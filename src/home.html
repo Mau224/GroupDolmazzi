@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+        <div class="preview">
+          <div class="preview__container">
+            <h1>dolmazzi group</h1>
+            <div class="preview__text">
+              <p>Anna Dolmazyan, founding broker,
+                creator of Dolmazzi</p>
+              <div class="preview__image"><img src="@img/profile.jpg" alt=""></div>
+              <h3>We hand-deliver your SOLUTIONS
+                with technology, communication, and efficiency.
+                We smooth out the rough and tough.</h3>
+            </div>
+          </div>
+        </div>
+        <div class="video">
+          <div class="video__container">
+            <div class="video__body-btn"
+              onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+              <button type="button" class="video-btn _icon-play">play video</button>
+            </div>
+            <div class="video__body" style="display:none">
+              <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video__wrap">
+              <img src="@img/video-prew.jpg" alt="">
+            </div>
+          </div>
+        </div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
