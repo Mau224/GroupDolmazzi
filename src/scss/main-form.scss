@@ -136,6 +136,26 @@
     padding-top: rem(50);
     display: flex;
     justify-content: center;
+    position: relative;
+
+    .btn-sub {
+      position: relative;
+
+      &::after {
+        border: 1px solid $mainColor;
+        right: rem(-100);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: rem(19);
+        height: rem(18);
+        background: url("../img/arrow.svg") no-repeat;
+        background-size: cover;
+        right: rem(-70);
+      }
+    }
 
     @media (max-width:$mobile){
       padding-top: rem(20);
