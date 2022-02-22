@@ -1,1 +1,57 @@
 // Заголовки, общие БЄМ блоки и проче...
+//кнопка с крудочком справа и элементом внутри
+
+.btn-circle {
+  display: flex;
+  flex-direction: row-reverse;
+  text-transform: uppercase;
+  line-height: math.div(35, 30);
+  align-items: center;
+  margin: 0px rem(30) 0px 0px;
+
+  @media (max-width:$tablet) {
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: math.div(35, 18);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: rem(81);
+    height: rem(81);
+    border-radius: 50%;
+    border: 1px solid #fff;
+    right: rem(-80);
+
+    @media (max-width:$tablet) {
+      width: rem(40);
+      height: rem(40);
+      right: rem(-30);
+      border: 2px solid #fff;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    right: rem(-50);
+    font-size: rem(18);
+
+    @media (max-width:$tablet) {
+      font-size: rem(10);
+      right: rem(-15);
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        background-color: #fff;
+      }
+
+      &::before {
+        color: #000;
+        z-index: 100;
+      }
+    }
+  }
+}
