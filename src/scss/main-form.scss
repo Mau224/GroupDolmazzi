@@ -1,5 +1,9 @@
 .form {
-  overflow: hidden;
+  padding-bottom: rem(200);
+
+  @media (max-width:$tablet){
+    @include adaptiveValue("padding-bottom", 200, 70);
+  }
   // .form__container
   &__container {
     @media (max-width:$mobile){
@@ -48,6 +52,10 @@
         padding-top: 0;
         padding-bottom: 0;
       }
+
+      @media (max-width:$mobile){
+        line-height: 94%;
+      }
     }
 
     p {
@@ -61,6 +69,10 @@
       @media (max-width:$tablet){
         @include adaptiveValue("font-size", 26, 18);
         line-height: math.div(18 , 26);
+      }
+
+      @media (max-width:$mobileSmall){
+        font-size: rem(14);
       }
     }
   }
@@ -144,16 +156,30 @@
       &::after {
         border: 1px solid $mainColor;
         right: rem(-100);
+        width: rem(64);
+        height: rem(64);
+
+        @media (max-width:$tablet){
+          width: rem(41);
+          height: rem(41);
+          right: rem(-50);
+        }
       }
 
       &::before {
         content: "";
         position: absolute;
         width: rem(19);
-        height: rem(18);
+        height: rem(19);
         background: url("../img/arrow.svg") no-repeat;
         background-size: cover;
-        right: rem(-70);
+        right: rem(-78);
+
+        @media (max-width:$tablet){
+          width: rem(12);
+          height: rem(12);
+          right: rem(-35);
+        }
       }
     }
 

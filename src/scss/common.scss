@@ -1,5 +1,23 @@
 // Заголовки, общие БЄМ блоки и проче...
 //кнопка с крудочком справа и элементом внутри
+input {
+  border-radius: 0;
+}
+
+h1 {
+  font-family: "SuisseIntlCondensedThin";
+  font-weight: 300;
+  @include adaptiveValue("font-size", 277, 110, 1920, 991);
+  line-height: math.div(255, 277);
+  /* identical to box height, or 92% */
+  letter-spacing: -0.005em;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (max-width:$tablet) {
+    @include adaptiveValue("font-size", 140, 88, 991, 360);
+  }
+}
 
 .btn-circle {
   display: flex;
@@ -52,6 +70,213 @@
         color: #000;
         z-index: 100;
       }
+    }
+  }
+}
+
+.blog-main-item {
+  // @include adaptiveValue("width", 600, 400);
+  // @include adaptiveValue("height", 600, 400);
+  background: #E5E5E5;
+  @include adaptiveValue("padding", 16, 12, 1920, 991);
+  min-height: 100%;
+  min-width: 100%;
+
+  @media (max-width:$tablet) {
+    padding: rem(11);
+  }
+
+  @media (max-width:$mobile) {
+    max-height: rem(605);
+  }
+
+  @media (max-width:$mobileSmall){
+    height: rem(340);
+  }
+}
+
+
+//перебитие стилей
+.blog__body-wrap {
+  grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr)) !important;
+  grid-template-rows: minmax(600) !important;
+
+  @media (max-width:$tablet) {
+    gap: rem(10) !important;
+  }
+
+  @media (max-width:$mobile) {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr;
+  }
+}
+
+.blog-item {
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    height: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: rem(1);
+      right: 50%;
+      background: $mainColor;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: rem(1);
+      width: 100%;
+      top: 50%;
+      background: $mainColor;
+
+    }
+
+    img {
+      padding: rem(13);
+      height: 100%;
+      object-fit: cover
+    }
+
+    p {
+      @include adaptiveValue("font-size", 20, 14, 1920, 991);
+      line-height: math.div(25, 20);
+      text-transform: uppercase;
+
+      @media (max-width:$tablet) {
+        font-size: rem(14);
+      }
+    }
+  }
+
+  &__text-1 {
+    // border: 1px solid $mainColor;
+  }
+
+  &__text-2 {
+    justify-items: end;
+    text-align: right;
+    align-self: end;
+  }
+}
+
+.blog-item-zip {
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    img {
+      max-height: 100%;
+    }
+
+    h4 {
+      @include adaptiveValue("font-size", 40, 20, 1920, 991);
+      line-height: math.div(49, 40);
+      text-transform: uppercase;
+      padding-top: rem(21);
+
+      @media (max-width:$tablet) {
+        font-size: rem(20);
+      }
+    }
+
+    p {
+      position: absolute;
+      transform: rotate(-90deg);
+      top: rem(27);
+      left: rem(-10);
+      text-transform: uppercase;
+      @include adaptiveValue("font-size", 20, 14, 1920, 991);
+      line-height: math.div(35, 20);
+
+      @media (max-width:$tablet) {
+        font-size: rem(14);
+      }
+    }
+  }
+}
+
+
+.blog-item-circle {
+  position: relative;
+
+  &__wrap {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    img {
+      max-height: rem(357);
+      height: min-content;
+    }
+  }
+
+  &__text-wrap {
+    border: 2px solid $mainColor;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width:$tablet) {
+      max-height: rem(120);
+    }
+
+    @media (max-width:$mobile) {
+      max-height: none;
+    }
+  }
+
+  img {
+    height: 100%;
+  }
+
+  p {
+    position: absolute;
+    bottom: rem(10);
+    @include adaptiveValue("right", 19, 12, 1920, 991);
+    text-transform: uppercase;
+    @include adaptiveValue("font-size", 20, 14, 1920, 991);
+    line-height: math.div(25, 20);
+
+    @media (max-width:$tablet) {
+      font-size: rem(14);
+      right: rem(15);
+    }
+
+    @media (max-width:$mobile) {
+      bottom: rem(10);
+      right: rem(12);
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+    text-align: center;
+    @include adaptiveValue("font-size", 20, 16, 1920, 991);
+    line-height: math.div(27, 20);
+    padding-right: rem(15);
+    padding-left: rem(15);
+
+    @media (max-width:$tablet) {
+      font-size: rem(14);
     }
   }
 }

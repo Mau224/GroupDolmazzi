@@ -1,3 +1,177 @@
 //====================================================================================================
+.footer {
+  background: #E5E5E5;
+
+  // .footer__container
+  &__container {
+    max-width: none;
+    padding: 0;
+  }
+
+  // .footer__body
+  &__body {
+    padding-top: rem(40);
+
+    @media (max-width:$tablet){
+      @include adaptiveValue("padding-top", 40, 20);
+    }
+  }
+
+  // .footer__img
+  &__img-ibg {
+    padding-bottom: percent(850, 1920);
+  }
+
+  // .footer__main
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    @include adaptiveValue("gap", 289, 80, 1920, 991);
+    width: 100%;
+    padding-top: rem(61);
+    padding-bottom: rem(55);
+    padding-right: rem(15);
+    padding-left: rem(15);
+
+    @media (max-width:$tablet){
+      gap: rem(20);
+      @include adaptiveValue("padding-top", 61, 20);
+      @include adaptiveValue("padding-bottom", 55, 13);
+    }
+
+    @media (max-width:$mobile){
+      justify-content: center;
+    }
+  }
+
+  // .footer__main-wrap
+  &__main-wrap {
+    display: flex;
+    flex: 1 1 50%;
+    min-height: rem(245);
+    gap: rem(10);
+
+    @media (max-width:$tablet){
+      min-height: rem(200);
+    }
+
+    @media (max-width:$mobile){
+      flex-direction: column-reverse;
+      &:last-child {
+        display: none;
+      }
+    }
+
+    @media (max-width:$mobileSmall){
+      max-width: rem(270);
+    }
+  }
+
+  // .footer__column
+  &__column {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width:$mobile){
+      align-items: center;
+    }
+
+    span {
+      font-size: rem(16);
+      line-height: math.div(18, 16);
+      max-width: rem(154);
+
+      @media (max-width:$tablet){
+        @include adaptiveValue("font-size", 16, 12, 991, 360);
+      }
+
+      @media (max-width:$mobile){
+        text-align: center;
+      }
+    }
+
+
+    p {
+      @include adaptiveValue("font-size", 30, 22, 1920, 991);
+      line-height: math.div(35, 30);
+
+      @media (max-width:$tablet) {
+        @include adaptiveValue("font-size", 22, 14, 991, 360);
+      }
+
+      @media (max-width:$mobile){
+        text-align: center;
+      }
+    }
+
+    a {
+      @include adaptiveValue("font-size", 30, 22, 1920, 991);
+      line-height: math.div(35, 30);
+
+      @media (max-width:$tablet) {
+        @include adaptiveValue("font-size", 22, 14, 991, 360);
+      }
+    }
+
+    img {
+      width: rem(65);
+      height: rem(63);
+
+      @media (max-width:$mobile){
+        width: rem(37);
+        height: rem(36);
+      }
+    }
+  }
+
+  // .footer__column-info
+  &__column-info {
+    @media (max-width:$mobile){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  // .footer__column-info-item
+  &__column-info-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    p {
+      margin: 0px rem(8) 0px 0px;
+    }
+  }
+
+  // .footer__column-list
+  &__column-list {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: rem(7);
+    }
+  }
+
+  //.footer__main-text
+
+  &__main-text {
+    display: flex;
+
+    h1 {
+      letter-spacing: rem(10);
+      @media (max-width:$mobile){
+        letter-spacing: -0.005em;
+      }
+    }
+
+    @media (max-width:$mobile){
+      padding-top: rem(11);
+    }
+  }
+}
 
 //====================================================================================================
