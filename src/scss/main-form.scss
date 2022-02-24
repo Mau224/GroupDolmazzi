@@ -71,8 +71,8 @@
         line-height: math.div(18 , 26);
       }
 
-      @media (max-width:$mobileSmall){
-        font-size: rem(14);
+      @media (max-width:$mobile){
+        @include adaptiveValue("font-size", 18, 14);
       }
     }
   }
@@ -84,7 +84,11 @@
     width: rem(400);
 
     @media (max-width:$tablet) {
-      @include adaptiveValue("width", 400, 150, 767, 360);
+      @include adaptiveValue("width", 400, 200);
+    }
+
+    @media (max-width:$mobile){
+      @include adaptiveValue("width", 200, 150);
     }
 
     // @include adaptiveValue("height", 409, 150);

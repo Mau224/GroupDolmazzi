@@ -357,11 +357,6 @@ h1 {
     max-height: 37.8125rem;
   }
 }
-@media (max-width: 29.99875em) {
-  .blog-main-item {
-    height: 21.25rem;
-  }
-}
 
 .blog__body-wrap {
   grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)) !important;
@@ -406,6 +401,7 @@ h1 {
   padding: 0.8125rem;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 .blog-item__wrap p {
   line-height: 1.25;
@@ -518,11 +514,10 @@ h1 {
   text-align: right;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
 }
 .blog-item-circle__img img {
   max-height: 22.3125rem;
-  height: min-content;
+  height: auto;
 }
 .blog-item-circle__text-wrap {
   border: 2px solid #202B54;
@@ -1027,6 +1022,7 @@ h1 {
 @media (max-width: 47.99875em) {
   .footer__main-wrap {
     flex-direction: column-reverse;
+    gap: 0;
   }
   .footer__main-wrap:last-child {
     display: none;
@@ -1068,6 +1064,7 @@ h1 {
 @media (max-width: 47.99875em) {
   .footer__column span {
     text-align: center;
+    margin-top: 0.625rem;
   }
 }
 .footer__column p {
@@ -1173,18 +1170,38 @@ h1 {
 }
 .footer__main-text {
   display: flex;
-}
-.footer__main-text h1 {
-  letter-spacing: 0.625rem;
+  justify-content: center;
 }
 @media (max-width: 47.99875em) {
+  .footer__main-text {
+    padding-top: 0.625rem;
+  }
+}
+@media (min-width: 120em) {
+  .footer__main-text h1 {
+    letter-spacing: 0.5rem;
+  }
+}
+@media (min-width: 61.9375em) and (max-width: 120em) {
+  @supports (letter-spacing: clamp( 0.375rem , 0.2416576964rem  +  0.215285253vw , 0.5rem )) {
+    .footer__main-text h1 {
+      letter-spacing: clamp( 0.375rem , 0.2416576964rem  +  0.215285253vw , 0.5rem );
+    }
+  }
+  @supports not (letter-spacing: clamp( 0.375rem , 0.2416576964rem  +  0.215285253vw , 0.5rem )) {
+    .footer__main-text h1 {
+      letter-spacing: calc(0.375rem + 0.125 * (100vw - 61.9375rem) / 58.0625);
+    }
+  }
+}
+@media (max-width: 61.99875em) {
   .footer__main-text h1 {
     letter-spacing: -0.005em;
   }
 }
 @media (max-width: 47.99875em) {
-  .footer__main-text {
-    padding-top: 0.6875rem;
+  .footer__main-text h1 {
+    letter-spacing: -0.005em;
   }
 }
 
@@ -1214,30 +1231,26 @@ h1 {
   }
 }
 @media (max-width: 61.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
-  @supports (font-size: clamp( 1.125rem , 0.9700613299rem  +  0.7746933505vw , 1.875rem )) {
+  @supports (font-size: clamp( 0.875rem , 0.6684151065rem  +  1.0329244674vw , 1.875rem )) {
     .preview__text p {
-      font-size: clamp( 1.125rem , 0.9700613299rem  +  0.7746933505vw , 1.875rem );
+      font-size: clamp( 0.875rem , 0.6684151065rem  +  1.0329244674vw , 1.875rem );
     }
   }
-  @supports not (font-size: clamp( 1.125rem , 0.9700613299rem  +  0.7746933505vw , 1.875rem )) {
+  @supports not (font-size: clamp( 0.875rem , 0.6684151065rem  +  1.0329244674vw , 1.875rem )) {
     .preview__text p {
-      font-size: calc(1.125rem + 0.75 * (100vw - 20rem) / 96.8125);
+      font-size: calc(0.875rem + 1 * (100vw - 20rem) / 96.8125);
     }
   }
 }
 @media (max-width: 61.99875em) and (max-width: 20em) {
   .preview__text p {
-    font-size: 1.125rem;
+    font-size: 0.875rem;
   }
 }
 @media (max-width: 47.99875em) {
   .preview__text p {
-    max-width: 20.625rem;
-  }
-}
-@media (max-width: 29.99875em) {
-  .preview__text p {
     font-size: 0.875rem;
+    max-width: 20.625rem;
   }
 }
 .preview__text h3 {
@@ -1252,23 +1265,23 @@ h1 {
   }
 }
 @media (max-width: 61.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
-  @supports (font-size: clamp( 1rem , 0.8192382182rem  +  0.903808909vw , 1.875rem )) {
+  @supports (font-size: clamp( 0.875rem , 0.6684151065rem  +  1.0329244674vw , 1.875rem )) {
     .preview__text h3 {
-      font-size: clamp( 1rem , 0.8192382182rem  +  0.903808909vw , 1.875rem );
+      font-size: clamp( 0.875rem , 0.6684151065rem  +  1.0329244674vw , 1.875rem );
     }
   }
-  @supports not (font-size: clamp( 1rem , 0.8192382182rem  +  0.903808909vw , 1.875rem )) {
+  @supports not (font-size: clamp( 0.875rem , 0.6684151065rem  +  1.0329244674vw , 1.875rem )) {
     .preview__text h3 {
-      font-size: calc(1rem + 0.875 * (100vw - 20rem) / 96.8125);
+      font-size: calc(0.875rem + 1 * (100vw - 20rem) / 96.8125);
     }
   }
 }
 @media (max-width: 61.99875em) and (max-width: 20em) {
   .preview__text h3 {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 }
-@media (max-width: 29.99875em) {
+@media (max-width: 47.99875em) {
   .preview__text h3 {
     font-size: 0.875rem;
   }
@@ -1652,7 +1665,29 @@ h1 {
     font-size: 1.125rem;
   }
 }
-@media (max-width: 29.99875em) {
+@media (max-width: 47.99875em) {
+  .case__title p {
+    max-width: 21.4375rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 116.8125em) {
+  .case__title p {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
+  @supports (font-size: clamp( 0.875rem , 0.8233537766rem  +  0.2582311168vw , 1.125rem )) {
+    .case__title p {
+      font-size: clamp( 0.875rem , 0.8233537766rem  +  0.2582311168vw , 1.125rem );
+    }
+  }
+  @supports not (font-size: clamp( 0.875rem , 0.8233537766rem  +  0.2582311168vw , 1.125rem )) {
+    .case__title p {
+      font-size: calc(0.875rem + 0.25 * (100vw - 20rem) / 96.8125);
+    }
+  }
+}
+@media (max-width: 47.99875em) and (max-width: 20em) {
   .case__title p {
     font-size: 0.875rem;
   }
@@ -1775,14 +1810,9 @@ h1 {
   max-width: 100%;
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-@media (max-width: 47.99875em) {
-  .case-tab__body img {
-    max-height: 18.625rem;
-    height: fit-content;
-  }
+  height: auto;
+  object-fit: contain;
+  vertical-align: top;
 }
 .case-tab__body-wrap {
   width: 100%;
@@ -1798,10 +1828,16 @@ h1 {
 }
 .case-tab__body-wrap-item {
   position: relative;
+  cursor: pointer;
 }
 @media (max-width: 47.99875em) {
   .case-tab__body-wrap-item {
     max-height: 37.8125rem;
+  }
+}
+@media (any-hover: hover) {
+  .case-tab__body-wrap-item:hover .case-tab__body-wrap-text {
+    opacity: 1;
   }
 }
 .case-tab__body-wrap-text {
@@ -1902,8 +1938,19 @@ h1 {
     padding-left: 0.625rem;
   }
 }
+@media (max-width: 47.99875em) and (hover: none) and (pointer: coarse) {
+  .case-tab__body-wrap-text:hover {
+    opacity: 1;
+  }
+  .case-tab__body-wrap-text:active {
+    opacity: 1;
+  }
+}
 @media (any-hover: hover) {
   .case-tab__body-wrap-text:hover {
+    opacity: 1;
+  }
+  .case-tab__body-wrap-text:active {
     opacity: 1;
   }
 }
@@ -1961,46 +2008,70 @@ h1 {
     font-size: 1.125rem;
   }
 }
-@media (max-width: 61.99875em) and (min-width: 116.8125em) {
-  .case-tab__body-wrap-text p {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 61.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
-  @supports (font-size: clamp( 0.875rem , 0.8491768883rem  +  0.1291155584vw , 1rem )) {
+@media (max-width: 61.99875em) and (min-width: 22.5em) and (max-width: 61.9375em) {
+  @supports (font-size: clamp( 0.875rem , 0.8036846276rem  +  0.3169572108vw , 1rem )) {
     .case-tab__body-wrap-text p {
-      font-size: clamp( 0.875rem , 0.8491768883rem  +  0.1291155584vw , 1rem );
+      font-size: clamp( 0.875rem , 0.8036846276rem  +  0.3169572108vw , 1rem );
     }
   }
-  @supports not (font-size: clamp( 0.875rem , 0.8491768883rem  +  0.1291155584vw , 1rem )) {
+  @supports not (font-size: clamp( 0.875rem , 0.8036846276rem  +  0.3169572108vw , 1rem )) {
     .case-tab__body-wrap-text p {
-      font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 96.8125);
+      font-size: calc(0.875rem + 0.125 * (100vw - 22.5rem) / 39.4375);
     }
   }
 }
-@media (max-width: 61.99875em) and (max-width: 20em) {
+@media (max-width: 61.99875em) and (min-width: 22.5em) and (max-width: 61.9375em) {
+  @supports (font-size: clamp( 1rem , 0.7147385103rem  +  1.2678288431vw , 1.5rem )) {
+    .case-tab__body-wrap-text p:last-child {
+      font-size: clamp( 1rem , 0.7147385103rem  +  1.2678288431vw , 1.5rem );
+    }
+  }
+  @supports not (font-size: clamp( 1rem , 0.7147385103rem  +  1.2678288431vw , 1.5rem )) {
+    .case-tab__body-wrap-text p:last-child {
+      font-size: calc(1rem + 0.5 * (100vw - 22.5rem) / 39.4375);
+    }
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 116.8125em) {
   .case-tab__body-wrap-text p {
     font-size: 0.875rem;
   }
 }
-@media (max-width: 61.99875em) and (min-width: 116.8125em) {
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
+  @supports (font-size: clamp( 0.875rem , 0.875rem  +  0vw , 0.875rem )) {
+    .case-tab__body-wrap-text p {
+      font-size: clamp( 0.875rem , 0.875rem  +  0vw , 0.875rem );
+    }
+  }
+  @supports not (font-size: clamp( 0.875rem , 0.875rem  +  0vw , 0.875rem )) {
+    .case-tab__body-wrap-text p {
+      font-size: calc(0.875rem + 0 * (100vw - 20rem) / 96.8125);
+    }
+  }
+}
+@media (max-width: 47.99875em) and (max-width: 20em) {
+  .case-tab__body-wrap-text p {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 116.8125em) {
   .case-tab__body-wrap-text p:last-child {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
-@media (max-width: 61.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
-  @supports (font-size: clamp( 0.875rem , 0.7458844416rem  +  0.6455777921vw , 1.5rem )) {
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
+  @supports (font-size: clamp( 0.875rem , 0.8491768883rem  +  0.1291155584vw , 1rem )) {
     .case-tab__body-wrap-text p:last-child {
-      font-size: clamp( 0.875rem , 0.7458844416rem  +  0.6455777921vw , 1.5rem );
+      font-size: clamp( 0.875rem , 0.8491768883rem  +  0.1291155584vw , 1rem );
     }
   }
-  @supports not (font-size: clamp( 0.875rem , 0.7458844416rem  +  0.6455777921vw , 1.5rem )) {
+  @supports not (font-size: clamp( 0.875rem , 0.8491768883rem  +  0.1291155584vw , 1rem )) {
     .case-tab__body-wrap-text p:last-child {
-      font-size: calc(0.875rem + 0.625 * (100vw - 20rem) / 96.8125);
+      font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 96.8125);
     }
   }
 }
-@media (max-width: 61.99875em) and (max-width: 20em) {
+@media (max-width: 47.99875em) and (max-width: 20em) {
   .case-tab__body-wrap-text p:last-child {
     font-size: 0.875rem;
   }
@@ -2033,24 +2104,36 @@ h1 {
     font-size: 1.25rem;
   }
 }
-@media (max-width: 61.99875em) and (min-width: 116.8125em) {
+@media (max-width: 61.99875em) and (min-width: 47.9375em) and (max-width: 61.9375em) {
+  @supports (font-size: clamp( 1rem , 0.1439732143rem  +  1.7857142857vw , 1.25rem )) {
+    .case-tab__body-wrap-text h3 {
+      font-size: clamp( 1rem , 0.1439732143rem  +  1.7857142857vw , 1.25rem );
+    }
+  }
+  @supports not (font-size: clamp( 1rem , 0.1439732143rem  +  1.7857142857vw , 1.25rem )) {
+    .case-tab__body-wrap-text h3 {
+      font-size: calc(1rem + 0.25 * (100vw - 47.9375rem) / 14);
+    }
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 116.8125em) {
   .case-tab__body-wrap-text h3 {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
-@media (max-width: 61.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
-  @supports (font-size: clamp( 0.875rem , 0.7975306649rem  +  0.3873466753vw , 1.25rem )) {
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
+  @supports (font-size: clamp( 0.875rem , 0.8491768883rem  +  0.1291155584vw , 1rem )) {
     .case-tab__body-wrap-text h3 {
-      font-size: clamp( 0.875rem , 0.7975306649rem  +  0.3873466753vw , 1.25rem );
+      font-size: clamp( 0.875rem , 0.8491768883rem  +  0.1291155584vw , 1rem );
     }
   }
-  @supports not (font-size: clamp( 0.875rem , 0.7975306649rem  +  0.3873466753vw , 1.25rem )) {
+  @supports not (font-size: clamp( 0.875rem , 0.8491768883rem  +  0.1291155584vw , 1rem )) {
     .case-tab__body-wrap-text h3 {
-      font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 96.8125);
+      font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 96.8125);
     }
   }
 }
-@media (max-width: 61.99875em) and (max-width: 20em) {
+@media (max-width: 47.99875em) and (max-width: 20em) {
   .case-tab__body-wrap-text h3 {
     font-size: 0.875rem;
   }
@@ -2065,6 +2148,15 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
+  padding-top: 1.25rem;
+}
+@media (max-width: 47.99875em) {
+  .case-show__content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding-top: 0.625rem;
+    gap: 0.625rem;
+  }
 }
 .case-show__more {
   font-size: 1.875rem;
@@ -2346,7 +2438,24 @@ h1 {
     font-size: 1.125rem;
   }
 }
-@media (max-width: 29.99875em) {
+@media (max-width: 47.99875em) and (min-width: 116.8125em) {
+  .form__title p {
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
+  @supports (font-size: clamp( 0.875rem , 0.8233537766rem  +  0.2582311168vw , 1.125rem )) {
+    .form__title p {
+      font-size: clamp( 0.875rem , 0.8233537766rem  +  0.2582311168vw , 1.125rem );
+    }
+  }
+  @supports not (font-size: clamp( 0.875rem , 0.8233537766rem  +  0.2582311168vw , 1.125rem )) {
+    .form__title p {
+      font-size: calc(0.875rem + 0.25 * (100vw - 20rem) / 96.8125);
+    }
+  }
+}
+@media (max-width: 47.99875em) and (max-width: 20em) {
   .form__title p {
     font-size: 0.875rem;
   }
@@ -2398,16 +2507,48 @@ h1 {
     padding-bottom: 1.5rem;
   }
 }
-@media (max-width: 61.99875em) and (min-width: 22.5em) and (max-width: 47.9375em) {
-  @supports (width: clamp( 9.375rem , -4.4456388206rem  +  61.4250614251vw , 25rem )) {
+@media (max-width: 61.99875em) and (min-width: 116.8125em) {
+  .form__img-wrap {
+    width: 25rem;
+  }
+}
+@media (max-width: 61.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
+  @supports (width: clamp( 12.5rem , 9.9176888315rem  +  12.9115558425vw , 25rem )) {
     .form__img-wrap {
-      width: clamp( 9.375rem , -4.4456388206rem  +  61.4250614251vw , 25rem );
+      width: clamp( 12.5rem , 9.9176888315rem  +  12.9115558425vw , 25rem );
     }
   }
-  @supports not (width: clamp( 9.375rem , -4.4456388206rem  +  61.4250614251vw , 25rem )) {
+  @supports not (width: clamp( 12.5rem , 9.9176888315rem  +  12.9115558425vw , 25rem )) {
     .form__img-wrap {
-      width: calc(9.375rem + 15.625 * (100vw - 22.5rem) / 25.4375);
+      width: calc(12.5rem + 12.5 * (100vw - 20rem) / 96.8125);
     }
+  }
+}
+@media (max-width: 61.99875em) and (max-width: 20em) {
+  .form__img-wrap {
+    width: 12.5rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 116.8125em) {
+  .form__img-wrap {
+    width: 12.5rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 116.8125em) {
+  @supports (width: clamp( 9.375rem , 8.7294222079rem  +  3.2278889606vw , 12.5rem )) {
+    .form__img-wrap {
+      width: clamp( 9.375rem , 8.7294222079rem  +  3.2278889606vw , 12.5rem );
+    }
+  }
+  @supports not (width: clamp( 9.375rem , 8.7294222079rem  +  3.2278889606vw , 12.5rem )) {
+    .form__img-wrap {
+      width: calc(9.375rem + 3.125 * (100vw - 20rem) / 96.8125);
+    }
+  }
+}
+@media (max-width: 47.99875em) and (max-width: 20em) {
+  .form__img-wrap {
+    width: 9.375rem;
   }
 }
 .form__img-wrap img {

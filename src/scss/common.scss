@@ -89,10 +89,6 @@ h1 {
   @media (max-width:$mobile) {
     max-height: rem(605);
   }
-
-  @media (max-width:$mobileSmall){
-    height: rem(340);
-  }
 }
 
 
@@ -142,7 +138,8 @@ h1 {
     img {
       padding: rem(13);
       height: 100%;
-      object-fit: cover
+      object-fit: cover;
+      display: block;
     }
 
     p {
@@ -220,11 +217,10 @@ h1 {
     text-align: right;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
 
     img {
       max-height: rem(357);
-      height: min-content;
+      height: auto;
     }
   }
 
