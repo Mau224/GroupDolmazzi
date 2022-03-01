@@ -1,0 +1,127 @@
+.slider {
+  padding-top: rem(56);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width:$mobile) {
+    @include adaptiveValue("padding-top", 56, 13);
+  }
+
+  // .slider__container
+  &__container {
+    padding: 0;
+
+    h2 {
+      padding-bottom: rem(85);
+
+      @media (max-width:$mobile) {
+        @include adaptiveValue("padding-bottom", 85, 24);
+      }
+    }
+
+    p {
+
+      font-family: $fontFamily;
+      text-align: center;
+      max-width: rem(882);
+      margin: 0 auto;
+      font-size: rem(40);
+      line-height: math.div(45, 40);
+
+      @media (max-width:$mobile) {
+        @include adaptiveValue("font-size", 40, 14, 767, 360);
+      }
+
+      @media (max-width:$mobileSmall){
+        max-width: rem(189);
+      }
+    }
+  }
+
+  // .slider__body
+  &__body {
+    padding-top: rem(113);
+    position: relative;
+    margin-bottom: rem(-105);
+    // max-height: rem(900);
+
+    @media (max-width:$mobile) {
+      max-height: rem(900);
+      @include adaptiveValue("padding-top", 80, 30);
+      margin-bottom: rem(-40);
+    }
+  }
+
+  // .slider__slider
+  &__slider {}
+
+  // .slider__wrapper
+  &__wrapper {}
+
+  // .slider__slide
+  &__slide {
+    width: 100%;
+    max-width: 100%;
+    max-height: rem(900);
+
+    img {
+      object-fit: cover;
+      max-width: 100%;
+      height: 100%;
+      width: 100%;
+      max-height: rem(900);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: rem(30);
+    justify-content: center;
+    padding-bottom: rem(40);
+    position: relative;
+    top: rem(-105);
+
+    @media (max-width:$mobile) {
+      justify-content: flex-start;
+      margin-left: rem(10);
+      padding: 0;
+      top: rem(-65);
+      gap: rem(16);
+    }
+  }
+
+  &__btn {
+    position: relative;
+    width: rem(64);
+    height: rem(64);
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width:$mobile) {
+      width: rem(41);
+      height: rem(41);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: rem(64);
+      height: rem(64);
+      background: url("../img/right-slide.svg") no-repeat;
+
+      @media (max-width:$mobile) {
+        width: rem(41);
+        height: rem(41);
+        background-size: cover;
+      }
+    }
+  }
+
+  &__left {
+    transform: rotate(180deg);
+  }
+
+}

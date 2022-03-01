@@ -1,0 +1,161 @@
+.team {
+  margin-top: rem(43);
+
+  @media (max-width:$mobile) {
+    margin-top: rem(13);
+  }
+
+  // .team__container
+  &__container {
+    padding: 0;
+
+    @media (max-width:$mobile) {
+      padding: 0;
+    }
+  }
+
+  // .team__body
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    border-top: rem(1) solid $mainColor;
+    border-bottom: rem(1) solid $mainColor;
+    border-right: 1px solid $mainColor;
+    border-left: 1px solid $mainColor;
+
+    &::before {
+      content: "";
+      width: rem(1);
+      height: 100%;
+      position: absolute;
+      background-color: $mainColor;
+      right: 50%;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: rem(1);
+      position: absolute;
+      background-color: $mainColor;
+      top: 50%;
+    }
+
+    @media (max-width:$mobile) {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 0;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // .team__item
+  &__item {
+    position: relative;
+    padding: rem(40);
+
+    @media (max-width:$tablet) {
+      padding: rem(20);
+    }
+
+    @media (max-width:$mobile) {
+      height: 0;
+      padding: 0;
+      padding-bottom: 100%;
+      border-bottom: 1px solid $mainColor;
+      padding-right: rem(15);
+      padding-left: rem(15);
+    }
+  }
+
+  &__item-img-ibg {
+    padding-bottom: 100%;
+
+    img {
+      max-width: 100%;
+
+      @media (max-width:$mobile) {
+        padding-top: rem(20);
+      }
+    }
+
+    @media (max-width:$mobile) {
+      padding-bottom: 100%;
+      margin-bottom: rem(10);
+    }
+  }
+
+  // .team__item-info
+  &__item-info {
+    margin-top: rem(60);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width:$tablet) {
+      @include adaptiveValue("margin-top", 60, 40, 991, 767);
+    }
+
+    @media (max-width:$mobile) {
+      margin-top: rem(20);
+    }
+
+    .form__btn {
+      position: absolute;
+      bottom: rem(60);
+      padding-top: 0;
+      @include adaptiveValue("font-size", 30, 20, 1920, 991);
+
+      @media (max-width:$mobileSmall) {
+        bottom: rem(20);
+      }
+    }
+
+    h3 {
+      @include adaptiveValue("font-size", 40, 26, 1920, 991);
+      line-height: math.div(45, 40);
+
+      @media (max-width:$tablet) {
+        @include adaptiveValue("font-size", 26, 20, 991, 767);
+      }
+
+      @media (max-width:$mobile) {
+        @include adaptiveValue("font-size", 24, 20, 767, 360);
+        height: 50%;
+      }
+    }
+
+    p {
+      @include adaptiveValue("font-size", 40, 20, 1920, 991);
+      line-height: math.div(45, 40);
+      margin-top: rem(36);
+
+      @media (max-width:$tablet) {
+        @include adaptiveValue("font-size", 20, 16, 991, 767);
+        margin-top: rem(20);
+      }
+
+      @media (max-width:$mobile) {
+        @include adaptiveValue("font-size", 20, 18, 767, 360);
+      }
+    }
+
+    &--second {
+      @media (max-width:$mobile) {
+        p {
+          position: absolute;
+          bottom: rem(20);
+        }
+      }
+    }
+  }
+}

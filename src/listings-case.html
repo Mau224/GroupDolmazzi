@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"listings-case"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      <div class="slider">
+        <div class="slider__container">
+          <h2>267 VALLEY
+            MEADOW ROAD
+            ENCINO</h2>
+          <p>67 VALLEY MEADOW ROAD, ENCINO, CA 91436
+            6 Bed / 6 Bath / $2,000,000</p>
+
+          <div class="slider__body">
+            <!-- Оболочка слайдера -->
+            <div class="slider__slider swiper">
+              <!-- Двигающееся часть слайдера -->
+              <div class="slider__wrapper swiper-wrapper">
+                <!-- Слайд -->
+                <div class="slider__slide swiper-slide">
+                  <div class="slider__slide-img">
+                    <img src="@img/caselistings-img1.jpg" alt="">
+                  </div>
+                </div>
+                <div class="slider__slide swiper-slide">
+                  <div class="slider__slide-img">
+                    <img src="@img/caselistings-img1.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <!-- Если нужна навигация (влево/вправо) -->
+              <div class="slider__btns">
+                <button type="button" class="swiper-button-prev slider__btn slider__left"></button>
+                <button type="button" class="swiper-button-next slider__btn slider__right"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      @@include('html/_main-text.htm',{})
+      @@include('html/_form-other.htm',{
+        "titleform":"contact us",
+        "titletext":"Interested in working with us? Wed love to hear from you! Please fill out the form below and one of our team members will be in touch"
+      })
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_popup.htm',{})
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

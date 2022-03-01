@@ -1,5 +1,5 @@
 /*
-Документация по работе в шаблоне: 
+Документация по работе в шаблоне:
 Документация слайдера: https://swiperjs.com/
 Сниппет(HTML): swiper
 */
@@ -10,7 +10,7 @@
 import Swiper, { Navigation } from 'swiper';
 /*
 Основниые модули слайдера:
-Navigation, Pagination, Autoplay, 
+Navigation, Pagination, Autoplay,
 EffectFade, Lazy, Manipulation
 Подробнее смотри https://swiperjs.com/
 */
@@ -32,13 +32,13 @@ function initSliders() {
 		new Swiper('.swiper', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation, Autoplay],
+			modules: [Navigation],
 
-			observer: true,
-			observeParents: true,
-			slidesPerView: 1,
+			// observer: true,
+			// observeParents: true,
+			slidesPerView: 'auto',
 			spaceBetween: 0,
-			autoHeight: true,
+			// autoHeight: true,
 			speed: 800,
 
 			//touchRatio: 0,

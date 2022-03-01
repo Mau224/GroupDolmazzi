@@ -1,0 +1,71 @@
+.contacts {
+  margin-top: rem(44);
+  margin-bottom: rem(100);
+
+  @media (max-width:$tablet) {
+    @include adaptiveValue("margin-bottom", 100, 0, 991, 360);
+  }
+
+  @media (max-width:$mobile) {
+    margin-top: rem(13);
+  }
+
+  // .contacts__container
+  &__container {
+    padding: 0;
+    max-width: none;
+  }
+
+  // .contacts__map
+  &__map-ibg {
+    // padding-bottom: percent(900, 1920);
+    margin-top: rem(70);
+
+    @media (max-width:$tablet) {
+      @include adaptiveValue("margin-top", 70, 20, 991, 360);
+    }
+
+    @media (max-width:$mobile) {
+      min-height: rem(335);
+    }
+
+    .ymaps-2-1-79-map {
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+
+      /* Firefox 3.5+ */
+      -webkit-filter: grayscale(100%);
+
+      /* Chrome 19+ & Safari 6+ */
+      filter: grayscale(100%);
+
+    }
+  }
+
+  // .contacts__info
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    @include adaptiveValue("gap", 94, 50, 1920, 991);
+    @include adaptiveValue("font-size", 60, 40, 1920, 991);
+    line-height: math.div(69, 60);
+    max-width: rem(822);
+    margin: 0 auto;
+    margin-top: rem(89);
+    text-align: center;
+
+    @media (max-width:$tablet) {
+      @include adaptiveValue("gap", 50, 20, 991, 360);
+      @include adaptiveValue("font-size", 40, 20, 991, 360);
+      @include adaptiveValue("margin-top", 89, 30, 991, 360);
+    }
+  }
+
+  // .contacts__info-item
+  &__info-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

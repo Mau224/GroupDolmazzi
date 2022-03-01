@@ -1,0 +1,37 @@
+.form__title-other {
+  p {
+    @include adaptiveValue("font-size", 30, 26, 1920, 991);
+    line-height: math.div(32, 30);
+    text-transform: lowercase;
+    max-width: rem(731);
+
+    @media (max-width:$tablet) {
+      @include adaptiveValue("font-size", 26, 18, 991, 767);
+    }
+
+    @media (max-width:$mobile) {
+      @include adaptiveValue("font-size", 18, 14, 767, 360);
+    }
+  }
+}
+
+.form__input-wrap-other {
+  flex-wrap: wrap;
+  gap: rem(70);
+  column-gap: 2%;
+
+  @media (max-width:$mobile){
+    gap: rem(30);
+    column-gap: 0;
+  }
+
+
+
+  .form__input {
+    width: 48%;
+
+    @media (max-width:$mobile){
+      width: 100%;
+    }
+  }
+}

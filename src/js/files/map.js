@@ -75,12 +75,12 @@ function mapInit(n = 1) {
 		}, 500);
 	}
 }
-if (document.querySelector('#map')) {
+if (document.querySelector('map')) {
 	mapAdd();
 }
 
 
-/* YA
+
 function map(n) {
 	ymaps.ready(init);
 	function init() {
@@ -126,4 +126,4 @@ function map(n) {
 		myMap.behaviors.disable('drag');
 	}
 }
-*/
+

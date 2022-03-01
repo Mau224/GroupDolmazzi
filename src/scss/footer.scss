@@ -161,12 +161,12 @@
   &__main-text {
     display: flex;
 
-    h1 {
-      letter-spacing: rem(10);
-      @media (max-width:$mobile){
-        letter-spacing: -0.005em;
-      }
-    }
+    // h1 {
+    //   letter-spacing: rem(10);
+    //   @media (max-width:$mobile){
+    //     letter-spacing: -0.005em;
+    //   }
+    // }
 
     @media (max-width:$mobile){
       padding-top: rem(11);

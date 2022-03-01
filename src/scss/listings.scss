@@ -1,0 +1,46 @@
+//=================================================================================
+.case-tab__listining-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: rem(40);
+
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid $mainColor;
+      width: rem(64);
+      height: rem(64);
+
+      @media (max-width:$tablet) {
+        width: rem(41);
+        height: rem(41);
+        right: auto;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: rem(19);
+      height: rem(19);
+      background: url("../img/arrow.svg") no-repeat;
+      background-size: cover;
+
+      @media (max-width:$tablet) {
+        width: rem(12);
+        height: rem(12);
+        right: auto;
+      }
+    }
+  }
+}

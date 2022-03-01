@@ -1,0 +1,136 @@
+.manifesto {
+
+  // .manifesto__container
+  &__container {
+
+    @media (max-width:$mobile){
+      padding: 0;
+    }
+  }
+
+  // .manifesto__body
+  &__body {
+    margin-top: rem(70);
+
+    @media (max-width:$mobile){
+      margin-top: rem(27);
+    }
+  }
+
+  // .manifesto__item
+  &__item {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $mainColor;
+    border-bottom: 1px solid $mainColor;
+    @include adaptiveValue("height", 520, 480, 1920, 991);
+
+    @media (max-width:$mobile){
+      flex-direction: column;
+      align-items: center;
+      border: 0;
+    }
+  }
+
+  // .manifesto__img
+  &__img {
+    width: 30%;
+    height: 100%;
+    max-height: rem(639);
+    position: relative;
+    border: 1px solid $mainColor;
+
+    &--02 {
+      .manifesto__img-elem {
+        position: relative;
+        height: 100%;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: $mainColor;
+          top: 50%;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          background-color: $mainColor;
+          // right: 50%;
+          top: 50%;
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: url("../img/01..svg") no-repeat;
+      @include adaptiveValue("width", 102, 50, 1920, 767);
+      @include adaptiveValue("height", 92, 40, 1920, 767);
+      background-size: contain;
+      right: rem(10);
+      top: rem(10);
+    }
+    img {
+      max-width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width:$mobile){
+      width: 100%;
+
+      img {
+        position: relative;
+        // transform: rotate(180deg);
+        border-bottom: 1px solid $mainColor;
+
+        border-top: 1px solid $mainColor;
+      }
+    }
+  }
+
+  // .manifesto__text
+  &__text {
+    width: 70%;
+    @include adaptiveValue("margin-left", 100, 70, 1920, 991);
+
+    @media (max-width:$tablet){
+      @include adaptiveValue("margin-left", 70, 30, 991, 767);
+    }
+
+    @media (max-width:$mobile){
+      margin-left: 0;
+      width: 100%;
+      margin-top: rem(65);
+      margin-bottom: rem(100);
+      padding-right: rem(10);
+      padding-left: rem(10);
+    }
+    h4 {
+      @include adaptiveValue("font-size", 80, 50, 1920, 991);
+      /* identical to box height, or 92px */
+      line-height: math.div(92 , 80);
+      text-transform: uppercase;
+      margin-bottom: rem(30);
+
+      @media (max-width:$tablet){
+        @include adaptiveValue("font-size", 50, 20, 991, 360);
+      }
+    }
+
+    p {
+      @include adaptiveValue("font-size", 40, 24 , 1920, 991);
+      line-height: math.div(52 , 41);
+
+      @media (max-width:$tablet){
+        @include adaptiveValue("font-size", 24, 18, 991, 360);
+      }
+    }
+  }
+}

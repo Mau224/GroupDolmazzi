@@ -20,14 +20,22 @@
   content: "\e900";
 }
 
-._icon-logo:before {
+._icon-left-slide:before {
   content: "\e901";
 }
 
-._icon-marker:before {
+._icon-logo:before {
   content: "\e902";
 }
 
-._icon-play:before {
+._icon-marker:before {
   content: "\e903";
+}
+
+._icon-play:before {
+  content: "\e904";
+}
+
+._icon-right-slide:before {
+  content: "\e905";
 }
