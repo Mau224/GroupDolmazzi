@@ -12,7 +12,7 @@
   &__body {
     padding-top: rem(40);
 
-    @media (max-width:$tablet){
+    @media (max-width:$tablet) {
       @include adaptiveValue("padding-top", 40, 20);
     }
   }
@@ -33,13 +33,13 @@
     padding-right: rem(15);
     padding-left: rem(15);
 
-    @media (max-width:$tablet){
+    @media (max-width:$tablet) {
       gap: rem(20);
       @include adaptiveValue("padding-top", 61, 20);
       @include adaptiveValue("padding-bottom", 55, 13);
     }
 
-    @media (max-width:$mobile){
+    @media (max-width:$mobile) {
       justify-content: center;
     }
   }
@@ -51,18 +51,20 @@
     min-height: rem(245);
     gap: rem(10);
 
-    @media (max-width:$tablet){
+    @media (max-width:$tablet) {
       min-height: rem(200);
     }
 
-    @media (max-width:$mobile){
+    @media (max-width:$mobile) {
       flex-direction: column-reverse;
+      gap: 0;
+
       &:last-child {
         display: none;
       }
     }
 
-    @media (max-width:$mobileSmall){
+    @media (max-width:$mobileSmall) {
       max-width: rem(270);
     }
   }
@@ -74,7 +76,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @media (max-width:$mobile){
+    @media (max-width:$mobile) {
       align-items: center;
     }
 
@@ -83,12 +85,13 @@
       line-height: math.div(18, 16);
       max-width: rem(154);
 
-      @media (max-width:$tablet){
+      @media (max-width:$tablet) {
         @include adaptiveValue("font-size", 16, 12, 991, 360);
       }
 
-      @media (max-width:$mobile){
+      @media (max-width:$mobile) {
         text-align: center;
+        margin-top: rem(10);
       }
     }
 
@@ -101,7 +104,7 @@
         @include adaptiveValue("font-size", 22, 14, 991, 360);
       }
 
-      @media (max-width:$mobile){
+      @media (max-width:$mobile) {
         text-align: center;
       }
     }
@@ -119,7 +122,7 @@
       width: rem(65);
       height: rem(63);
 
-      @media (max-width:$mobile){
+      @media (max-width:$mobile) {
         width: rem(37);
         height: rem(36);
       }
@@ -128,7 +131,7 @@
 
   // .footer__column-info
   &__column-info {
-    @media (max-width:$mobile){
+    @media (max-width:$mobile) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -160,16 +163,22 @@
 
   &__main-text {
     display: flex;
-
-    // h1 {
-    //   letter-spacing: rem(10);
-    //   @media (max-width:$mobile){
-    //     letter-spacing: -0.005em;
-    //   }
-    // }
+    justify-content: center;
 
     @media (max-width:$mobile){
-      padding-top: rem(11);
+      padding-top: rem(10);
+    }
+
+    h1 {
+      @include adaptiveValue("letter-spacing", 8, 6, 1920, 991);
+
+      @media (max-width:$tablet) {
+        letter-spacing: -0.005em;
+      }
+
+      @media (max-width:$mobile) {
+        letter-spacing: -0.005em;
+      }
     }
   }
 }

@@ -36,36 +36,31 @@
     align-items: center;
 
     p {
-      @include adaptiveValue("font-size", 30, 26);
       line-height: math.div(32, 30);
       max-width: rem(483);
       text-align: center;
 
       @media (max-width:$tablet) {
-        @include adaptiveValue("font-size", 26, 18, 991, 479);
+        @include adaptiveValue("font-size", 30, 14);
       }
 
       @media (max-width:$mobile) {
-        max-width: rem(330);
-      }
-
-      @media (max-width:$mobileSmall) {
         font-size: rem(14);
+        max-width: rem(330);
       }
     }
 
     h3 {
-      @include adaptiveValue("font-size", 30, 26);
       text-transform: uppercase;
       line-height: math.div(39, 30);
       max-width: rem(796);
       text-align: center;
 
       @media (max-width:$tablet) {
-        @include adaptiveValue("font-size", 26, 16, 991, 479);
+        @include adaptiveValue("font-size", 30, 14);
       }
 
-      @media (max-width:$mobileSmall) {
+      @media (max-width:$mobile) {
         font-size: rem(14);
       }
     }
@@ -233,7 +228,17 @@
     align-items: center;
 
     h2 {
+      font-family: "SuisseIntlCondensedThin";
+      font-weight: 300;
+      @include adaptiveValue("font-size", 277, 140, 1920, 991);
+      line-height: math.div(255, 275);
+      text-transform: uppercase;
+      text-align: center;
       padding-bottom: rem(20);
+
+      @media (max-width:$tablet) {
+        @include adaptiveValue("font-size", 140, 70, 991, 360);
+      }
     }
 
     p {
@@ -248,8 +253,9 @@
         @include adaptiveValue("font-size", 24, 18);
       }
 
-      @media (max-width:$mobileSmall) {
-        font-size: rem(14);
+      @media (max-width:$mobile) {
+        @include adaptiveValue("font-size", 18, 14);
+        max-width: rem(343);
       }
     }
   }
@@ -268,9 +274,7 @@
   }
 
   // .case__tabs
-  &__tab {
-    width: 100%;
-  }
+  &__tabs {}
 }
 
 .case-tab {
@@ -310,7 +314,7 @@
 
   // .case-tab__body
   &__body {
-    width: 100%;
+    // width: 100%;
     // display: grid;
     // grid-template-columns: 1fr 1fr;
     // gap: rem(20);
@@ -319,13 +323,9 @@
       max-width: 100%;
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover; // опционально
-
-      @media (max-width:$mobile) {
-        // max-height: rem(298);
-        // height: fit-content;
-      }
+      height: auto;
+      object-fit: contain; // опционально
+      vertical-align: top;
     }
   }
 
@@ -345,9 +345,18 @@
   // .case-tab__body-wrap-item
   &__body-wrap-item {
     position: relative;
+    cursor: pointer;
 
     @media (max-width:$mobile) {
       max-height: rem(605);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        .case-tab__body-wrap-text {
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -368,6 +377,10 @@
     @include adaptiveValue("padding-right", 130, 50, 1920, 991);
     @include adaptiveValue("padding-left", 130, 50, 1920, 991);
 
+    // &:focus {
+    //   display: block;
+    // }
+
     @media (max-width:$tablet) {
       padding-top: rem(10);
       padding-bottom: rem(10);
@@ -375,8 +388,24 @@
       @include adaptiveValue("padding-left", 50, 10);
     }
 
+    @media (max-width:$mobile) {
+      @media (hover: none) and (pointer: coarse) {
+        &:hover {
+          opacity: 1;
+        }
+
+        &:active {
+          opacity: 1;
+        }
+      }
+    }
+
     @media (any-hover: hover) {
       &:hover {
+        opacity: 1;
+      }
+
+      &:active {
         opacity: 1;
       }
     }
@@ -397,10 +426,18 @@
       }
 
       @media (max-width:$tablet) {
-        @include adaptiveValue("font-size", 16, 14);
+        @include adaptiveValue("font-size", 16, 14, 991, 360);
 
         &:last-child {
-          @include adaptiveValue("font-size", 24, 14);
+          @include adaptiveValue("font-size", 24, 16, 991, 360);
+        }
+      }
+
+      @media (max-width:$mobile) {
+        @include adaptiveValue("font-size", 14, 14);
+
+        &:last-child {
+          @include adaptiveValue("font-size", 16, 14);
         }
       }
     }
@@ -413,7 +450,11 @@
       text-transform: uppercase;
 
       @media (max-width:$tablet) {
-        @include adaptiveValue("font-size", 20, 14);
+        @include adaptiveValue("font-size", 20, 16, 991, 767);
+      }
+
+      @media (max-width:$mobile) {
+        @include adaptiveValue("font-size", 16, 14);
       }
     }
   }
@@ -432,9 +473,11 @@
     grid-template-columns: 1fr 1fr;
     gap: rem(20);
     padding-top: rem(20);
-    @media (max-width:$mobile){
-      padding-top: rem(10);
+
+    @media (max-width:$mobile) {
       grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      padding-top: rem(10);
       gap: rem(10);
     }
   }
