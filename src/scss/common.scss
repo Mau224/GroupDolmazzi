@@ -5,7 +5,7 @@ input {
 }
 
 h1 {
-  font-family: "SuisseIntlCondensedThin";
+  font-family: "SuisseIntlCondTrialLight";
   font-weight: 300;
   @include adaptiveValue("font-size", 277, 110, 1920, 991);
   line-height: math.div(255, 277);
@@ -16,6 +16,20 @@ h1 {
 
   @media (max-width:$tablet) {
     @include adaptiveValue("font-size", 140, 88, 991, 360);
+  }
+}
+
+h2 {
+  font-family: "SuisseIntlCondTrialLight";
+  font-weight: 300;
+  @include adaptiveValue("font-size", 277, 140, 1920, 991);
+  line-height: math.div(255, 275);
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: rem(20);
+
+  @media (max-width:$tablet) {
+    @include adaptiveValue("font-size", 140, 70, 991, 360);
   }
 }
 
