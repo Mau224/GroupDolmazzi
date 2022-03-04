@@ -50,12 +50,14 @@
 
     &--02 {
       .manifesto__img {
+        width: 40%;
         &::before {
           bottom: rem(10);
           left: 5%;
         }
       }
-      @media (max-width:$mobile){
+
+      @media (max-width:$mobile) {
         flex-direction: column-reverse;
       }
     }
@@ -66,6 +68,7 @@
           bottom: rem(20);
           right: 36%;
         }
+
         img {
           &:last-child {
             margin-left: rem(-7);
@@ -80,6 +83,7 @@
           bottom: rem(20);
           left: 5%;
         }
+
         img {
           transform: rotate(180deg);
         }
@@ -88,13 +92,16 @@
 
     &--05 {
       .manifesto__img {
+        position: relative;
 
-        &::before {
-
-        }
+        &::before {}
 
         img {
-          max-height:rem(300);
+          @include adaptiveValue("height", 300, 172, 1920, 991);
+
+          @media (max-width:$tablet){
+            @include adaptiveValue("height", 172, 140, 991, 767);
+          }
         }
       }
     }
@@ -102,7 +109,7 @@
 
   // .manifesto__img
   &__img {
-    width: 40%;
+    // width: 40%;
     height: 100%;
     // @include adaptiveValue("height", 641, 400, 1920, 991);
     // max-height: rem(639);
@@ -142,7 +149,7 @@
           transform: rotate(90deg);
         }
 
-        @media (max-width:$mobile){
+        @media (max-width:$mobile) {
           overflow: hidden;
         }
       }
