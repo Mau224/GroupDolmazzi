@@ -108,7 +108,7 @@ h2 {
 
 //перебитие стилей
 .blog__body-wrap {
-  grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr)) !important;
+  // grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr)) !important;
   grid-template-rows: minmax(600) !important;
 
   @media (max-width:$tablet) {
@@ -245,9 +245,9 @@ h2 {
     justify-content: center;
     align-items: center;
 
-    @media (max-width:$tablet) {
-      max-height: rem(120);
-    }
+    // @media (max-width:$tablet) {
+    //   max-height: rem(120);
+    // }
 
     @media (max-width:$mobile) {
       max-height: none;
@@ -287,6 +287,57 @@ h2 {
 
     @media (max-width:$tablet) {
       font-size: rem(14);
+    }
+  }
+}
+
+
+.blog-item-adp {
+  .blog-item__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+
+    h4 {
+      @include adaptiveValue("font-size", 40, 30, 1920, 767);
+      line-height: math.div(49 , 40);
+      text-align: center;
+    }
+
+    p {
+      @include adaptiveValue("font-size", 20, 16, 1920, 767);
+      line-height: math.div(35 , 20);
+      margin-top: rem(37);
+
+      @media (max-width:$tablet){
+        margin-top: rem(20);
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .blog-item__img-wrap {
+    @include adaptiveValue("width", 244, 180, 1920, 767);
+    @include adaptiveValue("height", 244, 180, 1920, 767);
+    position: absolute;
+    bottom: 0;
+    img {
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+.blog-item-mus {
+  .blog-item__wrap {
+    &::after {
+      display: none;
     }
   }
 }

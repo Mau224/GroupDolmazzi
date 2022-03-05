@@ -170,7 +170,8 @@
     }
 
     h1 {
-      @include adaptiveValue("letter-spacing", 8, 6, 1920, 991);
+      // @include adaptiveValue("letter-spacing", 8, 3, 1920, 991);
+      letter-spacing: -0.005em;
 
       @media (max-width:$tablet) {
         letter-spacing: -0.005em;

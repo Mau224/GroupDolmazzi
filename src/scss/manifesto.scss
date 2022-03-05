@@ -4,14 +4,16 @@
   // .manifesto__container
   &__container {
     padding: 0;
-    @media (max-width:$mobile) {
-      padding: 0;
-    }
+    max-width: none;
   }
 
   // .manifesto__body
   &__body {
     margin-top: rem(70);
+
+    @media (max-width:$tablet){
+      margin-top: rem(30);
+    }
 
     @media (max-width:$mobile) {
       margin-top: rem(27);
@@ -52,8 +54,8 @@
         }
 
         &::before {
-          right: 25%;
-          bottom: rem(40);
+          right: 15%;
+          top: rem(20);
           @media (max-width:$tablet){
             bottom: rem(10);
           }
@@ -106,6 +108,8 @@
         &::before {
           bottom: rem(10);
           left: 5%;
+          background: url("../img/02..svg") no-repeat;
+          background-size: contain;
         }
       }
 
@@ -117,7 +121,7 @@
     &--03 {
       .manifesto__img {
         position: relative;
-        width: 40%;
+        width: 35%;
         display: flex;
         border-right: 1px solid $mainColor;
 
@@ -130,6 +134,8 @@
         &::before {
           right: 25%;
           bottom: rem(40);
+          background: url("../img/03..svg") no-repeat;
+          background-size: contain;
 
           @media (max-width:$tablet){
             bottom: rem(15);
@@ -171,6 +177,8 @@
         &::before {
           bottom: rem(20);
           left: 5%;
+          background: url("../img/04..svg") no-repeat;
+          background-size: contain;
         }
 
         img {
@@ -182,7 +190,7 @@
     &--05 {
       .manifesto__img {
         position: relative;
-        width: 40%;
+        width: 35%;
         border-right: 1px solid $mainColor;
 
         @media (max-width:$mobile) {
@@ -194,6 +202,8 @@
         &::before {
           right: 6%;
           top: rem(20);
+          background: url("../img/05..svg") no-repeat;
+          background-size: contain;
         }
 
         .manifesto__elem-circle {
