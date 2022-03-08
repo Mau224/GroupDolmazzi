@@ -11,7 +11,7 @@
   &__body {
     margin-top: rem(70);
 
-    @media (max-width:$tablet){
+    @media (max-width:$tablet) {
       margin-top: rem(30);
     }
 
@@ -56,7 +56,12 @@
         &::before {
           right: 15%;
           top: rem(20);
-          @media (max-width:$tablet){
+
+          @media (min-width:$pc) {
+            right: 20%;
+          }
+
+          @media (max-width:$tablet) {
             bottom: rem(10);
           }
         }
@@ -78,23 +83,23 @@
         //       }
         //     }
         //   }
+      }
+
+
+
+      img {
+        @include adaptiveValue("height", 300, 162, 1920, 991);
+
+        @media (max-width:$tablet) {
+          @include adaptiveValue("height", 162, 100, 991, 767);
         }
 
-
-
-        img {
-          @include adaptiveValue("height", 300, 162, 1920, 991);
-
-          @media (max-width:$tablet) {
-            @include adaptiveValue("height", 162, 100, 991, 767);
-          }
-
-          @media (max-width:$mobile) {
-            @include adaptiveValue("height", 200, 140, 767, 360);
-            border: 0;
-          }
+        @media (max-width:$mobile) {
+          @include adaptiveValue("height", 200, 140, 767, 360);
+          border: 0;
         }
       }
+    }
 
 
     &--02 {
@@ -137,11 +142,11 @@
           background: url("../img/03..svg") no-repeat;
           background-size: contain;
 
-          @media (max-width:$tablet){
+          @media (max-width:$tablet) {
             bottom: rem(15);
           }
 
-          @media (max-width:$mobile){
+          @media (max-width:$mobile) {
             bottom: rem(40);
             right: 30%;
           }

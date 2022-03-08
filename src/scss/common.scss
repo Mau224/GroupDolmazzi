@@ -14,6 +14,10 @@ h1 {
   text-align: center;
   text-transform: uppercase;
 
+  @media (min-width:$pc) {
+    font-size: rem(250);
+  }
+
   @media (max-width:$tablet) {
     @include adaptiveValue("font-size", 140, 88, 991, 360);
   }
@@ -89,19 +93,34 @@ h2 {
 }
 
 .blog-main-item {
-  // @include adaptiveValue("width", 600, 400);
-  // @include adaptiveValue("height", 600, 400);
+  @include adaptiveValue("width", 600, 315, 1920, 991);
+  @include adaptiveValue("height", 600, 315, 1920, 991);
   background: #E5E5E5;
+  height: 100%;
+  width: 100%;
   @include adaptiveValue("padding", 16, 12, 1920, 991);
   min-height: 100%;
   min-width: 100%;
 
+  h4 {
+    @include adaptiveValue("font-size", 40, 18, 1920, 991);
+    line-height: math.div(49, 40);
+
+    @media (max-width:$tablet){
+      @include adaptiveValue("font-size", 20, 16, 991, 767);
+    }
+  }
+
   @media (max-width:$tablet) {
     padding: rem(11);
+    @include adaptiveValue("width", 400, 340, 991, 767);
+    @include adaptiveValue("height", 400, 340, 991, 767);
   }
 
   @media (max-width:$mobile) {
     max-height: rem(605);
+    @include adaptiveValue("width", 600, 340, 767, 360);
+    @include adaptiveValue("height", 600, 340, 767, 360);
   }
 }
 
@@ -193,7 +212,6 @@ h2 {
       @include adaptiveValue("font-size", 40, 20, 1920, 991);
       line-height: math.div(49, 40);
       text-transform: uppercase;
-      padding-top: rem(21);
 
       @media (max-width:$tablet) {
         font-size: rem(20);
@@ -299,19 +317,26 @@ h2 {
     align-items: center;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
 
     h4 {
-      @include adaptiveValue("font-size", 40, 30, 1920, 767);
-      line-height: math.div(49 , 40);
+      @include adaptiveValue("font-size", 40, 22, 1920, 991);
+      line-height: math.div(49, 40);
       text-align: center;
+      text-transform: uppercase;
+
+      @media (max-width:$mobile) {
+        font-size: rem(20);
+      }
     }
 
     p {
       @include adaptiveValue("font-size", 20, 16, 1920, 767);
-      line-height: math.div(35 , 20);
-      margin-top: rem(37);
+      line-height: math.div(35, 20);
+      @include adaptiveValue("margin-top", 37, 20, 1920, 991);
 
-      @media (max-width:$tablet){
+      @media (max-width:$tablet) {
         margin-top: rem(20);
       }
     }
@@ -322,13 +347,21 @@ h2 {
   }
 
   .blog-item__img-wrap {
-    @include adaptiveValue("width", 244, 180, 1920, 767);
-    @include adaptiveValue("height", 244, 180, 1920, 767);
+    @include adaptiveValue("width", 244, 130, 1920, 767);
+    @include adaptiveValue("height", 244, 130, 1920, 767);
     position: absolute;
     bottom: 0;
+
+    @media (max-width:$mobile){
+      width: rem(130);
+      height: rem(130);
+      bottom: rem(20);
+    }
+
     img {
       max-width: 100%;
       height: 100%;
+      padding: 0;
     }
   }
 }
@@ -336,6 +369,274 @@ h2 {
 
 .blog-item-mus {
   .blog-item__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 1px solid $mainColor;
+    border-radius: 50%;
+
+    h4 {
+      @include adaptiveValue("font-size", 40, 26, 1920, 991);
+      line-height: math.div(49, 40);
+      text-align: center;
+      text-transform: uppercase;
+      max-width: rem(300);
+      @include adaptiveValue("margin-bottom", 74, 35, 1920, 991);
+
+      @media (max-width:$mobile) {
+        font-size: rem(20);
+        max-width: rem(200);
+        margin-bottom: rem(30);
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.blog-item-tri {
+  .blog-item__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    border: 1px solid $mainColor;
+
+    &::after {
+      display: none;
+    }
+
+    .blog-item__img-wrap {
+      height: 100%;
+    }
+
+    img {
+      padding: 0;
+      border-left: 1px solid $mainColor;
+    }
+
+    h4 {
+      @include adaptiveValue("font-size", 40, 26, 1920, 991);
+      line-height: math.div(49, 40);
+      text-align: center;
+      text-transform: uppercase;
+      grid-column: 1 / 3;
+      margin-bottom: 0;
+
+      @media (max-width:$mobile) {
+        font-size: rem(20);
+        max-width: rem(200);
+      }
+    }
+  }
+}
+
+
+.blog-item-cof {
+  .blog-item__wrap {
+    display: flex;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    h4 {
+      text-transform: uppercase;
+      max-width: rem(300);
+
+      @media (max-width:$mobile) {
+        font-size: rem(20);
+      }
+    }
+
+    p {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .blog-item__img-wrap {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @include adaptiveValue("width", 244, 130, 1920, 767);
+      @include adaptiveValue("height", 244, 130, 1920, 767);
+
+      @media (max-width:$mobile){
+        width: rem(130);
+        height: rem(130);
+      }
+    }
+  }
+}
+
+
+.blog-item-2 {
+  .blog-item__wrap {
+
+    .blog-item__text-1 {
+      padding-left: rem(20);
+      padding-top: rem(20);
+      justify-items: start;
+    }
+
+    .blog-item__text-2 {
+      padding-bottom: rem(20);
+      padding-right: rem(20);
+    }
+
+    .blog-item__img-wrap {
+      align-self: center;
+    }
+  }
+}
+
+.blog-item-zip-2 {
+  padding: 0;
+  .blog-item-zip__wrap {
+    p {
+      right: 8.5%;
+      top: 30%;
+      left: auto;
+    }
+
+    .blog-item-zip__img {
+      margin-bottom: rem(10);
+    }
+
+    h4 {
+      padding-top: 0;
+      margin-top: rem(10);
+      @include adaptiveValue("padding-left", 16, 12, 1920, 991);
+      margin-bottom: rem(10);
+    }
+  }
+}
+
+.blog-item-circle-2 {
+  .blog-item-circle__wrap {
+    .blog-item-circle__text-wrap {
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+      h4 {
+        @include adaptiveValue("font-size", 40, 18, 1920, 991);
+        line-height: math.div(49, 40);
+        text-align: center;
+        text-transform: uppercase;
+        max-width: rem(300);
+
+        @media (max-width:$mobile) {
+          font-size: rem(20);
+          max-width: rem(200);
+        }
+      }
+
+      p {
+        text-transform: uppercase;
+        @include adaptiveValue("font-size", 20, 16, 1920, 991);
+        line-height: math.div(35 , 20);
+
+        @media (max-width:$mobile) {
+          font-size: rem(16);
+        }
+      }
+    }
+  }
+}
+
+.blog-item-cof-2 {
+  .blog-item__wrap {
+    background: url(../img/z.svg) no-repeat;
+    background-size: cover;
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    p {
+      text-align: right;
+      position: absolute;
+      right: 0;
+    }
+
+    h4 {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: rem(20);
+      @include adaptiveValue("font-size", 40, 18, 1920, 991);
+      line-height: math.div(49, 40);
+      text-transform: uppercase;
+      max-width: rem(300);
+
+      @media (max-width:$mobile) {
+        font-size: rem(20);
+        margin-bottom: rem(0);
+        max-width: rem(200);
+      }
+    }
+  }
+}
+
+.blog-item-3 {
+  .blog-item__wrap {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    position: relative;
+
+    .blog-item__img-wrap {
+      position: relative;
+
+      img {
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+        @include adaptiveValue("width", 244, 130, 1920, 767);
+        @include adaptiveValue("height", 244, 130, 1920, 767);
+      }
+    }
+
+    .blog-item__text-wrap {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+
+      p {
+        position: absolute;
+        bottom: 0;
+      }
+
+      h4 {
+        text-transform: uppercase;
+        @include adaptiveValue("font-size", 20, 16, 1920, 991);
+
+        @media (max-width:$mobile){
+          font-size: rem(20);
+        }
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
     &::after {
       display: none;
     }
