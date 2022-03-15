@@ -42,6 +42,52 @@
     }
 
     &--01 {
+      @media (any-hover: hover) {
+        &:hover {
+          .line {
+            fill: none;
+            stroke-width: 2px;
+            stroke: $mainColor;
+            transform-origin: 100% 100%;
+
+            // Animate a dashed line
+            //stroke-dashoffset: 420;
+            //stroke-dasharray: 15,8;  // length of the dash and space between dashes
+            //animation: dashed 4s linear infinite;
+
+
+            // Draw in the line
+            // infinite loops the animation
+            // alternate runs the animation forwards and backwards
+            stroke-dashoffset: 0; // length of the line
+            stroke-dasharray: 3700; // solid line
+            animation: draw 4s linear;
+
+
+            // Rotate and scale!
+            /*stroke-dasharray: 15,8;
+	animation: dashedscale 4s alternate infinite ease-in-out;	*/
+
+            //transform-origin: 100px 100px; // pixels not percentages for firefox
+          }
+
+          // Draw the line in from nothing
+          @keyframes draw {
+            0% {
+              //start from offset of line
+              stroke-dashoffset: 3700;
+              stroke: $mainColor;
+            }
+
+            100% {
+              //bring line back in to start point
+              stroke-dashoffset: 0;
+              stroke: $mainColor;
+            }
+          }
+        }
+      }
+
       .manifesto__img {
         position: relative;
         width: 40%;
@@ -66,23 +112,11 @@
           }
         }
 
-        // .manifesto__zic-zac {
-        //   width: 100%;
-        //   height: 100%;
-        //   position: relative;
-        //   border-right: 1px solid $mainColor;
-
-        //     .line {
-        //       position: absolute;
-        //       height: 100%;
-        //       width: rem(1);
-        //       background-color: $mainColor;
-
-        //       &:last-child {
-        //         transform: rotate(62deg);
-        //       }
-        //     }
-        //   }
+        svg {
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
       }
 
 
@@ -124,6 +158,37 @@
     }
 
     &--03 {
+      @media (any-hover: hover) {
+        &:hover {
+          .manifesto__img{
+            .manifesto__elem-circle {
+              .line {
+                stroke-dashoffset: 200;
+                stroke-dasharray: 3700; // solid line
+                animation: draw 4s linear;
+                opacity: 1;
+              }
+            }
+          }
+
+          // Draw the line in from nothing
+          @keyframes draw {
+            0% {
+              //start from offset of line
+              stroke-dashoffset: 200;
+              // stroke-width: 2px;
+              fill: $mainColor;
+            }
+
+            100% {
+              //bring line back in to start point
+              stroke-dashoffset: 0;
+
+            }
+          }
+        }
+      }
+
       .manifesto__img {
         position: relative;
         width: 35%;
@@ -154,8 +219,42 @@
 
         .manifesto__elem-circle {
           width: 100%;
-          border: 1px solid $mainColor;
-          border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+
+          .line {
+            opacity: 0;
+          }
+
+          svg {
+            width: 50%;
+            height: 100%;
+            min-width: 100%;
+            //start from offset of line
+            stroke-dashoffset: 0;
+            fill: none;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: rem(1);
+            background-color: $mainColor;
+            transform: rotate(90deg);
+            top: 50%;
+            right: -0.5%;
+            z-index: 1000;
+          }
+
+          // &::after {
+          //   content: "";
+          //   position: absolute;
+          //   width: 100%;
+          //   height: rem(1);
+          //   background-color: $mainColor;
+          //   border-radius: 0 100px 100px 0;
+          //   top: 50%;
+          //   right: 0;
+          // }
         }
 
         img {
@@ -174,6 +273,52 @@
     }
 
     &--04 {
+      @media (any-hover: hover) {
+        &:hover {
+          .line {
+            fill: none;
+            stroke-width: 2px;
+            stroke: $mainColor;
+            transform-origin: 100% 100%;
+
+            // Animate a dashed line
+            //stroke-dashoffset: 420;
+            //stroke-dasharray: 15,8;  // length of the dash and space between dashes
+            //animation: dashed 4s linear infinite;
+
+
+            // Draw in the line
+            // infinite loops the animation
+            // alternate runs the animation forwards and backwards
+            stroke-dashoffset: 0; // length of the line
+            stroke-dasharray: 3700; // solid line
+            animation: draw 4s linear;
+
+
+            // Rotate and scale!
+            /*stroke-dasharray: 15,8;
+	animation: dashedscale 4s alternate infinite ease-in-out;	*/
+
+            //transform-origin: 100px 100px; // pixels not percentages for firefox
+          }
+
+          // Draw the line in from nothing
+          @keyframes draw {
+            0% {
+              //start from offset of line
+              stroke-dashoffset: 3700;
+              stroke: $mainColor;
+            }
+
+            100% {
+              //bring line back in to start point
+              stroke-dashoffset: 0;
+              stroke: $mainColor;
+            }
+          }
+        }
+      }
+
       @media (max-width:$mobile) {
         flex-direction: column-reverse;
       }
@@ -186,9 +331,13 @@
           background-size: contain;
         }
 
-        img {
+        svg {
+          width: 100%;
+          height: 100%;
+          position: relative;
           transform: rotate(180deg);
         }
+
       }
     }
 

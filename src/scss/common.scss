@@ -106,7 +106,7 @@ h2 {
     @include adaptiveValue("font-size", 40, 18, 1920, 991);
     line-height: math.div(49, 40);
 
-    @media (max-width:$tablet){
+    @media (max-width:$tablet) {
       @include adaptiveValue("font-size", 20, 16, 991, 767);
     }
   }
@@ -352,7 +352,7 @@ h2 {
     position: absolute;
     bottom: 0;
 
-    @media (max-width:$mobile){
+    @media (max-width:$mobile) {
       width: rem(130);
       height: rem(130);
       bottom: rem(20);
@@ -382,7 +382,7 @@ h2 {
       line-height: math.div(49, 40);
       text-align: center;
       text-transform: uppercase;
-      max-width: rem(300);
+      max-width: 80%;
       @include adaptiveValue("margin-bottom", 74, 35, 1920, 991);
 
       @media (max-width:$mobile) {
@@ -456,7 +456,7 @@ h2 {
 
     h4 {
       text-transform: uppercase;
-      max-width: rem(300);
+      max-width: 80%;
 
       @media (max-width:$mobile) {
         font-size: rem(20);
@@ -476,7 +476,7 @@ h2 {
       @include adaptiveValue("width", 244, 130, 1920, 767);
       @include adaptiveValue("height", 244, 130, 1920, 767);
 
-      @media (max-width:$mobile){
+      @media (max-width:$mobile) {
         width: rem(130);
         height: rem(130);
       }
@@ -507,6 +507,7 @@ h2 {
 
 .blog-item-zip-2 {
   padding: 0;
+
   .blog-item-zip__wrap {
     p {
       right: 8.5%;
@@ -537,7 +538,7 @@ h2 {
         line-height: math.div(49, 40);
         text-align: center;
         text-transform: uppercase;
-        max-width: rem(300);
+        max-width: 80%;
 
         @media (max-width:$mobile) {
           font-size: rem(20);
@@ -548,7 +549,7 @@ h2 {
       p {
         text-transform: uppercase;
         @include adaptiveValue("font-size", 20, 16, 1920, 991);
-        line-height: math.div(35 , 20);
+        line-height: math.div(35, 20);
 
         @media (max-width:$mobile) {
           font-size: rem(16);
@@ -562,6 +563,7 @@ h2 {
   .blog-item__wrap {
     background: url(../img/z.svg) no-repeat;
     background-size: cover;
+
     &::before {
       display: none;
     }
@@ -583,7 +585,7 @@ h2 {
       @include adaptiveValue("font-size", 40, 18, 1920, 991);
       line-height: math.div(49, 40);
       text-transform: uppercase;
-      max-width: rem(300);
+      max-width: 80%;
 
       @media (max-width:$mobile) {
         font-size: rem(20);
@@ -599,9 +601,15 @@ h2 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     position: relative;
+    border-left: 1px solid $mainColor;
+    border-right: 1px solid $mainColor;
+    padding-right: rem(16);
+    padding-left: rem(16);
 
     .blog-item__img-wrap {
       position: relative;
+      display: flex;
+      justify-content: end;
 
       img {
         padding: 0;
@@ -626,8 +634,9 @@ h2 {
       h4 {
         text-transform: uppercase;
         @include adaptiveValue("font-size", 20, 16, 1920, 991);
+        padding-right: rem(16);
 
-        @media (max-width:$mobile){
+        @media (max-width:$mobile) {
           font-size: rem(20);
         }
       }
@@ -637,8 +646,8 @@ h2 {
       display: none;
     }
 
-    &::after {
-      display: none;
-    }
+    // &::after {
+    //   display: none;
+    // }
   }
 }
