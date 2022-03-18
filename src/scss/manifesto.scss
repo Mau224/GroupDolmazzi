@@ -115,7 +115,6 @@
         }
 
         svg {
-          width: 100%;
           height: 100%;
           position: relative;
         }
@@ -424,7 +423,7 @@
           .manifesto__elem-circle {
             .line-circle {
               stroke-dashoffset:0;
-              stroke-dasharray: 2900; // solid line
+              stroke-dasharray: 1000; // solid line
               animation: drawtype 3s linear;
               opacity: 1;
             }
@@ -435,14 +434,15 @@
         @keyframes drawtype {
           0% {
             //start from offset of line
-            stroke-dashoffset: 3800;
+            stroke-dashoffset: 200;
+            stroke-dasharray: 200;
             // stroke-width: 2px;
             fill: $mainColor;
           }
 
           100% {
             //bring line back in to start point
-            stroke-dashoffset: 1000;
+            stroke-dasharray: 800;
 
           }
         }
