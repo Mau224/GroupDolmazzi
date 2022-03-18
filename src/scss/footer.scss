@@ -18,8 +18,29 @@
   }
 
   // .footer__img
-  &__img-ibg {
-    padding-bottom: percent(850, 1920);
+  &__img {
+    position: relative;
+    // height: rem(600);
+    // padding-bottom: percent(850, 1920);
+
+
+    svg {
+      transition: 2s all;
+      animation: 20s linear 0s normal none infinite running left;
+      position: relative;
+      width: 100%;
+
+      @keyframes left {
+        0% {
+          left: 0;
+        }
+
+        100% {
+          left: -100%;
+
+        }
+      }
+    }
   }
 
   // .footer__main
@@ -165,7 +186,7 @@
     display: flex;
     justify-content: center;
 
-    @media (max-width:$mobile){
+    @media (max-width:$mobile) {
       padding-top: rem(10);
     }
 
