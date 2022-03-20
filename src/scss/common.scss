@@ -140,20 +140,78 @@ h2 {
   }
 }
 
+.blog-main-item.blog-item {
+  position: relative;
+  perspective: 1000px;
+  background-color: #fff;
+
+  &:hover {
+    .blog-item__back {
+      transform: rotateY(360deg);
+    }
+
+    .blog-item__front {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
 .blog-item {
+  padding: 0;
+
+  &__back {
+    position: absolute;
+    background-color: #E5E5E5;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 1s;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    @include adaptiveValue("padding", 16, 12, 1920, 991);
+
+    @media (max-width:$tablet){
+      padding: rem(11);
+    }
+  }
+
+  &__front {
+    position: absolute;
+    background-color: #E5E5E5;
+    backface-visibility: hidden;
+    transform: rotateY(360deg);
+    transition: 1s;
+    height: 100%;
+    @include adaptiveValue("padding", 16, 12, 1920, 991);
+    @media (max-width:$tablet){
+      padding: rem(11);
+    }
+  }
+
+  &__img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__wrap {
+    position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     position: relative;
     height: 100%;
+    transition: 1s;
+    background-color: #E5E5E5;
+    // @include adaptiveValue("padding", 16, 12, 1920, 991);
 
     &::after {
       content: "";
       position: absolute;
       height: 100%;
-      width: rem(1);
+      width: rem(2);
       right: 50%;
       background: $mainColor;
     }
@@ -161,7 +219,7 @@ h2 {
     &::before {
       content: "";
       position: absolute;
-      height: rem(1);
+      height: rem(2);
       width: 100%;
       top: 50%;
       background: $mainColor;
@@ -197,7 +255,56 @@ h2 {
   }
 }
 
+.blog-main-item.blog-item-zip {
+  position: relative;
+  perspective: 1000px;
+  background-color: #fff;
+
+  &:hover {
+    .blog-item__back {
+      transform: rotateY(360deg);
+    }
+
+    .blog-item__front {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
 .blog-item-zip {
+  padding: 0;
+
+  &__back {
+    position: absolute;
+    background-color: #E5E5E5;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 1s;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    @include adaptiveValue("padding", 16, 12, 1920, 991);
+
+    @media (max-width:$tablet) {
+      padding: rem(11);
+    }
+  }
+
+  &__front {
+    position: absolute;
+    background-color: #E5E5E5;
+    backface-visibility: hidden;
+    transform: rotateY(360deg);
+    transition: 1s;
+    height: 100%;
+    @include adaptiveValue("padding", 16, 12, 1920, 991);
+
+    @media (max-width:$tablet) {
+      padding: rem(11);
+    }
+  }
 
   &__wrap {
     display: flex;
@@ -234,9 +341,57 @@ h2 {
   }
 }
 
+.blog-main-item.blog-item-circle {
+  position: relative;
+  perspective: 1000px;
+  background-color: #fff;
+
+  &:hover {
+    .blog-item__back {
+      transform: rotateY(360deg);
+    }
+
+    .blog-item__front {
+      transform: rotateY(180deg);
+    }
+  }
+}
 
 .blog-item-circle {
   position: relative;
+  padding: 0;
+
+  &__back {
+    position: absolute;
+    background-color: #E5E5E5;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 1s;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    @include adaptiveValue("padding", 16, 12, 1920, 991);
+
+    @media (max-width:$tablet) {
+      padding: rem(11);
+    }
+  }
+
+  &__front {
+    position: absolute;
+    background-color: #E5E5E5;
+    backface-visibility: hidden;
+    transform: rotateY(360deg);
+    transition: 1s;
+    height: 100%;
+    @include adaptiveValue("padding", 16, 12, 1920, 991);
+
+    @media (max-width:$tablet) {
+      padding: rem(11);
+    }
+  }
 
   &__wrap {
     display: grid;
@@ -315,8 +470,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-top: rem(2) solid $mainColor;
+    border-bottom: rem(2) solid $mainColor;
     grid-template-columns: auto;
     grid-template-rows: auto;
 
@@ -374,7 +529,7 @@ h2 {
     align-items: center;
     justify-content: center;
     height: 100%;
-    border: 1px solid $mainColor;
+    border: rem(2) solid $mainColor;
     border-radius: 50%;
 
     h4 {
@@ -408,7 +563,7 @@ h2 {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: center;
-    border: 1px solid $mainColor;
+    border: rem(2) solid $mainColor;
 
     &::after {
       display: none;
@@ -420,7 +575,8 @@ h2 {
 
     img {
       padding: 0;
-      border-left: 1px solid $mainColor;
+      height: 100%;
+      border-left: rem(2) solid $mainColor;
     }
 
     h4 {
@@ -601,15 +757,16 @@ h2 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     position: relative;
-    border-left: 1px solid $mainColor;
-    border-right: 1px solid $mainColor;
-    padding-right: rem(16);
-    padding-left: rem(16);
+    border-left: rem(2) solid $mainColor;
+    border-right: rem(2) solid $mainColor;
+
 
     .blog-item__img-wrap {
       position: relative;
       display: flex;
       justify-content: end;
+      margin-left: rem(5);
+      margin-right: rem(5);
 
       img {
         padding: 0;
@@ -625,6 +782,8 @@ h2 {
       flex-direction: column;
       height: 100%;
       position: relative;
+      margin-left: rem(5);
+      margin-right: rem(5);
 
       p {
         position: absolute;
