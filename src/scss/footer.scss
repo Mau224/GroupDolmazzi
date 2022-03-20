@@ -24,11 +24,20 @@
     // padding-bottom: percent(850, 1920);
 
 
-    svg {
-      transition: 2s all;
-      animation: 20s linear 0s normal none infinite running left;
+    img {
+      // transition: 2s all;
+      animation: 700s linear 0s normal none infinite running left;
       position: relative;
-      width: 100%;
+      @include adaptiveValue("height", 800, 600, 1920, 991);
+      // width: 100%;
+
+      @media (max-width:$tablet){
+        @include adaptiveValue("height", 600, 400, 991, 767);
+      }
+
+      @media (max-width:$mobile){
+        @include adaptiveValue("height", 400, 256, 767, 360);
+      }
 
       @keyframes left {
         0% {
@@ -192,11 +201,17 @@
     }
 
     h1 {
+      width: 100%;
+      text-align:justify;
+      @include adaptiveValue("font-size", 281, 140, 1920, 991);
+      line-height: math.div(282 , 255);
       // @include adaptiveValue("letter-spacing", 8, 3, 1920, 991);
       letter-spacing: -0.005em;
 
       @media (max-width:$tablet) {
         letter-spacing: -0.005em;
+        text-align: center;
+        @include adaptiveValue("font-size", 140, 120, 991, 767);
       }
 
       @media (max-width:$mobile) {

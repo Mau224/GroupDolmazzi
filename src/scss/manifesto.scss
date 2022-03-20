@@ -246,13 +246,14 @@
           0% {
             //start from offset of line
             stroke-dashoffset: 180;
+            stroke-dasharray: 220;
             // stroke-width: 2px;
             fill: $mainColor;
           }
 
           100% {
             //bring line back in to start point
-            stroke-dashoffset: 200;
+            stroke-dasharray: 1000;
 
           }
         }
@@ -299,7 +300,10 @@
             min-width: 100%;
             //start from offset of line
             stroke-dashoffset: 0;
+            stroke-dasharray: 0;
             fill: none;
+            position: relative;
+            left: rem(3);
           }
 
           &::before {
@@ -313,17 +317,6 @@
             right: -0.5%;
             z-index: 1000;
           }
-
-          // &::after {
-          //   content: "";
-          //   position: absolute;
-          //   width: 100%;
-          //   height: rem(1);
-          //   background-color: $mainColor;
-          //   border-radius: 0 100px 100px 0;
-          //   top: 50%;
-          //   right: 0;
-          // }
         }
 
         img {
@@ -353,26 +346,9 @@
           stroke: $mainColor;
           transform-origin: 100% 100%;
           opacity: 1;
-
-          // Animate a dashed line
-          //stroke-dashoffset: 420;
-          //stroke-dasharray: 15,8;  // length of the dash and space between dashes
-          //animation: dashed 4s linear infinite;
-
-
-          // Draw in the line
-          // infinite loops the animation
-          // alternate runs the animation forwards and backwards
           stroke-dashoffset: 0; // length of the line
           stroke-dasharray: 3700; // solid line
           animation: draw 4s linear;
-
-
-          // Rotate and scale!
-          /*stroke-dasharray: 15,8;
-	animation: dashedscale 4s alternate infinite ease-in-out;	*/
-
-          //transform-origin: 100px 100px; // pixels not percentages for firefox
         }
 
         // Draw the line in from nothing
@@ -434,15 +410,15 @@
         @keyframes drawtype {
           0% {
             //start from offset of line
-            stroke-dashoffset: 50;
-            stroke-dasharray: 300;
+            stroke-dashoffset: 450;
+            stroke-dasharray: 740;
             // stroke-width: 2px;
             fill: $mainColor;
           }
 
           100% {
             //bring line back in to start point
-            stroke-dasharray: 900;
+            stroke-dasharray: 1800;
 
           }
         }
@@ -473,7 +449,7 @@
           width: 100%;
           height: 50%;
           margin-top: rem(0);
-          // position: relative;
+
           // top: rem(10);
 
           &:last-child {
@@ -493,6 +469,7 @@
             //start from offset of line
             stroke-dashoffset: 0;
             fill: none;
+
             // transform: rotate(90deg);
           }
 
@@ -507,17 +484,6 @@
             right: -0.5%;
             z-index: 1000;
           }
-
-          // &::after {
-          //   content: "";
-          //   position: absolute;
-          //   width: 100%;
-          //   height: rem(1);
-          //   background-color: $mainColor;
-          //   border-radius: 0 100px 100px 0;
-          //   top: 50%;
-          //   right: 0;
-          // }
         }
 
         img {
