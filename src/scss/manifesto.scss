@@ -145,11 +145,12 @@
             .manifesto__img-elem {
 
               &::after {
-                width: 100%;
+                width: 200%;
               }
 
               &::before {
                 width: 100%;
+                transition-delay: 1s;
               }
 
             }
@@ -177,20 +178,21 @@
               content: "";
               position: absolute;
               width: 0;
-              height: 1px;
+              height: rem(2);
               background-color: $mainColor;
               transition: 2s all;
               top: 50%;
+              left: 0;
             }
 
             &::after {
               content: "";
               position: absolute;
-              height: 1px;
+              height: rem(2);
               width: 0;
               background-color: $mainColor;
               // right: 50%;
-              top: 50%;
+              top: 0;
               transition: 2s all;
               transform: rotate(90deg);
             }
@@ -234,26 +236,26 @@
           .manifesto__elem-circle {
             .line {
               stroke-dashoffset: 0;
-              stroke-dasharray: 1000; // solid line
-              animation: draw 3s linear;
+              stroke-dasharray: 0; // solid line
+              animation: drawtype 3s linear;
               opacity: 1;
             }
           }
         }
 
         // Draw the line in from nothing
-        @keyframes draw {
+        @keyframes drawcircle {
           0% {
             //start from offset of line
-            stroke-dashoffset: 180;
-            stroke-dasharray: 220;
+            stroke-dashoffset: 450;
+            stroke-dasharray: 740;
             // stroke-width: 2px;
             fill: $mainColor;
           }
 
           100% {
             //bring line back in to start point
-            stroke-dasharray: 1000;
+            stroke-dasharray: 1800;
 
           }
         }
@@ -299,8 +301,7 @@
             height: 100%;
             min-width: 100%;
             //start from offset of line
-            stroke-dashoffset: 0;
-            stroke-dasharray: 0;
+            // stroke-dasharray: 0% 44%;
             fill: none;
             position: relative;
             left: rem(3);
@@ -335,6 +336,9 @@
     }
 
     &--04 {
+      display: flex;
+      justify-content: space-between;
+
       &._watcher-view {
         .zip-anemate {
           opacity: 1 !important;
@@ -372,6 +376,10 @@
       }
 
       .manifesto__img {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+
         .zip-anemate {
           opacity: 0;
         }
@@ -384,7 +392,7 @@
         }
 
         svg {
-          width: 100%;
+          // width: 100%;
           height: 100%;
           position: relative;
           transform: rotate(180deg);
@@ -398,7 +406,7 @@
         .manifesto__img {
           .manifesto__elem-circle {
             .line-circle {
-              stroke-dashoffset:0;
+              stroke-dashoffset: 0;
               stroke-dasharray: 0; // solid line
               animation: drawtype 3s linear;
               opacity: 1;
@@ -459,7 +467,7 @@
             }
           }
 
-          .line {
+          .line-circle {
             opacity: 0;
           }
 
@@ -477,11 +485,10 @@
             content: "";
             position: absolute;
             width: 100%;
-            height: rem(1);
+            height: rem(2);
             background-color: $mainColor;
             // transform: rotate(90deg);
             top: 50%;
-            right: -0.5%;
             z-index: 1000;
           }
         }

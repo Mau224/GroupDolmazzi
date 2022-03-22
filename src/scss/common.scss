@@ -163,7 +163,7 @@ h2 {
     position: absolute;
     background-color: #E5E5E5;
     backface-visibility: hidden;
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
     transition: 1s;
     height: 100%;
     display: flex;
@@ -283,7 +283,7 @@ h2 {
     position: absolute;
     background-color: #E5E5E5;
     backface-visibility: hidden;
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
     transition: 1s;
     height: 100%;
     @include adaptiveValue("padding", 16, 12, 1920, 991);
@@ -364,11 +364,11 @@ h2 {
   background-color: #fff;
 
   &:hover {
-    .blog-item__back {
+    .blog-item-zip__back {
       transform: rotateY(360deg);
     }
 
-    .blog-item__front {
+    .blog-item-zip__front {
       transform: rotateY(180deg);
     }
   }
@@ -381,7 +381,7 @@ h2 {
     position: absolute;
     background-color: #E5E5E5;
     backface-visibility: hidden;
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
     transition: 1s;
     height: 100%;
     @include adaptiveValue("padding", 16, 12, 1920, 991);
@@ -429,7 +429,7 @@ h2 {
     position: absolute;
     background-color: #E5E5E5;
     backface-visibility: hidden;
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
     transition: 1s;
     height: 100%;
     display: flex;
@@ -478,8 +478,8 @@ h2 {
 
       // .blog-item__player-btns-center
       .blog-item__player-btns-center {
-        @include adaptiveValue("width", 80, 30);
-        @include adaptiveValue("height", 80, 30);
+        @include adaptiveValue("width", 80, 50);
+        @include adaptiveValue("height", 80, 50);
         border-radius: 50%;
         background-color: $mainColor;
         display: flex;
@@ -600,11 +600,11 @@ h2 {
   background-color: #fff;
 
   &:hover {
-    .blog-item__back {
+    .blog-item-circle__back {
       transform: rotateY(360deg);
     }
 
-    .blog-item__front {
+    .blog-item-circle__front {
       transform: rotateY(180deg);
     }
   }
@@ -618,7 +618,7 @@ h2 {
     position: absolute;
     background-color: #E5E5E5;
     backface-visibility: hidden;
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
     transition: 1s;
     height: 100%;
     @include adaptiveValue("padding", 16, 12, 1920, 991);
@@ -702,7 +702,7 @@ h2 {
     position: absolute;
     background-color: #E5E5E5;
     backface-visibility: hidden;
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
     transition: 1s;
     height: 100%;
     display: flex;
@@ -726,10 +726,19 @@ h2 {
       right: 0;
       position: relative;
       @include adaptiveValue("margin-top", 56, 10);
-      max-height: 50%;
+      max-height: 53%;
       font-weight: 400;
+      padding-right: rem(20);
       @include adaptiveValue("font-size", 24, 16);
       line-height: math.div(30, 24);
+
+      @media (max-width:$tablet){
+        max-height: 60%;
+      }
+
+      @media (max-width:$mobile){
+        max-height: 70%;
+      }
 
       .simplebar-content-wrapper {
         overflow: auto;
@@ -788,7 +797,7 @@ h2 {
     @include adaptiveValue("width", 244, 130, 1920, 767);
     @include adaptiveValue("height", 244, 130, 1920, 767);
     position: absolute;
-    bottom: 0;
+    bottom: rem(8);
 
     @media (max-width:$mobile) {
       width: rem(130);

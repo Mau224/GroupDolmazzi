@@ -475,6 +475,21 @@
   flex-direction: column;
   align-items: center;
 
+  &._showmore-active {
+    .case-show__more {
+      &::before {
+        content: "";
+        position: absolute;
+        background: none;
+        background-color: $mainColor;
+        width: 1.1875rem;
+        height: rem(1);
+        right: -3.5rem;
+        background-size: contain;
+      }
+    }
+  }
+
   // .case-show__content
   &__content {
     display: grid;
