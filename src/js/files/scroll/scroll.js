@@ -1,4 +1,3 @@
-// Подключение функционала "Чертогов Фрилансера"
 import { isMobile, getHash } from "../functions.js";
 // Модуль прокрутки к блоку
 import { gotoBlock } from "./gotoblock.js";

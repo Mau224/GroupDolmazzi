@@ -5,7 +5,6 @@
 Сниппет(HTML):
 */
 
-// Подключение функционала "Чертогов Фрилансера"
 import { isMobile, FLS } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
@@ -53,8 +52,3 @@ if (galleries.length) {
 	// Добавляем в объект модулей
 	flsModules.gallery = galleyItems;
 }
-
-
-
-
-
