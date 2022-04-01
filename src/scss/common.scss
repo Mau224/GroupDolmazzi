@@ -144,6 +144,7 @@ h2 {
   position: relative;
   perspective: 1000px;
   background-color: #fff;
+  overflow: hidden;
 
   &:hover {
     .blog-item__back {
@@ -362,6 +363,7 @@ h2 {
   position: relative;
   perspective: 1000px;
   background-color: #fff;
+  overflow: hidden;
 
   &:hover {
     .blog-item-zip__back {
@@ -454,6 +456,10 @@ h2 {
         max-width: 60%;
         margin: 0 auto;
         @include adaptiveValue("margin-top", 77, 30);
+
+        @media (max-width:$mobile){
+          max-width: 80%;
+        }
       }
 
       // .blog-item__player-btns-left
@@ -497,6 +503,10 @@ h2 {
           max-height: rem(25);
           background-color: #E5E5E5;
           margin-right: rem(10);
+
+          @media (max-width:$mobile){
+            max-height: rem(20);
+          }
         }
 
         &::after {
@@ -507,6 +517,10 @@ h2 {
           max-height: rem(25);
           background-color: #E5E5E5;
           margin-left: rem(10);
+
+          @media (max-width:$mobile){
+            max-height: rem(20);
+          }
         }
       }
 
@@ -588,6 +602,10 @@ h2 {
       @media (max-width:$tablet) {
         font-size: rem(20);
       }
+
+      @media (max-width:$mobile){
+        margin-bottom: rem(90);
+      }
     }
 
     @media (max-width:$tablet) {
@@ -600,6 +618,7 @@ h2 {
   position: relative;
   perspective: 1000px;
   background-color: #fff;
+  overflow: hidden;
 
   &:hover {
     .blog-item-circle__back {
@@ -616,6 +635,10 @@ h2 {
   position: relative;
   padding: 0;
 
+  @media (max-width:$mobile){
+    padding: rem(11);
+  }
+
   &__front {
     position: absolute;
     background-color: #E5E5E5;
@@ -627,7 +650,9 @@ h2 {
 
     @media (max-width:$tablet) {
       padding: rem(11);
+      margin-bottom: rem(11);
     }
+
   }
 
   &__wrap {
@@ -661,6 +686,7 @@ h2 {
 
     @media (max-width:$mobile) {
       max-height: none;
+      margin-bottom: rem(21);
     }
   }
 
@@ -682,7 +708,7 @@ h2 {
     }
 
     @media (max-width:$mobile) {
-      bottom: rem(10);
+      bottom: rem(22);
       right: rem(12);
     }
   }
@@ -739,7 +765,7 @@ h2 {
       }
 
       @media (max-width:$mobile){
-        max-height: 70%;
+        max-height: 63%;
       }
 
       .simplebar-content-wrapper {

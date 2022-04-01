@@ -116,6 +116,11 @@
   &__map-wrapper {
     margin-top: rem(20);
     margin-right: rem(40);
+
+    iframe {
+      width: 100%;
+      @include adaptiveValue("height", 515, 335);
+    }
   }
 
   // .prev__map-text
