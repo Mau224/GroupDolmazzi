@@ -47,6 +47,17 @@
 
     .main-text__img {
       margin-top: rem(30);
+      width: auto;
+
+      img {
+        @include adaptiveValue("width", 642, 400, 1920, 991);
+        @include adaptiveValue("height", 642, 400, 1920, 991);
+
+        @media (max-width:$tablet) {
+          @include adaptiveValue("width", 400, 150, 991, 360);
+          @include adaptiveValue("height", 400, 150, 991, 360);
+        }
+      }
     }
   }
 }
@@ -121,7 +132,7 @@
           background-color: $mainColor;
           right: 0;
 
-          @media (max-width:$mobile){
+          @media (max-width:$mobile) {
             @include adaptiveValue("width", 30, 14, 767, 360);
           }
         }

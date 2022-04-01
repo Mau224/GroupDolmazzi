@@ -333,15 +333,15 @@
   &__body-wrap {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     @include adaptiveValue("gap", 20, 10, 1920, 767);
 
     @media (max-width:$tablet){
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr !important;
     }
 
     @media (max-width:$mobile) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
       gap: rem(10);
     }
   }
@@ -486,6 +486,9 @@
         height: rem(1);
         right: -3.5rem;
         background-size: contain;
+        @media (max-width:$tablet){
+          right: rem(-46);
+        }
       }
     }
   }

@@ -109,6 +109,8 @@
 
     @media (max-width:$mobile) {
       align-items: center;
+      flex-direction: column-reverse;
+      margin-top: rem(20);
     }
 
     span {
@@ -187,6 +189,7 @@
 
     a {
       margin-bottom: rem(7);
+      max-width: rem(245);
     }
   }
 
@@ -207,6 +210,11 @@
       line-height: math.div(282 , 255);
       // @include adaptiveValue("letter-spacing", 8, 3, 1920, 991);
       letter-spacing: -0.005em;
+
+      @media (min-width:$pc){
+        @include adaptiveValue("font-size", 390, 281, 4800, 1920);
+        width: 100%;
+      }
 
       @media (max-width:$tablet) {
         letter-spacing: -0.005em;

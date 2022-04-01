@@ -20,14 +20,14 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     position: relative;
-    border-top: rem(1) solid $mainColor;
-    border-bottom: rem(1) solid $mainColor;
-    border-right: 1px solid $mainColor;
-    border-left: 1px solid $mainColor;
+    border-top: rem(2) solid $mainColor;
+    border-bottom: rem(2) solid $mainColor;
+    border-right: rem(2) solid $mainColor;
+    border-left: rem(2) solid $mainColor;
 
     &::before {
       content: "";
-      width: rem(1);
+      width: rem(2);
       height: 100%;
       position: absolute;
       background-color: $mainColor;
@@ -37,7 +37,7 @@
     &::after {
       content: "";
       width: 100%;
-      height: rem(1);
+      height: rem(2);
       position: absolute;
       background-color: $mainColor;
       top: 50%;

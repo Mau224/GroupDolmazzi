@@ -127,7 +127,7 @@ h2 {
 
 //перебитие стилей
 .blog__body-wrap {
-  // grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr)) !important;
+  grid-template-columns: 1fr 1fr 1fr !important;
   grid-template-rows: minmax(600) !important;
 
   @media (max-width:$tablet) {
@@ -381,7 +381,7 @@ h2 {
     position: absolute;
     background-color: #E5E5E5;
     backface-visibility: hidden;
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
     transition: 1s;
     height: 100%;
     @include adaptiveValue("padding", 16, 12, 1920, 991);
@@ -429,7 +429,7 @@ h2 {
     position: absolute;
     background-color: #E5E5E5;
     backface-visibility: hidden;
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
     transition: 1s;
     height: 100%;
     display: flex;

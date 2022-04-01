@@ -12,17 +12,14 @@ import { flsModules } from "./modules.js";
 //     this.className += " active";
 //   });
 // }
-document.getElementById('btn').onclick = function () {
-  document.getElementById('map').classList.add('active');
-}
 
-let Wrapper = document.querySelector(".wrapper");
+// let Wrapper = document.querySelector(".wrapper");
 
-window.onload = function () {
-  document.body.classList.add('loaded_hiding');
-  window.setTimeout(function () {
-    document.body.classList.add('loaded');
-    document.body.classList.remove('loaded_hiding');
-    Wrapper.classList.add('preview');
-  }, 2000);
-}
+// window.onload = function () {
+//   document.body.classList.add('loaded_hiding');
+//   window.setTimeout(function () {
+//     document.body.classList.add('loaded');
+//     document.body.classList.remove('loaded_hiding');
+//     Wrapper.classList.add('preview');
+//   }, 2000);
+// }

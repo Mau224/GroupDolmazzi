@@ -1,12 +1,12 @@
 .wrapper-preview {
-  transform: translateY(-100%);
   position: relative;
-  &.preview {
-    transform: translateY(0);
-    transition: 2s transform;
-    animation-delay: 1s;
-    position: relative;
-  }
+  //transform: translateY(100%);
+  //&.preview {
+  //  transform: translateY(0);
+  //  transition: 2s transform;
+  //  animation-delay: 1s;
+  //  position: relative;
+  //}
 }
 
 
@@ -90,5 +90,5 @@
 }
 
 .loaded .preloader {
-  display: none;
+  //display: none;
 }

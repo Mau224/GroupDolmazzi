@@ -20,17 +20,10 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: SuisseIntlMed;
+	font-family: SuisseIntl;
 	font-display: swap;
 	src: url("../fonts/SuisseIntl-Medium.woff2") format("woff2"), url("../fonts/SuisseIntl-Medium.woff") format("woff");
 	font-weight: 500;
-	font-style: normal;
-}
-@font-face {
-	font-family: SuisseIntlBook;
-	font-display: swap;
-	src: url("../fonts/SuisseIntl-Book.woff2") format("woff2"), url("../fonts/SuisseIntl-Book.woff") format("woff");
-	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
@@ -41,7 +34,14 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: SuisseIntlReg;
+	font-family: SuisseIntlBook;
+	font-display: swap;
+	src: url("../fonts/SuisseIntl-Book.woff2") format("woff2"), url("../fonts/SuisseIntl-Book.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: SuisseIntl;
 	font-display: swap;
 	src: url("../fonts/SuisseIntl-Regular.woff2") format("woff2"), url("../fonts/SuisseIntl-Regular.woff") format("woff");
 	font-weight: 400;
