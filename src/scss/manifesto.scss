@@ -164,8 +164,8 @@
         width: 40%;
 
         &--02 {
-          border-right: 1px solid $mainColor;
-          border-left: 1px solid $mainColor;
+          border-right: rem(2) solid $mainColor;
+          border-left: rem(2) solid $mainColor;
 
           .manifesto__img-elem {
             position: relative;
@@ -268,7 +268,7 @@
         position: relative;
         width: 35%;
         display: flex;
-        border-right: 1px solid $mainColor;
+        border-right: rem(2) solid $mainColor;
 
         @media (max-width:$mobile) {
           width: 100%;
@@ -316,11 +316,10 @@
             content: "";
             position: absolute;
             width: 100%;
-            height: rem(1);
+            height: rem(1.5);
             background-color: $mainColor;
             transform: rotate(90deg);
             top: 50%;
-            right: -0.5%;
             z-index: 1000;
           }
         }
@@ -415,6 +414,7 @@
               stroke-dasharray: 0; // solid line
               animation: drawtype 3s linear;
               opacity: 1;
+              fill: none;
             }
           }
         }
@@ -426,7 +426,7 @@
             stroke-dashoffset: 450;
             stroke-dasharray: 740;
             // stroke-width: 2px;
-            fill: $mainColor;
+            fill: none;
           }
 
           100% {
@@ -462,7 +462,6 @@
           width: 100%;
           height: 50%;
           margin-top: rem(0);
-          transform: rotate(180deg);
 
           // top: rem(10);
 
