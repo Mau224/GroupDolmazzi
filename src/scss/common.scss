@@ -92,15 +92,20 @@ h2 {
   }
 }
 
+.case-tab__body-wrap-blog-item {
+  @include adaptiveValue("padding", 16, 12, 1920, 991);
+}
+
 .blog-main-item {
   @include adaptiveValue("width", 600, 315, 1920, 991);
   @include adaptiveValue("height", 600, 315, 1920, 991);
   background: #E5E5E5;
   height: 100%;
   width: 100%;
-  @include adaptiveValue("padding", 16, 12, 1920, 991);
+  // @include adaptiveValue("padding", 16, 12, 1920, 991);
   min-height: 100%;
   min-width: 100%;
+  overflow: hidden;
 
   h4 {
     @include adaptiveValue("font-size", 40, 18, 1920, 991);
@@ -118,7 +123,7 @@ h2 {
   }
 
   @media (max-width:$mobile) {
-    max-height: rem(605);
+    // max-height: rem(605);
     @include adaptiveValue("width", 600, 340, 767, 360);
     @include adaptiveValue("height", 600, 340, 767, 360);
   }
@@ -140,37 +145,84 @@ h2 {
   }
 }
 
-.blog-main-item.blog-item {
-  position: relative;
-  perspective: 1000px;
-  background-color: #fff;
-  overflow: hidden;
 
-  &:hover {
-    .blog-item__back {
-      transform: rotateY(360deg);
-    }
 
-    .blog-item__front {
-      transform: rotateY(180deg);
-    }
-  }
-}
 
 .blog-item {
   padding: 0;
+  -webkit-perspective: 1200;
+  perspective: 1200;
+  -moz-transform: perspective(1200px);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  @media (max-width:$tablet){
+    // @include adaptiveValue("width", 400, 340, 991, 767);
+    @include adaptiveValue("height", 400, 340, 991, 767);
+  }
+
+  @media (max-width:$mobile) {
+    max-height: rem(605);
+    // @include adaptiveValue("width", 600, 340, 767, 360);
+    @include adaptiveValue("height", 600, 340, 767, 360);
+  }
+
+  &:hover {
+    .blog-item__flip {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__flip {
+    position: relative;
+    @include adaptiveValue("width", 600, 315, 1920, 991);
+    @include adaptiveValue("height", 600, 315, 1920, 991);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: .7s linear;
+    -moz-transition: .7s linear;
+    -o-transition: .7s linear;
+    transition: .7s linear;
+
+    @media (max-width:$tablet) {
+      padding: rem(11);
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width:$mobile) {
+      max-height: rem(605);
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   &__back {
     position: absolute;
-    background-color: #E5E5E5;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    transition: 1s;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
     height: 100%;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: flex-start;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: #E5E5E5;
+    @include adaptiveValue("padding", 16, 12, 1920, 991);
+    // color: white;
+
+    @media (max-width:$tablet) {
+      padding: rem(11);
+    }
 
     .blog-item__video-player {
       margin-top: rem(23);
@@ -272,7 +324,7 @@ h2 {
       @include adaptiveValue("font-size", 40, 20, 1920, 991);
       line-height: math.div(49, 40);
       text-transform: uppercase;
-      @include adaptiveValue("margin-top", 26, 10);
+      @include adaptiveValue("margin-top", 15, 10);
 
       @media (max-width:$tablet) {
         font-size: rem(20);
@@ -282,14 +334,24 @@ h2 {
 
   &__front {
     position: absolute;
-    background-color: #E5E5E5;
-    backface-visibility: hidden;
-    transform: rotateY(360deg);
-    transition: 1s;
-    height: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
     @include adaptiveValue("padding", 16, 12, 1920, 991);
+    // padding: 40px 20px 20px;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: #E5E5E5;
+    z-index: 2;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 
-    @media (max-width:$tablet) {
+    @media (max-width:$tablet){
       padding: rem(11);
     }
   }
@@ -297,7 +359,7 @@ h2 {
   &__img-wrap {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
   }
 
   &__wrap {
@@ -309,7 +371,7 @@ h2 {
     height: 100%;
     transition: 1s;
     background-color: #E5E5E5;
-    // @include adaptiveValue("padding", 16, 12, 1920, 991);
+    // @include adaptiveValue("padding", 16, 12, 1920, 360);
 
     &::after {
       content: "";
@@ -359,37 +421,87 @@ h2 {
   }
 }
 
-.blog-main-item.blog-item-zip {
-  position: relative;
-  perspective: 1000px;
-  background-color: #fff;
-  overflow: hidden;
 
-  &:hover {
-    .blog-item-zip__back {
-      transform: rotateY(360deg);
-    }
-
-    .blog-item-zip__front {
-      transform: rotateY(180deg);
-    }
-  }
-}
 
 .blog-item-zip {
   padding: 0;
+  -webkit-perspective: 1200;
+  perspective: 1200;
+  -moz-transform: perspective(1200px);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 
-  &__front {
-    position: absolute;
-    background-color: #E5E5E5;
-    backface-visibility: hidden;
-    transform: rotateY(360deg);
-    transition: 1s;
-    height: 100%;
-    @include adaptiveValue("padding", 16, 12, 1920, 991);
+  @media (max-width:$tablet) {
+    // @include adaptiveValue("width", 400, 340, 991, 767);
+    @include adaptiveValue("height", 400, 340, 991, 767);
+  }
+
+  @media (max-width:$mobile) {
+    max-height: rem(605);
+    // @include adaptiveValue("width", 600, 340, 767, 360);
+    @include adaptiveValue("height", 600, 340, 767, 360);
+  }
+
+  &:hover {
+    .blog-item-zip__flip {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__flip {
+    position: relative;
+    @include adaptiveValue("width", 600, 315, 1920, 991);
+    @include adaptiveValue("height", 600, 315, 1920, 991);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: .7s linear;
+    -moz-transition: .7s linear;
+    -o-transition: .7s linear;
+    transition: .7s linear;
 
     @media (max-width:$tablet) {
       padding: rem(11);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    @include adaptiveValue("padding", 16, 12, 1920, 991);
+    // padding: 40px 20px 20px;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: #E5E5E5;
+    z-index: 2;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+
+    @media (max-width:$tablet) {
+      padding: rem(11);
+    }
+  }
+
+  &__img {
+    @media (max-width:$tablet){
+      height: rem(300);
+    }
+
+    @media (max-width:$mobile){
+      height: 100%;
     }
   }
 
@@ -429,17 +541,24 @@ h2 {
 
   &__back {
     position: absolute;
-    background-color: #E5E5E5;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    transition: 1s;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
     width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: #E5E5E5;
     @include adaptiveValue("padding", 16, 12, 1920, 991);
+
+    @media (max-width:$tablet) {
+      padding: rem(11);
+    }
 
     .blog-item__player {
       height: 100%;
@@ -453,11 +572,11 @@ h2 {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 60%;
+        max-width: 80%;
         margin: 0 auto;
-        @include adaptiveValue("margin-top", 77, 30);
+        @include adaptiveValue("margin-top", 37, 10);
 
-        @media (max-width:$mobile){
+        @media (max-width:$mobile) {
           max-width: 80%;
         }
       }
@@ -502,10 +621,11 @@ h2 {
           height: 100%;
           max-height: rem(25);
           background-color: #E5E5E5;
-          margin-right: rem(10);
+          right: rem(24);
 
-          @media (max-width:$mobile){
+          @media (max-width:$mobile) {
             max-height: rem(20);
+            right: rem(28);
           }
         }
 
@@ -516,10 +636,11 @@ h2 {
           height: 100%;
           max-height: rem(25);
           background-color: #E5E5E5;
-          margin-left: rem(10);
+          left: rem(26);
 
-          @media (max-width:$mobile){
+          @media (max-width:$mobile) {
             max-height: rem(20);
+            left: rem(30);
           }
         }
       }
@@ -603,7 +724,7 @@ h2 {
         font-size: rem(20);
       }
 
-      @media (max-width:$mobile){
+      @media (max-width:$mobile) {
         margin-bottom: rem(90);
       }
     }
@@ -614,45 +735,81 @@ h2 {
   }
 }
 
-.blog-main-item.blog-item-circle {
-  position: relative;
-  perspective: 1000px;
-  background-color: #fff;
-  overflow: hidden;
+.blog-item-circle {
+  padding: 0;
+  -webkit-perspective: 1200;
+  perspective: 1200;
+  -moz-transform: perspective(1200px);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  @media (max-width:$tablet) {
+    // @include adaptiveValue("width", 400, 340, 991, 767);
+    @include adaptiveValue("height", 400, 340, 991, 767);
+  }
+
+  @media (max-width:$mobile) {
+    max-height: rem(605);
+    // @include adaptiveValue("width", 600, 340, 767, 360);
+    @include adaptiveValue("height", 600, 340, 767, 360);
+  }
 
   &:hover {
-    .blog-item-circle__back {
-      transform: rotateY(360deg);
-    }
-
-    .blog-item-circle__front {
+    .blog-item-circle__flip {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
       transform: rotateY(180deg);
     }
   }
-}
 
-.blog-item-circle {
-  position: relative;
-  padding: 0;
+  &__flip {
+    position: relative;
+    @include adaptiveValue("width", 600, 315, 1920, 991);
+    @include adaptiveValue("height", 600, 315, 1920, 991);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: .7s linear;
+    -moz-transition: .7s linear;
+    -o-transition: .7s linear;
+    transition: .7s linear;
 
-  @media (max-width:$mobile){
-    padding: rem(11);
+    @media (max-width:$tablet) {
+      padding: rem(11);
+      width: 100%;
+      height: 100%;
+    }
+
   }
 
   &__front {
     position: absolute;
-    background-color: #E5E5E5;
-    backface-visibility: hidden;
-    transform: rotateY(360deg);
-    transition: 1s;
-    height: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
     @include adaptiveValue("padding", 16, 12, 1920, 991);
+    // padding: 40px 20px 20px;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: #E5E5E5;
+    z-index: 2;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 
     @media (max-width:$tablet) {
       padding: rem(11);
-      margin-bottom: rem(11);
     }
 
+    @media (max-width:$tablet){
+      padding: rem(11);
+    }
   }
 
   &__wrap {
@@ -728,15 +885,24 @@ h2 {
 
   &__back {
     position: absolute;
-    background-color: #E5E5E5;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    transition: 1s;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
     width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: #E5E5E5;
     @include adaptiveValue("padding", 16, 12, 1920, 991);
+
+    @media (max-width:$tablet) {
+      padding: rem(11);
+    }
 
     h4 {
       text-align: center;
@@ -760,11 +926,11 @@ h2 {
       @include adaptiveValue("font-size", 24, 16);
       line-height: math.div(30, 24);
 
-      @media (max-width:$tablet){
+      @media (max-width:$tablet) {
         max-height: 60%;
       }
 
-      @media (max-width:$mobile){
+      @media (max-width:$mobile) {
         max-height: 63%;
       }
 
@@ -796,7 +962,7 @@ h2 {
     grid-template-rows: auto;
 
     h4 {
-      @include adaptiveValue("font-size", 40, 22, 1920, 991);
+      @include adaptiveValue("font-size", 40, 20, 1920, 991);
       line-height: math.div(49, 40);
       text-align: center;
       text-transform: uppercase;
@@ -822,8 +988,8 @@ h2 {
   }
 
   .blog-item__img-wrap {
-    @include adaptiveValue("width", 244, 130, 1920, 767);
-    @include adaptiveValue("height", 244, 130, 1920, 767);
+    @include adaptiveValue("width", 244, 100, 1920, 767);
+    @include adaptiveValue("height", 244, 100, 1920, 767);
     position: absolute;
     bottom: rem(8);
 
@@ -853,7 +1019,7 @@ h2 {
     border-radius: 50%;
 
     h4 {
-      @include adaptiveValue("font-size", 40, 26, 1920, 991);
+      @include adaptiveValue("font-size", 40, 20, 1920, 991);
       line-height: math.div(49, 40);
       text-align: center;
       text-transform: uppercase;
@@ -878,6 +1044,7 @@ h2 {
 }
 
 .blog-item-tri {
+  height: 100%;
   .blog-item__wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -900,7 +1067,7 @@ h2 {
     }
 
     h4 {
-      @include adaptiveValue("font-size", 40, 26, 1920, 991);
+      @include adaptiveValue("font-size", 40, 20, 1920, 991);
       line-height: math.div(49, 40);
       text-align: center;
       text-transform: uppercase;
@@ -962,6 +1129,7 @@ h2 {
 
 
 .blog-item-2 {
+  height: 100%;
   .blog-item__wrap {
 
     .blog-item__text-1 {
@@ -983,12 +1151,17 @@ h2 {
 
 .blog-item-zip-2 {
   padding: 0;
+  background-color: #E5E5E5;
 
   .blog-item-zip__wrap {
     p {
       right: 8.5%;
       top: 30%;
       left: auto;
+
+      @media (max-width:$mobile){
+        top: 22%;
+      }
     }
 
     .blog-item-zip__img {
@@ -1000,6 +1173,12 @@ h2 {
       margin-top: rem(10);
       @include adaptiveValue("padding-left", 16, 12, 1920, 991);
       margin-bottom: rem(10);
+      max-width: rem(350);
+      margin-left: rem(20);
+
+      @media (max-width:$mobile) {
+        margin-left: rem(20);
+      }
     }
   }
 }
@@ -1008,6 +1187,11 @@ h2 {
   .blog-item-circle__wrap {
     .blog-item-circle__text-wrap {
       border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      background: #E5E5E5;
+
+      @media (max-width:$mobile) {
+        margin-bottom: 0;
+      }
 
       h4 {
         @include adaptiveValue("font-size", 40, 18, 1920, 991);
@@ -1027,6 +1211,10 @@ h2 {
         @include adaptiveValue("font-size", 20, 16, 1920, 991);
         line-height: math.div(35, 20);
 
+        @media (max-width:$tablet){
+          font-size: rem(18);
+        }
+
         @media (max-width:$mobile) {
           font-size: rem(16);
         }
@@ -1038,7 +1226,12 @@ h2 {
 .blog-item-cof-2 {
   .blog-item__wrap {
     background: url(../img/z.svg) no-repeat;
+    height: 100%;
     background-size: cover;
+
+    @media (max-width:$tablet){
+      background-size: contain;
+    }
 
     &::before {
       display: none;
@@ -1051,7 +1244,7 @@ h2 {
     p {
       text-align: right;
       position: absolute;
-      right: 0;
+      right: rem(15);
     }
 
     h4 {
