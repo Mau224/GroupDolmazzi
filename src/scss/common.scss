@@ -148,6 +148,20 @@ h2 {
 
 .blog-item-one {
   background-color: transparent;
+  @include adaptiveValue("width", 600, 315, 1920, 991);
+  @include adaptiveValue("height", 600, 315, 1920, 991);
+
+  @media (max-width:$tablet) {
+    padding: rem(11);
+    @include adaptiveValue("width", 400, 340, 991, 767);
+    @include adaptiveValue("height", 400, 340, 991, 767);
+  }
+
+  @media (max-width:$mobile) {
+    // max-height: rem(605);
+    @include adaptiveValue("width", 600, 340, 767, 360);
+    @include adaptiveValue("height", 600, 340, 767, 360);
+  }
 
   .blog-item__img-wrap {
     display: flex;
@@ -493,6 +507,7 @@ h2 {
     -moz-transition: .7s linear;
     -o-transition: .7s linear;
     transition: .7s linear;
+    transform: rotateY(180deg);
 
     @media (max-width:$tablet) {
       padding: rem(11);

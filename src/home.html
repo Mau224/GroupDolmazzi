@@ -8,7 +8,7 @@
   <div class="wrapper">
     @@include('html/_header.htm',{})
     <main class="page">
-      <div class="preview" data-watch-threshold="1" data-watch-once data-watch>
+      <div class="preview" data-watch-threshold="0.25" data-watch-once data-watch>
         <div class="preview__container">
           <h1>dolmazzi group</h1>
           <div class="preview__text">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="video" data-watch-threshold="1" data-watch-once data-watch>
+      <div class="video" data-watch-threshold="0.25" data-watch-once data-watch>
         <div class="video__container">
           <div class="video__body-btn">
             <button type="button" class="video-btn btn-circle _icon-play">play video</button>
@@ -212,7 +212,7 @@
               <div data-tabs-body class="case-tab__content">
                 <div class="case-tab__body">
                   <div class="case-tab__body-wrap blog__body-wrap">
-                    <div class="case-tab__body-wrap-blog-item blog-item blog-item-one blog-main-item">
+                    <div class="case-tab__body-wrap-blog-item blog-item blog-item-one">
                       <div class="blog-item__flip">
                         <div class="blog-item__front">
                           <div class="blog-item__wrap">
@@ -242,7 +242,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="case-tab__body-wrap-blog-item blog-item-zip blog-main-item">
+                    <div class="case-tab__body-wrap-blog-item blog-item-zip">
                       <div class="blog-item-zip__flip">
                         <div class="blog-item-zip__front">
                           <div class="blog-item-zip__wrap">
@@ -257,7 +257,7 @@
                         <div class="blog-item-zip__back">
                           <h4>CGI Recreation
                             of the iconic Lancia Stratos HF Zero</h4>
-                          <div class="blog-item__player">
+                          <!-- <div class="blog-item__player">
                             <div class="blog-item__player-progress-bar">
                               <div class="blog-item__player-progress"></div>
                             </div>
@@ -277,11 +277,15 @@
                                 <p>10</p>
                               </div>
                             </div>
-                          </div>
+                          </div> -->
+                          <audio id="player" controls>
+                            <source src="" type="audio/mp3" />
+                            <source src="" type="audio/ogg" />
+                          </audio>
                         </div>
                       </div>
                     </div>
-                    <div class="case-tab__body-wrap-blog-item blog-item-circle blog-main-item">
+                    <div class="case-tab__body-wrap-blog-item blog-item-circle">
                       <div class="blog-item-circle__flip">
                         <div class="blog-item-circle__front">
                           <div class="blog-item-circle__wrap">
