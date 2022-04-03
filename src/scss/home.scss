@@ -1,5 +1,11 @@
 //====================================================================================================
 .preview {
+  opacity: 0;
+  transition: 1.7s opacity;
+
+  &._watcher-view {
+    opacity: 1;
+  }
 
   // .preview__container
   &__container {
@@ -87,6 +93,12 @@
 //====================================================================================================
 .video {
   padding: rem(66) 0px 0px 0px;
+  opacity: 0;
+  transition: 1s opacity;
+
+  &._watcher-view {
+    opacity: 1;
+  }
 
   // .video__container
   &__container {
@@ -209,6 +221,12 @@
 
 //====================================================================================================
 .case {
+  opacity: 0;
+  transition: 1s opacity;
+
+  &._watcher-view {
+    opacity: 1;
+  }
 
   // .case__container
   &__container {
@@ -310,11 +328,13 @@
   }
 
   // .case-tab__content
-  &__content {}
+  &__content {
+    width: 100%;
+  }
 
   // .case-tab__body
   &__body {
-    // width: 100%;
+    width: 100%;
     // display: grid;
     // grid-template-columns: 1fr 1fr;
     // gap: rem(20);

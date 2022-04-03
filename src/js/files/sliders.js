@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, {Navigation, EffectCoverflow} from 'swiper';
+import Swiper, {Navigation,EffectCreative} from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -32,7 +32,7 @@ function initSliders() {
     new Swiper('.swiper', { // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, EffectCoverflow],
+      modules: [Navigation, EffectCreative],
 
       slidesPerView: 'auto',
       spaceBetween: 0,
@@ -49,12 +49,19 @@ function initSliders() {
 
 
       // Эффекты
-      effect: 'coverflow',
-      coverflowEffect: {
-        rotate: 230,
-        slideShadows: true,
-      },
       grabCursor: true,
+      parallax: true,
+      effect: 'creative',
+      creativeEffect: {
+        prev: {
+          // will set `translateZ(-400px)` on previous slides
+          translate: [0, 0, -400],
+        },
+        next: {
+          // will set `translateX(100%)` on next slides
+          translate: ['100%', 0, 0],
+        },
+      },
       // autoplay: {
       // 	delay: 3000,
       // 	disableOnInteraction: false,

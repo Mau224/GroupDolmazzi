@@ -159,7 +159,7 @@
 
       &::after {
         border: 1px solid $mainColor;
-        right: rem(-100);
+        right: rem(-85);
         width: rem(64);
         height: rem(64);
 
@@ -177,7 +177,7 @@
         height: rem(19);
         background: url("../img/arrow.svg") no-repeat;
         background-size: cover;
-        right: rem(-78);
+        right: rem(-62);
 
         @media (max-width:$tablet){
           width: rem(12);

@@ -14,7 +14,7 @@
 
     h2 {
       padding-bottom: rem(85);
-
+      font-family: 'SuisseIntlCondensedLight';
       @media (max-width:$mobile) {
         @include adaptiveValue("padding-bottom", 85, 24);
       }
@@ -88,6 +88,7 @@
     padding-bottom: rem(40);
     position: relative;
     top: rem(-105);
+    z-index: 1000;
 
     @media (max-width:$mobile) {
       justify-content: flex-start;

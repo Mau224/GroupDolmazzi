@@ -101,6 +101,10 @@
     @include adaptiveValue("font-size", 18, 14);
     line-height: math.div(50 , 20);
 
+    &:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width:$tablet){
       color: #fff;
       font-size: rem(20);

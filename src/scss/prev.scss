@@ -151,7 +151,7 @@
     h1 {
       text-align: left;
       font-weight: 300;
-      @include adaptiveValue("font-size", 192, 120, 1920, 991);
+      @include adaptiveValue("font-size", 192, 90, 1920, 991);
       line-height: math.div(185, 192);
       /* or 96% */
       letter-spacing: -0.005em;
@@ -160,9 +160,10 @@
       height: auto;
       position: relative;
       top: 0;
-      width: 60%;
       // @include adaptiveValue("margin-bottom", 100, 90, 1920, 991);
       padding-top: rem(20);
+      padding-right: rem(20);
+
       @media (min-width:$pc){
         margin-bottom: rem(90);
       }
@@ -201,10 +202,7 @@
       p {
         @include adaptiveValue("font-size", 40, 24);
         line-height: math.div(44, 40);
-      }
-
-      .form__btn {
-        @include adaptiveValue("margin-top", 129, 50, 1920, 991);
+        padding-right: rem(20);
       }
     }
   }
