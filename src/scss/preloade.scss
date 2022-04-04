@@ -1,6 +1,10 @@
 .wrapper-preview {
   position: relative;
-  //transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 1002;
+  background: #fff;
+  overflow: hidden;
+  height: 100vh;
   //&.preview {
   //  transform: translateY(0);
   //  transition: 2s transform;

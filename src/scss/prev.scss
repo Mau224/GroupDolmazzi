@@ -5,9 +5,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    padding-right: 0;
     padding-left: 0;
-    overflow-y: scroll;
     scroll-behavior: smooth;
     min-height: 100vh;
     height: 100vh;
@@ -15,6 +13,7 @@
     margin-right: rem(-20);
     max-width: none;
     position: relative;
+    overflow: hidden;
   }
 
   // .prev__map
@@ -147,6 +146,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    background: #fff;
 
     h1 {
       text-align: left;
@@ -214,8 +214,6 @@
     width: 50%;
     position: relative;
     padding: rem(20);
-    overflow: hidden;
-    height: calc(100% + 1px);
     p {
       @include adaptiveValue("font-size", 40, 24);
       line-height: math.div(44, 40);
