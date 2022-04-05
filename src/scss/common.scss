@@ -5,7 +5,7 @@ input {
 }
 
 h1 {
-  font-family: "SuisseIntlCondTrialLight";
+  font-family: "SuisseIntlCondensedThin";
   font-weight: 300;
   @include adaptiveValue("font-size", 277, 110, 1920, 991);
   line-height: math.div(255, 277);
@@ -24,7 +24,7 @@ h1 {
 }
 
 h2 {
-  font-family: "SuisseIntlCondTrialLight";
+  font-family: "SuisseIntlCondensedThin";
   font-weight: 300;
   @include adaptiveValue("font-size", 277, 140, 1920, 991);
   line-height: math.div(255, 275);
@@ -148,18 +148,19 @@ h2 {
 
 .blog-item-one {
   background-color: transparent;
-  @include adaptiveValue("width", 600, 315, 1920, 991);
+  width: 100%;
+  // @include adaptiveValue("width", 600, 315, 1920, 991);
   @include adaptiveValue("height", 600, 315, 1920, 991);
 
   @media (max-width:$tablet) {
     padding: rem(11);
-    @include adaptiveValue("width", 400, 340, 991, 767);
+    // @include adaptiveValue("width", 400, 340, 991, 767);
     @include adaptiveValue("height", 400, 340, 991, 767);
   }
 
   @media (max-width:$mobile) {
     // max-height: rem(605);
-    @include adaptiveValue("width", 600, 340, 767, 360);
+    // @include adaptiveValue("width", 600, 340, 767, 360);
     @include adaptiveValue("height", 600, 340, 767, 360);
   }
 
@@ -187,9 +188,9 @@ h2 {
 
 .blog-item {
   padding: 0;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  -moz-transform: perspective(1000px);
+  -webkit-perspective: 1200;
+  perspective: 1200;
+  -moz-transform: perspective(1200px);
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -221,10 +222,10 @@ h2 {
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transition: .7s ease;
-    -moz-transition: .7s ease;
-    -o-transition: .7s ease;
-    transition: .7s ease;
+    -webkit-transition: .7s linear;
+    -moz-transition: .7s linear;
+    -o-transition: .7s linear;
+    transition: .7s linear;
 
     @media (max-width:$tablet) {
       padding: rem(11);
@@ -507,7 +508,7 @@ h2 {
     -moz-transition: .7s linear;
     -o-transition: .7s linear;
     transition: .7s linear;
-    transform: rotateY(180deg);
+    // transform: rotateY(180deg);
 
     @media (max-width:$tablet) {
       padding: rem(11);
@@ -790,7 +791,7 @@ h2 {
 }
 
 .blog-item-circle {
-  background-color: transparent;
+  // background-color: #E5E5E5;
   padding: 0;
   -webkit-perspective: 1200;
   perspective: 1200;
@@ -798,6 +799,8 @@ h2 {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  position: relative;
+
 
   @media (max-width:$tablet) {
     // @include adaptiveValue("width", 400, 340, 991, 767);
@@ -830,9 +833,10 @@ h2 {
     -moz-transition: .7s linear;
     -o-transition: .7s linear;
     transition: .7s linear;
+    // transform: rotateY(180deg);
 
     @media (max-width:$tablet) {
-      padding: rem(11);
+      // padding: rem(11);
       width: 100%;
       height: 100%;
     }
@@ -840,7 +844,7 @@ h2 {
   }
 
   &__front {
-    position: absolute;
+    // position: absolute;
     top: 0;
     left: 0;
     box-sizing: border-box;
@@ -975,7 +979,7 @@ h2 {
       right: 0;
       position: relative;
       @include adaptiveValue("margin-top", 56, 10);
-      max-height: 53%;
+      height: 53%;
       font-weight: 400;
       padding-right: rem(20);
       @include adaptiveValue("font-size", 24, 16);
@@ -990,7 +994,8 @@ h2 {
       }
 
       .simplebar-content-wrapper {
-        overflow: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
       }
 
       .simplebar-scrollbar::before {

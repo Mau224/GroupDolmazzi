@@ -7,7 +7,11 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, {Navigation,EffectCreative} from 'swiper';
+import Swiper, {
+  Navigation,
+  EffectCreative,
+  Parallax
+} from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -22,7 +26,7 @@ import "../../scss/base/swiper.scss";
 // import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
 // import 'swiper/css';
-
+var interleaveOffset = 0.5;
 // Инициализация слайдеров
 function initSliders() {
   // Перечень слайдеров
@@ -32,15 +36,17 @@ function initSliders() {
     new Swiper('.swiper', { // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, EffectCreative],
+      modules: [Navigation, EffectCreative, Parallax],
 
       slidesPerView: 'auto',
       spaceBetween: 0,
+      speed: 1000,
+      mousewheelControl: true,
       // autoHeight: true,
-      speed: 800,
       observer: true,
       watchOverflow: true,
       observeParents: true,
+      watchSlidesProgress: true,
       //touchRatio: 0,
       //simulateTouch: false,
       //loop: true,
@@ -93,20 +99,43 @@ function initSliders() {
       // Брейкпоинты
 
       breakpoints: {
-      	320: {
+        320: {
           slidesPerView: 'auto',
-      		spaceBetween: 0,
-      		autoHeight: true,
-      	},
-      	992: {
-      		slidesPerView: 'auto',
-      		spaceBetween: 20,
-      	},
+          spaceBetween: 0,
+          autoHeight: true,
+        },
+        992: {
+          slidesPerView: 'auto',
+          spaceBetween: 20,
+        },
       },
 
       // События
       on: {
-
+        progress: function () {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            var slideProgress = swiper.slides[i].progress;
+            var innerOffset = swiper.width * interleaveOffset;
+            var innerTranslate = slideProgress * innerOffset;
+            swiper.slides[i].querySelector(".slide-inner").style.transform =
+              "translate3d(" + innerTranslate + "px, 0, 0)";
+          }
+        },
+        touchStart: function () {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = "";
+          }
+        },
+        setTransition: function (speed) {
+          var swiper = this;
+          for (var i = 0; i < swiper.slides.length; i++) {
+            swiper.slides[i].style.transition = speed + "ms";
+            swiper.slides[i].querySelector(".slide-inner").style.transition =
+              speed + "ms";
+          }
+        }
       }
     });
   }
