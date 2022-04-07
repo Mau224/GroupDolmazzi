@@ -93,6 +93,10 @@ h2 {
 }
 
 .case-tab__body-wrap-blog-item {
+  // @include adaptiveValue("padding", 16, 12, 1920, 991);
+}
+
+.blog-item-other {
   @include adaptiveValue("padding", 16, 12, 1920, 991);
 }
 
@@ -150,10 +154,10 @@ h2 {
   background-color: transparent;
   width: 100%;
   // @include adaptiveValue("width", 600, 315, 1920, 991);
-  @include adaptiveValue("height", 600, 315, 1920, 991);
+  // @include adaptiveValue("height", 600, 315, 1920, 991);
 
   @media (max-width:$tablet) {
-    padding: rem(11);
+    // padding: rem(11);
     // @include adaptiveValue("width", 400, 340, 991, 767);
     @include adaptiveValue("height", 400, 340, 991, 767);
   }
@@ -180,6 +184,7 @@ h2 {
 
     img {
       object-fit: cover !important;
+      max-height: rem(280);
       // @include adaptiveValue("width", 209, 150, 771, 360);
       // @include adaptiveValue("height", 209, 150, 771, 360);
     }
@@ -194,6 +199,7 @@ h2 {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  // background-color: #E5E5E5;
 
   @media (max-width:$tablet) {
     // @include adaptiveValue("width", 400, 340, 991, 767);
@@ -217,8 +223,9 @@ h2 {
 
   &__flip {
     position: relative;
+    height: 100%;
     // @include adaptiveValue("width", 600, 315, 1920, 991);
-    @include adaptiveValue("height", 600, 315, 1920, 991);
+    // @include adaptiveValue("height", 600, 315, 1920, 991);
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -387,7 +394,7 @@ h2 {
     -webkit-transform: rotateY(0deg);
     -moz-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 
     @media (max-width:$tablet) {
       padding: rem(11);
@@ -499,8 +506,9 @@ h2 {
 
   &__flip {
     position: relative;
+    height: 100%;
     // @include adaptiveValue("width", 600, 315, 1920, 991);
-    @include adaptiveValue("height", 600, 315, 1920, 991);
+    // @include adaptiveValue("height", 600, 315, 1920, 991);
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -542,8 +550,18 @@ h2 {
   }
 
   &__img {
+    max-height: 60%;
+
+    img {
+      object-fit: contain;
+      height: 100% !important;
+    }
     @media (max-width:$tablet) {
-      height: rem(300);
+      height: rem(270);
+
+      img {
+        width: auto !important;
+      }
     }
 
     @media (max-width:$mobile) {
@@ -555,10 +573,6 @@ h2 {
     display: flex;
     flex-direction: column;
     position: relative;
-
-    img {
-      max-height: 100%;
-    }
 
     h4 {
       @include adaptiveValue("font-size", 40, 20, 1920, 991);
@@ -824,8 +838,9 @@ h2 {
 
   &__flip {
     position: relative;
+    height: 100%;
     // @include adaptiveValue("width", 600, 315, 1920, 991);
-    @include adaptiveValue("height", 600, 315, 1920, 991);
+    // @include adaptiveValue("height", 600, 315, 1920, 991);
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -1289,7 +1304,7 @@ h2 {
   .blog-item__wrap {
     background: url(../img/z.svg) no-repeat;
     height: 100%;
-    background-size: cover;
+    background-size: contain;
 
     @media (max-width:$tablet) {
       background-size: contain;

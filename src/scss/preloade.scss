@@ -26,6 +26,7 @@
   background: #E5E5E5;
   /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
   z-index: 1001;
+  padding-bottom: rem(20);
 }
 
 .preloader__text {
@@ -37,6 +38,7 @@
     line-height: 13px;
     text-transform: uppercase;
     text-align: left;
+    margin-left: rem(20);
   }
 }
 
@@ -67,6 +69,7 @@
   height: 100%;
   text-align: center;
   animation: preloader-rotate 2s infinite linear;
+  // margin-bottom: rem(20);
 
   .footer__img {
     margin-top: 8%;
@@ -86,11 +89,12 @@
       height: 30%;
       position: relative;
       margin-top: rem(20);
+      // padding-bottom: rem(30);
       h1 {
         white-space: nowrap;
         animation: 10s linear 0s normal none infinite running left;
         position: relative;
-        height: 20%;
+        // height: 20%;
       }
     }
   }
