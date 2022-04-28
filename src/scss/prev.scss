@@ -332,8 +332,8 @@
       }
 
       h2 {
-        opacity: 0;
-        display: none;
+        //opacity: 0;
+        display: flex;
         @include adaptiveValue("font-size", 142, 50, 1920, 991);
         line-height: math.div(182, 142);
         color: $mainColor;
