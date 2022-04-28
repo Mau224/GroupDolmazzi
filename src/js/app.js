@@ -191,4 +191,6 @@ import "./libs/dynamic_adapt.js";
 import "./files/script.js";
 import "./files/map.js";
 import "./files/scrollAnimations.js";
+import "./files/audioplayer.js";
+import "./files/videoplayer.js";
 //============================================================================================================================================================================================================================================

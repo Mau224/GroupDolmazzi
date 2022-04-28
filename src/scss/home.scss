@@ -347,6 +347,15 @@
       object-fit: contain; // опционально
       vertical-align: top;
     }
+
+    video {
+      max-width: 100%;
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain; // опционально
+      vertical-align: top;
+    }
   }
 
   // .case-tab__body-wrap
