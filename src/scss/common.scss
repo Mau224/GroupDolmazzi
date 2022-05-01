@@ -672,12 +672,18 @@ h2 {
         @include adaptiveValue("height", 80, 50);
         border-radius: 50%;
         background-color: $mainColor;
-        background: url(../img/pause.svg) no-repeat;
+        background: url(../img/play.svg) no-repeat;
         background-size: contain;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+
+        &.active {
+          background: url(../img/pause.svg) no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
 
         // &::before {
         //   content: "";

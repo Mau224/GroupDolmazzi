@@ -60,13 +60,15 @@ if (playIconContainer &&
 
     playIconContainer.addEventListener('click', () => {
         if(playState === 'play') {
-            audio.play();
+          audio.play();
+          playIconContainer.classList.add('active');
             requestAnimationFrame(whilePlaying);
             playState = 'pause';
         } else {
             audio.pause();
             cancelAnimationFrame(raf);
-            playState = 'play';
+          playState = 'play';
+          playIconContainer.classList.remove('active');
         }
     });
 
