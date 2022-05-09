@@ -282,25 +282,38 @@ h2 {
         height: rem(25);
         display: flex;
         justify-content: space-between;
+        background: url(../img/play-video.svg) no-repeat;
+        background-position: center;
+        background-size: contain;
 
-        &::before {
-          content: "";
-          position: absolute;
-          width: rem(6);
-          height: 100%;
-          background-color: $mainColor;
-          top: 0;
-          left: 0;
+        &::before,
+        &::after {
+          display: none;
         }
 
-        &::after {
-          content: "";
-          position: absolute;
-          width: rem(6);
-          height: 100%;
-          background-color: $mainColor;
-          top: 0;
-          right: 0;
+        &.active {
+          background: none;
+          &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: rem(6);
+            height: 100%;
+            background-color: $mainColor;
+            top: 0;
+            left: 0;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: rem(6);
+            height: 100%;
+            background-color: $mainColor;
+            top: 0;
+            right: 0;
+          }
         }
       }
 
@@ -556,6 +569,7 @@ h2 {
       object-fit: contain;
       height: 100% !important;
     }
+
     @media (max-width:$tablet) {
       height: rem(270);
 
@@ -1412,5 +1426,39 @@ h2 {
     // &::after {
     //   display: none;
     // }
+  }
+}
+
+
+.policy {
+  p {
+    margin-bottom: rem(30);
+    @include adaptiveValue("font-size", 30, 14);
+    span {
+      font-family: 'SuisseIntlMedium';
+      font-weight: bold;
+      margin-bottom: rem(30);
+      @include adaptiveValue("font-size", 30, 14);
+    }
+  }
+  h3 {
+    @include adaptiveValue("font-size", 50, 30, 1920, 991);
+    line-height: math.div(32 , 50);
+    margin-bottom: rem(40);
+
+    @media (max-width:$tablet){
+      @include adaptiveValue("font-size", 30, 18, 991, 360);
+      margin-bottom: rem(20);
+    }
+  }
+
+  h4 {
+    font-family: 'SuisseIntlMedium';
+    font-weight: bold;
+    margin-bottom: rem(30);
+    @include adaptiveValue("font-size", 30, 18);
+    @media (max-width:$tablet){
+      margin-bottom: rem(15);
+    }
   }
 }

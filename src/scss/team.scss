@@ -22,7 +22,7 @@
     position: relative;
     border: rem(2) solid $mainColor;
 
-    @media (max-width:$mobile){
+    @media (max-width:$mobile) {
       border: rem(1) solid $mainColor;
     }
 
@@ -95,6 +95,31 @@
     }
   }
 
+  &__item-block {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: rem(600);
+
+    &:last-child {
+      margin-top: rem(40);
+    }
+  }
+
+  &__text-scroll {
+    @include adaptiveValue("max-height", 500, 200, 1920, 991);
+
+    @media (max-width:$tablet){
+      font-size: rem(20);
+      @include adaptiveValue("max-height", 200, 160, 991, 767);
+    }
+
+    @media (max-width:$mobile){
+      font-size: rem(18);
+    }
+  }
+
   // .team__item-info
   &__item-info {
     margin-top: rem(60);
@@ -124,6 +149,7 @@
     h3 {
       @include adaptiveValue("font-size", 40, 26, 1920, 991);
       line-height: math.div(45, 40);
+      margin-bottom: rem(30);
 
       @media (max-width:$tablet) {
         @include adaptiveValue("font-size", 26, 20, 991, 767);
@@ -136,10 +162,6 @@
     }
 
     p {
-      @include adaptiveValue("font-size", 40, 20, 1920, 991);
-      line-height: math.div(45, 40);
-      margin-top: rem(36);
-
       @media (max-width:$tablet) {
         @include adaptiveValue("font-size", 20, 16, 991, 767);
         margin-top: rem(20);

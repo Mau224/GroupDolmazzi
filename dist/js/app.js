@@ -13382,10 +13382,12 @@
             videoplayer_playIconContainer.addEventListener("click", (() => {
                 if ("play" === videoplayer_playState) {
                     video.play();
+                    videoplayer_playIconContainer.classList.add("active");
                     requestAnimationFrame(whilePlaying);
                     videoplayer_playState = "pause";
                 } else {
                     video.pause();
+                    videoplayer_playIconContainer.classList.remove("active");
                     cancelAnimationFrame(videoplayer_raf);
                     videoplayer_playState = "play";
                 }

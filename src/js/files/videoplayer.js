@@ -14,11 +14,13 @@ if (playIconContainer &&
 
     playIconContainer.addEventListener('click', () => {
         if(playState === 'play') {
-            video.play();
+          video.play();
+          playIconContainer.classList.add('active');
             requestAnimationFrame(whilePlaying);
             playState = 'pause';
         } else {
-            video.pause();
+          video.pause();
+          playIconContainer.classList.remove('active')
             cancelAnimationFrame(raf);
             playState = 'play';
         }
