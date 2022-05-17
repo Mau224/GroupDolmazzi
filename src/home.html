@@ -23,20 +23,19 @@
         </div>
       </div>
       <div class="video" data-watch-threshold="0.25" data-watch-once data-watch>
+        <div class="video__body-btn">
+          <button type="button" class="video-btn btn-circle _icon-play">play video</button>
+        </div>
         <div class="video__container">
-          <div class="video__body-btn">
-            <button type="button" class="video-btn btn-circle _icon-play">play video</button>
-          </div>
-          <div class="video__body" style="display:none">
+          <!-- <div class="video__body" style="display:none">
             <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ?autoplay=1&amp;" autoplay="
                 1" title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+              allowfullscreen></iframe> -->
           </div>
           <div class="video__wrap">
             <img src="@img/video-prew.jpg" alt="">
           </div>
-        </div>
       </div>
       <div class="case" data-watch-threshold="0.25" data-watch-once data-watch>
         <div class="case__container">
@@ -196,7 +195,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class="case" data-watch-threshold="0.25" data-watch-once data-watch>
+      <div class="case" data-watch-threshold="0.25" data-watch-once data-watch>
         <div class="case__container">
           <div class="case__title">
             <h2>Trending in Dolmazzi</h2>
@@ -356,7 +355,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
       @@include('html/_main-form.htm',{})
     </main>
     @@include('html/_footer.htm',{})

@@ -95,6 +95,10 @@
   padding: rem(66) 0px 0px 0px;
   opacity: 0;
   transition: 1s opacity;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &._watcher-view {
     opacity: 1;
@@ -103,7 +107,7 @@
   // .video__container
   &__container {
     padding: 0;
-    position: relative;
+    // position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -354,7 +358,7 @@
       display: block;
       width: 100%;
       height: auto;
-      object-fit: contain; // опционально
+      object-fit: cover; // опционально
       vertical-align: top;
     }
   }
@@ -467,7 +471,7 @@
         @include adaptiveValue("font-size", 16, 14, 991, 360);
 
         &:last-child {
-          @include adaptiveValue("font-size", 24, 16, 991, 360);
+          @include adaptiveValue("font-size", 20, 16, 991, 360);
         }
       }
 

@@ -20,6 +20,7 @@
   // .footer__img
   &__img {
     position: relative;
+    overflow: hidden;
     // height: rem(600);
     // padding-bottom: percent(850, 1920);
 
@@ -31,11 +32,11 @@
       @include adaptiveValue("height", 800, 600, 1920, 991);
       // width: 100%;
 
-      @media (max-width:$tablet){
+      @media (max-width:$tablet) {
         @include adaptiveValue("height", 600, 400, 991, 767);
       }
 
-      @media (max-width:$mobile){
+      @media (max-width:$mobile) {
         @include adaptiveValue("height", 400, 256, 767, 360);
       }
 
@@ -187,13 +188,51 @@
     display: flex;
     flex-direction: column;
 
+    &--second {
+      a {
+        &:last-child {
+          width: auto;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
     a {
       margin-bottom: rem(7);
       max-width: rem(245);
       position: relative;
       width: min-content;
 
+      span {
+        position: relative;
+        @include adaptiveValue("font-size", 30, 22, 1920, 991);
+        line-height: math.div(35, 30);
+
+        @media (max-width:$tablet) {
+          @include adaptiveValue("font-size", 22, 14, 991, 360);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: rem(2);
+          background-color: $mainColor;
+          bottom: 0;
+          transition: 0.7s width;
+        }
+      }
+
       &:hover {
+        span {
+          &::before {
+            width: 100%;
+          }
+        }
+
         &::before {
           width: 100%;
         }
@@ -223,13 +262,13 @@
 
     h1 {
       width: 100%;
-      text-align:justify;
+      text-align: justify;
       @include adaptiveValue("font-size", 281, 140, 1920, 991);
-      line-height: math.div(282 , 255);
+      line-height: math.div(282, 255);
       // @include adaptiveValue("letter-spacing", 8, 3, 1920, 991);
       letter-spacing: -0.005em;
 
-      @media (min-width:$pc){
+      @media (min-width:$pc) {
         @include adaptiveValue("font-size", 390, 281, 4800, 1920);
         width: 100%;
       }
