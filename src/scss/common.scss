@@ -345,40 +345,43 @@ h2 {
 
         &:not(:last-child) {
           margin-left: rem(20);
+          margin-right: 1.25rem;
+          display: inline-block;
+          width: 60px;
         }
       }
 
       .blog-item__player-progress-bar {
-        background-color: $mainColor;
-        width: 100%;
+        -webkit-appearance: none;
         height: rem(1);
-        display: flex;
-        align-items: center;
-        z-index: 0;
+        width: 100%;
+        background-color: $mainColor;
+        outline: none;
 
-        .blog-item__player-progress {
-          width: 0%;
-          background-color: rgba(32, 43, 84, 0.3);
-          height: rem(2);
-          position: relative;
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: rem(8);
+          height: rem(8);
+          border-radius: 50%;
+          background-color: $mainColor;
+          cursor: pointer;
           z-index: 20;
           opacity: 1;
+        }
 
-          &::before {
-            content: "";
-            position: absolute;
-            width: rem(8);
-            height: rem(8);
-            border-radius: 50%;
-            background-color: $mainColor;
-            top: rem(-3);
-            right: 0;
-          }
+        &::-moz-range-thumb {
+          width: rem(8);
+          height: rem(8);
+          border-radius: 50%;
+          background-color: $mainColor;
+          cursor: pointer;
+          z-index: 20;
+          opacity: 1;
         }
       }
     }
 
-    width: 100%;
     @include adaptiveValue("padding", 16, 12, 1920, 991);
 
     @media (max-width:$tablet) {
@@ -791,30 +794,32 @@ h2 {
       }
 
       .blog-item__player-progress-bar {
-        background-color: $mainColor;
+        -webkit-appearance: none;
         height: rem(1);
-        display: flex;
-        align-items: center;
-        z-index: 0;
+        width: 100%;
+        background-color: $mainColor;
+        outline: none;
 
-        .blog-item__player-progress {
-          width: 0%;
-          background-color: rgba(32, 43, 84, 0.3);
-          height: rem(2);
-          position: relative;
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: rem(8);
+          height: rem(8);
+          border-radius: 50%;
+          background-color: $mainColor;
+          cursor: pointer;
           z-index: 20;
           opacity: 1;
+        }
 
-          &::before {
-            content: "";
-            position: absolute;
-            width: rem(8);
-            height: rem(8);
-            border-radius: 50%;
-            background-color: $mainColor;
-            top: rem(-3);
-            right: 0;
-          }
+        &::-moz-range-thumb {
+          width: rem(8);
+          height: rem(8);
+          border-radius: 50%;
+          background-color: $mainColor;
+          cursor: pointer;
+          z-index: 20;
+          opacity: 1;
         }
       }
     }

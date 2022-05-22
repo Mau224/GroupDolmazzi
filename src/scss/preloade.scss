@@ -61,6 +61,20 @@
   }
 }
 
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: -13656px 0; }
+}
+
+@keyframes animatedText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .preloader__row {
   position: relative;
   display: flex;
@@ -80,21 +94,23 @@
       display: flex;
       align-items: center;
     }
-    img {
+    .footer__img-block {
+      background: url("@img/bigzip.svg") repeat-x;
+      background-size: cover;
       height: 100%;
-      animation: 40s ease 0s normal none infinite running left;
+      animation: animatedBackground 40s linear infinite;
     }
     &:last-child {
-      margin-top: 0;
       height: 30%;
       position: relative;
       margin-top: rem(20);
-      // padding-bottom: rem(30);
+      display: flex;
+      flex-wrap: nowrap;
       h1 {
         white-space: nowrap;
-        animation: 10s linear 0s normal none infinite running left;
+        animation: animatedText 6s linear infinite;
         position: relative;
-        // height: 20%;
+        width: 100%;
       }
     }
   }
