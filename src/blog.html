@@ -36,25 +36,38 @@
                               interior designer</p>
                           </div>
                         </div>
-                        <div
-                          class="blog-item-zip__back audio-player-container"
-                          data-src='[{"name": "CGI Recreation\nof the iconic Lancia Stratos HF Zero", "src": "https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3"}, {"name": "Test", "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}]'>
-                          <audio class="audio" preload="metadata"></audio>
-                          <h4 class="audio-title"></h4>
+                        <div id="audio-player-container" class="blog-item-zip__back">
+                          <audio id="audio" preload="metadata"></audio>
+                          <script>
+                            window.tracks = [{
+                                name: 'CGI Recreation\nof the iconic Lancia Stratos HF Zero',
+                                src: 'https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3',
+                              },
+                              {
+                                name: 'Test',
+                                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+                              },
+                            ];
+                          </script>
+                          <h4 id="audio-title"></h4>
                           <div class="blog-item__player">
-                            <input type="range" min="0" max="100" value="0" class="blog-item__player-progress-bar seek-slider">
+                            <div class="blog-item__player-progress-bar">
+                              <div id="seek-slider" class="blog-item__player-progress"></div>
+                            </div>
                             <div class="blog-item__player-timer">
-                              <p class="current-time">0:00</p>
-                              <p class="duration">0:00</p>
+                              <p id="current-time">0:00</p>
+                              <p id="duration">0:00</p>
                             </div>
 
                             <div class="blog-item__player-btns">
-                              <div class="blog-item__player-btns-left previous-icon">
+                              <div id="previous-icon" class="blog-item__player-btns-left">
+                                <p>10</p>
                                 <img src="@img/audio-arrow.svg" alt="">
                               </div>
-                              <div class="blog-item__player-btns-center play-icon"></div>
-                              <div class="blog-item__player-btns-right next-icon">
+                              <div id="play-icon" class="blog-item__player-btns-center"></div>
+                              <div id="next-icon" class="blog-item__player-btns-right">
                                 <img src="@img/audio-arrow.svg" alt="">
+                                <p>10</p>
                               </div>
                             </div>
                           </div>
@@ -73,16 +86,18 @@
                               Superstar Set</h4>
                           </div>
                         </div>
-                        <div class="blog-item__back video-player-container">
-                          <video
+                        <div class="blog-item__back">
+                          <video id="video"
                             src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
                             poster="@img/prev-video.jpg"></video>
                           <div class="blog-item__video">
                             <div class="blog-item__video-player">
-                              <div class="blog-item__video-player-btn video-play-icon"></div>
-                              <p class="video-current-time">00:00</p>
-                              <input type="range" min="0" max="100" value="0" class="blog-item__player-progress-bar video-seek-slider">
-                              <p class="video-duration">00:00</p>
+                              <div id="video-play-icon" class="blog-item__video-player-btn"></div>
+                              <p id="video-current-time">00:00</p>
+                              <div class="blog-item__player-progress-bar">
+                                <div id="video-seek-slider" class="blog-item__player-progress"></div>
+                              </div>
+                              <p id="video-duration">00:00</p>
                             </div>
                             <h4>LEGO x Adidas Originals
                               Superstar Set</h4>
@@ -199,30 +214,42 @@
                             <p>podcast</p>
                           </div>
                         </div>
-                          <div
-                                  class="blog-item-zip__back audio-player-container"
-                                  data-src='[{"name": "CGI Recreation\nof the iconic Lancia Stratos HF Zero", "src": "https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3"}, {"name": "Test", "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}]'
-                          >
-                              <audio class="audio" preload="metadata"></audio>
-                              <h4 class="audio-title"></h4>
-                              <div class="blog-item__player">
-                                <input type="range" min="0" max="100" value="0" class="blog-item__player-progress-bar seek-slider">
-                                  <div class="blog-item__player-timer">
-                                      <p class="current-time">0:00</p>
-                                      <p class="duration">0:00</p>
-                                  </div>
+                        <div id="audio-player-container" class="blog-item-zip__back">
+                          <audio id="audio" preload="metadata"></audio>
+                          <script>
+                            window.tracks = [{
+                                name: 'CGI Recreation\nof the iconic Lancia Stratos HF Zero',
+                                src: 'https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3',
+                              },
+                              {
+                                name: 'Test',
+                                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+                              },
+                            ];
+                          </script>
+                          <h4 id="audio-title"></h4>
+                          <div class="blog-item__player">
+                            <div class="blog-item__player-progress-bar">
+                              <div id="seek-slider" class="blog-item__player-progress"></div>
+                            </div>
+                            <div class="blog-item__player-timer">
+                              <p id="current-time">0:00</p>
+                              <p id="duration">0:00</p>
+                            </div>
 
-                                  <div class="blog-item__player-btns">
-                                      <div class="blog-item__player-btns-left previous-icon">
-                                          <img src="@img/audio-arrow.svg" alt="">
-                                      </div>
-                                      <div class="blog-item__player-btns-center play-icon"></div>
-                                      <div class="blog-item__player-btns-right next-icon">
-                                          <img src="@img/audio-arrow.svg" alt="">
-                                      </div>
-                                  </div>
+                            <div class="blog-item__player-btns">
+                              <div id="previous-icon" class="blog-item__player-btns-left">
+                                <p>10</p>
+                                <img src="@img/audio-arrow.svg" alt="">
                               </div>
+                              <div id="play-icon" class="blog-item__player-btns-center"></div>
+                              <div id="next-icon" class="blog-item__player-btns-right">
+                                <img src="@img/audio-arrow.svg" alt="">
+                                <p>10</p>
+                              </div>
+                            </div>
                           </div>
+                        </div>
                       </div>
                     </div>
                     <div class="case-tab__body-wrap-blog-item blog-item-tri blog-main-item">
@@ -337,21 +364,23 @@
                             <p class="blog-item__text-1">podcast</p>
                           </div>
                         </div>
-                          <div class="blog-item__back video-player-container">
-                              <video
-                                     src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
-                                     poster="@img/prev-video.jpg"></video>
-                              <div class="blog-item__video">
-                                  <div class="blog-item__video-player">
-                                      <div class="blog-item__video-player-btn video-play-icon"></div>
-                                      <p class="video-current-time">00:00</p>
-                                      <input type="range" min="0" max="100" value="0" class="blog-item__player-progress-bar video-seek-slider">
-                                      <p class="video-duration">00:00</p>
-                                  </div>
-                                  <h4>LEGO x Adidas Originals
-                                      Superstar Set</h4>
+                        <div class="blog-item__back">
+                          <video id="video"
+                            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+                            poster="@img/prev-video.jpg"></video>
+                          <div class="blog-item__video">
+                            <div class="blog-item__video-player">
+                              <div id="video-play-icon" class="blog-item__video-player-btn"></div>
+                              <p id="video-current-time">00:00</p>
+                              <div class="blog-item__player-progress-bar">
+                                <div id="video-seek-slider" class="blog-item__player-progress"></div>
                               </div>
+                              <p id="video-duration">00:00</p>
+                            </div>
+                            <h4>LEGO x Adidas Originals
+                              Superstar Set</h4>
                           </div>
+                        </div>
                       </div>
                     </div>
                     <div class="case-tab__body-wrap-blog-item blog-item-zip-2 blog-main-item blog-item-other">
@@ -366,21 +395,23 @@
                             <p>videos</p>
                           </div>
                         </div>
-                          <div class="blog-item__back video-player-container">
-                              <video
-                                     src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
-                                     poster="@img/prev-video.jpg"></video>
-                              <div class="blog-item__video">
-                                  <div class="blog-item__video-player">
-                                      <div class="blog-item__video-player-btn video-play-icon"></div>
-                                      <p class="video-current-time">00:00</p>
-                                      <input type="range" min="0" max="100" value="0" class="blog-item__player-progress-bar video-seek-slider">
-                                      <p class="video-duration">00:00</p>
-                                  </div>
-                                  <h4>LEGO x Adidas Originals
-                                      Superstar Set</h4>
+                        <div class="blog-item__back">
+                          <video id="video"
+                            src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+                            poster="@img/prev-video.jpg"></video>
+                          <div class="blog-item__video">
+                            <div class="blog-item__video-player">
+                              <div id="video-play-icon" class="blog-item__video-player-btn"></div>
+                              <p id="video-current-time">00:00</p>
+                              <div class="blog-item__player-progress-bar">
+                                <div id="video-seek-slider" class="blog-item__player-progress"></div>
                               </div>
+                              <p id="video-duration">00:00</p>
+                            </div>
+                            <h4>LEGO x Adidas Originals
+                              Superstar Set</h4>
                           </div>
+                        </div>
                       </div>
                     </div>
                     <div class="case-tab__body-wrap-blog-item blog-item-circle-2 blog-main-item">
@@ -397,30 +428,42 @@
                             </div>
                           </div>
                         </div>
-                          <div
-                                  class="blog-item-zip__back audio-player-container"
-                                  data-src='[{"name": "CGI Recreation\nof the iconic Lancia Stratos HF Zero", "src": "https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3"}, {"name": "Test", "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}]'
-                          >
-                              <audio class="audio" preload="metadata"></audio>
-                              <h4 class="audio-title"></h4>
-                              <div class="blog-item__player">
-                                <input type="range" min="0" max="100" value="0" class="blog-item__player-progress-bar seek-slider">
-                                  <div class="blog-item__player-timer">
-                                      <p class="current-time">0:00</p>
-                                      <p class="duration">0:00</p>
-                                  </div>
+                        <div id="audio-player-container" class="blog-item-zip__back">
+                          <audio id="audio" preload="metadata"></audio>
+                          <script>
+                            window.tracks = [{
+                                name: 'CGI Recreation\nof the iconic Lancia Stratos HF Zero',
+                                src: 'https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3',
+                              },
+                              {
+                                name: 'Test',
+                                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+                              },
+                            ];
+                          </script>
+                          <h4 id="audio-title"></h4>
+                          <div class="blog-item__player">
+                            <div class="blog-item__player-progress-bar">
+                              <div id="seek-slider" class="blog-item__player-progress"></div>
+                            </div>
+                            <div class="blog-item__player-timer">
+                              <p id="current-time">0:00</p>
+                              <p id="duration">0:00</p>
+                            </div>
 
-                                  <div class="blog-item__player-btns">
-                                      <div class="blog-item__player-btns-left previous-icon">
-                                          <img src="@img/audio-arrow.svg" alt="">
-                                      </div>
-                                      <div class="blog-item__player-btns-center play-icon"></div>
-                                      <div class="blog-item__player-btns-right next-icon">
-                                          <img src="@img/audio-arrow.svg" alt="">
-                                      </div>
-                                  </div>
+                            <div class="blog-item__player-btns">
+                              <div id="previous-icon" class="blog-item__player-btns-left">
+                                <p>10</p>
+                                <img src="@img/audio-arrow.svg" alt="">
                               </div>
+                              <div id="play-icon" class="blog-item__player-btns-center"></div>
+                              <div id="next-icon" class="blog-item__player-btns-right">
+                                <img src="@img/audio-arrow.svg" alt="">
+                                <p>10</p>
+                              </div>
+                            </div>
                           </div>
+                        </div>
                       </div>
                     </div>
                     <div class="case-tab__body-wrap-blog-item blog-item-cof-2 blog-main-item">
@@ -432,30 +475,42 @@
                             <p>podcast</p>
                           </div>
                         </div>
-                          <div
-                                  class="blog-item-zip__back audio-player-container"
-                                  data-src='[{"name": "CGI Recreation\nof the iconic Lancia Stratos HF Zero", "src": "https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3"}, {"name": "Test", "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}]'
-                          >
-                              <audio class="audio" preload="metadata"></audio>
-                              <h4 class="audio-title"></h4>
-                              <div class="blog-item__player">
-                                <input type="range" min="0" max="100" value="0" class="blog-item__player-progress-bar seek-slider">
-                                  <div class="blog-item__player-timer">
-                                      <p class="current-time">0:00</p>
-                                      <p class="duration">0:00</p>
-                                  </div>
+                        <div id="audio-player-container" class="blog-item-zip__back">
+                          <audio id="audio" preload="metadata"></audio>
+                          <script>
+                            window.tracks = [{
+                                name: 'CGI Recreation\nof the iconic Lancia Stratos HF Zero',
+                                src: 'https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3',
+                              },
+                              {
+                                name: 'Test',
+                                src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+                              },
+                            ];
+                          </script>
+                          <h4 id="audio-title"></h4>
+                          <div class="blog-item__player">
+                            <div class="blog-item__player-progress-bar">
+                              <div id="seek-slider" class="blog-item__player-progress"></div>
+                            </div>
+                            <div class="blog-item__player-timer">
+                              <p id="current-time">0:00</p>
+                              <p id="duration">0:00</p>
+                            </div>
 
-                                  <div class="blog-item__player-btns">
-                                      <div class="blog-item__player-btns-left previous-icon">
-                                          <img src="@img/audio-arrow.svg" alt="">
-                                      </div>
-                                      <div class="blog-item__player-btns-center play-icon"></div>
-                                      <div class="blog-item__player-btns-right next-icon">
-                                          <img src="@img/audio-arrow.svg" alt="">
-                                      </div>
-                                  </div>
+                            <div class="blog-item__player-btns">
+                              <div id="previous-icon" class="blog-item__player-btns-left">
+                                <p>10</p>
+                                <img src="@img/audio-arrow.svg" alt="">
                               </div>
+                              <div id="play-icon" class="blog-item__player-btns-center"></div>
+                              <div id="next-icon" class="blog-item__player-btns-right">
+                                <img src="@img/audio-arrow.svg" alt="">
+                                <p>10</p>
+                              </div>
+                            </div>
                           </div>
+                        </div>
                       </div>
                     </div>
                     <div class="case-tab__body-wrap-blog-item blog-item-3 blog-main-item">

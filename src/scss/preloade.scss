@@ -81,6 +81,7 @@
       align-items: center;
       margin-bottom: rem(0);
     }
+<<<<<<< HEAD
     svg {
       height: 100%;
       animation: 190s linear 0s normal none infinite running left;
@@ -92,14 +93,28 @@
     &:last-child {
       margin-top: 0;
       height: 48%;
+=======
+    img {
+      height: 100%;
+      animation: 40s ease 0s normal none infinite running left;
+    }
+    &:last-child {
+      margin-top: 0;
+      height: 30%;
+>>>>>>> parent of 677f57a (animation and player update)
       position: relative;
       margin-top: rem(20);
       // padding-bottom: rem(30);
       h1 {
         white-space: nowrap;
+<<<<<<< HEAD
         animation: 30s linear 0s normal none infinite running left;
         position: relative;
         // @include adaptiveValue("font-size", 100, 80, 1920, 991);
+=======
+        animation: 10s linear 0s normal none infinite running left;
+        position: relative;
+>>>>>>> parent of 677f57a (animation and player update)
         // height: 20%;
       }
     }

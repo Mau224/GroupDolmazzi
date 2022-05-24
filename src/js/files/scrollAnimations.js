@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const wrapperPreview = document.querySelector('.wrapper-preview');
         const prevBlock = document.querySelector('.prev__blok > p');
         const prevImg = document.querySelector('.prev__img-wrapper');
-        let prevBlockOffset = prevBlock ? prevBlock.getBoundingClientRect().top : 0;
-        let prevImgOffset = prevImg ? prevImg.getBoundingClientRect().top : 0;
+        let prevBlockOffset = prevBlock.getBoundingClientRect().top;
+        let prevImgOffset = prevImg.getBoundingClientRect().top;
         let translateImage = prevImgOffset - prevBlockOffset;
 
         window.addEventListener('optimizedResize', () => {
