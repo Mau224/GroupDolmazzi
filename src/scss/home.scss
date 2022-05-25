@@ -140,21 +140,21 @@
   }
 
   &__wrap {
-    max-height: rem(900);
-    //height: 350vh;
+    //max-height: rem(900);
+    height: 300vmin;
 
     img {
       max-width: 100%;
       object-fit: cover;
-      @include adaptiveValue("height", 900, 600);
-
-      @media (max-width:$tablet) {
-        @include adaptiveValue("height", 600, 400);
-      }
-
-      @media (max-width:$mobile) {
-        @include adaptiveValue("height", 400, 322);
-      }
+      //@include adaptiveValue("height", 900, 600);
+      //
+      //@media (max-width:$tablet) {
+      //  @include adaptiveValue("height", 600, 400);
+      //}
+      //
+      //@media (max-width:$mobile) {
+      //  @include adaptiveValue("height", 400, 322);
+      //}
     }
   }
 
