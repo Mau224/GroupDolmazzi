@@ -34,7 +34,7 @@
   p {
     font-style: normal;
     font-weight: 400;
-    @include adaptiveValue("font-size", 30, 20, 1920, 991);
+    @include adaptiveValue("font-size", 20, 12, 1920, 991);
     line-height: 13px;
     text-transform: uppercase;
     text-align: left;
@@ -61,20 +61,6 @@
   }
 }
 
-@keyframes animatedBackground {
-  from { background-position: 0 0; }
-  to { background-position: -13656px 0; }
-}
-
-@keyframes animatedText {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 .preloader__row {
   position: relative;
   display: flex;
@@ -86,31 +72,50 @@
   // margin-bottom: rem(20);
 
   .footer__img {
-    margin-top: 8%;
-    height: 60%;
+    margin-top: 10%;
+    height: 100%;
     z-index: 1000;
-    margin-bottom: rem(20);
+    // margin-bottom: rem(20);
     &:first-child {
       display: flex;
       align-items: center;
+      margin-bottom: rem(0);
     }
-    .footer__img-block {
-      background: url("@img/bigzip.svg") repeat-x;
-      background-size: cover;
+<<<<<<< HEAD
+    svg {
       height: 100%;
-      animation: animatedBackground 40s linear infinite;
+      animation: 190s linear 0s normal none infinite running left;
+    }
+
+    marquee {
+      height: 100%;
     }
     &:last-child {
+      margin-top: 0;
+      height: 48%;
+=======
+    img {
+      height: 100%;
+      animation: 40s ease 0s normal none infinite running left;
+    }
+    &:last-child {
+      margin-top: 0;
       height: 30%;
+>>>>>>> parent of 677f57a (animation and player update)
       position: relative;
       margin-top: rem(20);
-      display: flex;
-      flex-wrap: nowrap;
+      // padding-bottom: rem(30);
       h1 {
         white-space: nowrap;
-        animation: animatedText 6s linear infinite;
+<<<<<<< HEAD
+        animation: 30s linear 0s normal none infinite running left;
         position: relative;
-        width: 100%;
+        // @include adaptiveValue("font-size", 100, 80, 1920, 991);
+=======
+        animation: 10s linear 0s normal none infinite running left;
+        position: relative;
+>>>>>>> parent of 677f57a (animation and player update)
+        // height: 20%;
       }
     }
   }
