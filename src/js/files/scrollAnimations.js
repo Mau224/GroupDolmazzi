@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
         if (wrapperPreview) {
+            let tween = gsap.to(".scroll-text__part", {xPercent: -100, repeat: -1, duration: 10, ease: "linear"}).totalProgress(0.5);
+            gsap.set(".scroll-text__wrapper", {xPercent: -50});
+
             if (history.scrollRestoration) {
                 history.scrollRestoration = 'manual';
             } else {

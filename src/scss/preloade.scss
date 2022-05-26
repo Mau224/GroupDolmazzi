@@ -61,6 +61,11 @@
   }
 }
 
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: -13656px 0; }
+}
+
 .preloader__row {
   position: relative;
   display: flex;
@@ -72,50 +77,36 @@
   // margin-bottom: rem(20);
 
   .footer__img {
-    margin-top: 10%;
-    height: 100%;
+    margin-top: 8%;
+    height: 60%;
     z-index: 1000;
-    // margin-bottom: rem(20);
+    margin-bottom: rem(20);
     &:first-child {
       display: flex;
       align-items: center;
-      margin-bottom: rem(0);
     }
-<<<<<<< HEAD
-    svg {
+    .footer__img-block {
+      background: url("@img/bigzip.svg") repeat-x;
+      background-size: cover;
       height: 100%;
-      animation: 190s linear 0s normal none infinite running left;
-    }
-
-    marquee {
-      height: 100%;
+      animation: animatedBackground 40s linear infinite;
     }
     &:last-child {
-      margin-top: 0;
-      height: 48%;
-=======
-    img {
-      height: 100%;
-      animation: 40s ease 0s normal none infinite running left;
-    }
-    &:last-child {
-      margin-top: 0;
       height: 30%;
->>>>>>> parent of 677f57a (animation and player update)
       position: relative;
       margin-top: rem(20);
-      // padding-bottom: rem(30);
+      width: fit-content;
+      display: flex;
+      flex: auto;
+      flex-direction: row;
+      -webkit-font-smoothing: antialiased;
       h1 {
         white-space: nowrap;
-<<<<<<< HEAD
-        animation: 30s linear 0s normal none infinite running left;
         position: relative;
-        // @include adaptiveValue("font-size", 100, 80, 1920, 991);
-=======
-        animation: 10s linear 0s normal none infinite running left;
-        position: relative;
->>>>>>> parent of 677f57a (animation and player update)
-        // height: 20%;
+        display: inline-block;
+        width: fit-content;
+        flex-shrink: 0;
+        font-smooth: always;
       }
     }
   }
