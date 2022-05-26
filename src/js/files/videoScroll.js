@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const image = document.querySelector(".video-background");
+const image = document.querySelector(".video-background") || {};
 
 const frameCount = 148;
 const currentFrame = index => (
@@ -20,12 +20,12 @@ const preloadImages = () => {
 const img = new Image()
 img.src = currentFrame(1);
 img.onload = () => {
-    image.src = img.src;
+    image.src = img && img?.src;
 }
 
 const updateImage = index => {
     img.src = currentFrame(index);
-    image.src = img.src;
+    image.src = img?.src;
 }
 
 const scrollVideo = (self) => {
@@ -43,7 +43,7 @@ const scrollVideo = (self) => {
 gsap.timeline({
     scrollTrigger: {
         trigger: ".video__wrap",
-        start: () => `top ${(window.innerHeight - document.querySelector(".video-background").clientHeight) / 2}`,
+        start: () => `top ${(window.innerHeight - document.querySelector(".video-background")?.clientHeight) / 2}`,
         end: "bottom bottom",
         pin: true,
         // markers: true,

@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let translateImage = prevImgOffset - prevBlockOffset;
 
         window.addEventListener('optimizedResize', () => {
-            prevBlockOffset = prevBlock.getBoundingClientRect().top;
-            prevImgOffset = prevImg.getBoundingClientRect().top;
+            prevBlockOffset = prevBlock?.getBoundingClientRect()?.top;
+            prevImgOffset = prevImg?.getBoundingClientRect()?.top;
             translateImage = prevImgOffset - prevBlockOffset;
         });
 
