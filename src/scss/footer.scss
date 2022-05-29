@@ -21,16 +21,59 @@
   &__img {
     position: relative;
     overflow: hidden;
+    height: 100%;
+    min-height: 100%;
+    @include adaptiveValue("height", 800, 600, 1920, 991);
     // height: rem(600);
     // padding-bottom: percent(850, 1920);
 
+    @media (max-width:$tablet) {
+      @include adaptiveValue("height", 600, 400, 991, 767);
+    }
+
+    @media (max-width:$mobile) {
+      @include adaptiveValue("height", 400, 256, 767, 360);
+    }
+
+    @keyframes animatedBackground2 {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: -13656px 0;
+      }
+    }
+
+    .footer__img-block {
+      position: absolute;
+      width: 100%;
+      background: url("@img/bigzip.svg") repeat-x;
+      background-size: cover;
+      height: 100%;
+      min-height: 100%;
+      animation: animatedBackground2 40s linear infinite;
+    }
 
     img {
       // transition: 2s all;
-      animation: 700s linear 0s normal none infinite running left;
+      animation: animatedBackground2 400s linear infinite;
       position: relative;
       @include adaptiveValue("height", 800, 600, 1920, 991);
       // width: 100%;
+
+      // @keyframes animatedBackground2 {
+      //   from {
+      //     transform: translate(0, 0);
+      //     // transform-origin-x: 0 0;
+      //   }
+
+
+      //   to {
+      //     // transform-origin-x: -13656px 0;
+      //     transform: translate(rem(-13000), 0);
+      //   }
+      // }
 
       @media (max-width:$tablet) {
         @include adaptiveValue("height", 600, 400, 991, 767);

@@ -169,8 +169,8 @@
         width: 40%;
 
         &--02 {
-          border-right: rem(2) solid $mainColor;
-          border-left: rem(2) solid $mainColor;
+          // border-right: rem(2) solid $mainColor;
+          border-left: rem(1) solid $mainColor;
 
           @media (max-width:$mobile){
             border: rem(2) solid $mainColor;
@@ -189,8 +189,11 @@
               position: absolute;
               width: 0;
               height: rem(2);
+              // height: 1.5em;
               background-color: $mainColor;
               transition: 1.5s all;
+              // animation-delay: 1s;
+              transition-delay: 1s;
               top: 50%;
               left: 0;
             }
@@ -232,6 +235,9 @@
           left: 5%;
           background: url("../img/02..svg") no-repeat;
           background-size: contain;
+          z-index: 100;
+          transition-delay: 0s;
+          animation-delay: 0s;
         }
       }
 
@@ -278,7 +284,7 @@
         position: relative;
         width: 35%;
         display: flex;
-        border-right: rem(2) solid $mainColor;
+        // border-right: rem(2) solid $mainColor;
 
         @media (max-width:$mobile) {
           width: 100%;
@@ -292,6 +298,7 @@
           bottom: rem(40);
           background: url("../img/03..svg") no-repeat;
           background-size: contain;
+          z-index: 100;
 
           @media (max-width:$tablet) {
             bottom: rem(15);
@@ -412,6 +419,7 @@
           align-items: flex-start;
           justify-content: flex-start;
           margin-right: rem(2);
+          width: auto;
         }
 
         .zip-anemate {
@@ -520,7 +528,7 @@
             content: "";
             position: absolute;
             width: 100%;
-            height: rem(2);
+            height: rem(1);
             background-color: $mainColor;
             // transform: rotate(90deg);
             top: 50%;

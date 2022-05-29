@@ -81,6 +81,7 @@
     height: 60%;
     z-index: 1000;
     margin-bottom: rem(20);
+    min-height: auto;
     &:first-child {
       display: flex;
       align-items: center;

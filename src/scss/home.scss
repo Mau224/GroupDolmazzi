@@ -398,6 +398,7 @@
       &:hover {
         .case-tab__body-wrap-text {
           opacity: 1;
+          width: 100%;
         }
       }
     }
@@ -429,6 +430,8 @@
       padding-bottom: rem(10);
       @include adaptiveValue("padding-right", 50, 10);
       @include adaptiveValue("padding-left", 50, 10);
+
+
     }
 
     @media (max-width:$mobile) {
@@ -472,7 +475,8 @@
         @include adaptiveValue("font-size", 16, 14, 991, 360);
 
         &:last-child {
-          @include adaptiveValue("font-size", 20, 16, 991, 360);
+          font-size: rem(14)!important;
+          // @include adaptiveValue("font-size", 16, 14, 991, 360)!important;
         }
       }
 
@@ -493,7 +497,8 @@
       text-transform: uppercase;
 
       @media (max-width:$tablet) {
-        @include adaptiveValue("font-size", 20, 16, 991, 767);
+        font-size: rem(18)!important;
+        // @include adaptiveValue("font-size", 20, 16, 991, 767);
       }
 
       @media (max-width:$mobile) {
@@ -560,6 +565,7 @@
       height: rem(64);
 
       @media (max-width:$tablet) {
+        border: 1px solid $mainColor;
         width: rem(40);
         height: rem(40);
         right: rem(-56);
@@ -584,6 +590,9 @@
         right: rem(-43);
         width: rem(14);
         height: rem(14);
+        background: url("../img/plus.svg");
+        background-size: contain;
+        z-index: 1000!important;
       }
     }
 
