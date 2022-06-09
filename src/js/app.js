@@ -26,7 +26,7 @@ import * as flsFunctions from "./files/functions.js";
 /* (i) необходимо для корректного отображения webp из css  */
 flsFunctions.isWebp();
 /* Добавление класса touch для HTML если браузер мобильный */
-// flsFunctions.addTouchClass();
+flsFunctions.addTouchClass();
 /* Добавление loaded для HTML после полной загрузки страницы */
 // flsFunctions.addLoadedClass();
 /* Модуль для работы с меню (Бургер) */
@@ -156,7 +156,7 @@ import './libs/watcher.js'
 import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 
 // Функционал добавления классов к хедеру при прокрутке
 // flsScroll.headerScroll();

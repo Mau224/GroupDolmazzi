@@ -18,7 +18,7 @@
   &__body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     position: relative;
     border: rem(2) solid $mainColor;
 
@@ -34,15 +34,15 @@
       background-color: $mainColor;
       right: 50%;
     }
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: rem(2);
-      position: absolute;
-      background-color: $mainColor;
-      top: 50%;
-    }
+    //на пока убрали второго разграничивающая черта
+    // &::after {
+    //   content: "";
+    //   width: 100%;
+    //   height: rem(2);
+    //   position: absolute;
+    //   background-color: $mainColor;
+    //   top: 50%;
+    // }
 
     @media (max-width:$mobile) {
       display: flex;

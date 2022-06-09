@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220527074915">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220609204449">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,11 +64,19 @@
 				</div>
 			</div>
 			<div class="video" data-watch-threshold="0.25" data-watch-once data-watch>
-				<!--        <div class="video__body-btn">-->
-				<!--          <button type="button" class="video-btn btn-circle _icon-play">play video</button>-->
-				<!--        </div>-->
+				<!-- <div class="video__body-btn">
+          <button type="button" class="video-btn btn-circle _icon-play">play video</button>
+        </div> -->
+				<div class="video__container">
+					<!-- <div class="video__body" style="display:none">
+            <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ?autoplay=1&amp;" autoplay="
+                1" title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe> -->
+				</div>
 				<div class="video__wrap">
-					<picture><source srcset="img/video/Full_5_1000.webp" type="image/webp"><img src="img/video/Full_5_1000.jpg" class="video-background" alt=""></picture>
+					<video controls poster="img/video-prew.jpg" src="img/video-base/Full_2.mp4"></video>
+					<!--            <video src="img/output.mp4" playsinline="true" webkit-playsinline="true" preload="auto" muted="muted" class="video-background"></video>-->
 				</div>
 			</div>
 			<div class="case" data-watch-threshold="0.25" data-watch-once data-watch>
@@ -134,42 +142,43 @@
 											</div>
 										</div>
 									</div>
-									<div data-showmore class="case-tab__show case-show">
-										<div data-showmore-content="0" class="case-show__content">
-											<div class="case-tab__body-wrap-item" aria-haspopup="true">
-												<picture><source srcset="img/case-img1.webp" type="image/webp"><img src="img/case-img1.jpg" alt="картинка"></picture>
-												<div class="case-tab__body-wrap-text">
-													<p>67 Valley Meadow Road, Encino, CA 91436
-														6 bed / 6 bath / $2,000,000</p>
-													<h3>TOPANGA – MODERN HOUSE
-														WITH A NICE VIEW</h3>
-													<p>If you want to count on a team for your real estate needs, you can trust
-														Dolmazzi Group.
-														They are extremely professional and have the know-how to get the deal you
-														want. We
-														couldn’t be more happy with the services provided by Anna and her team.
-													</p>
-												</div>
-											</div>
-											<div class="case-tab__body-wrap-item" aria-haspopup="true">
-												<picture><source srcset="img/case-img3.webp" type="image/webp"><img src="img/case-img3.jpg" alt="картинка"></picture>
-												<div class="case-tab__body-wrap-text">
-													<p>67 Valley Meadow Road, Encino, CA 91436
-														6 bed / 6 bath / $2,000,000</p>
-													<h3>TOPANGA – MODERN HOUSE
-														WITH A NICE VIEW</h3>
-													<p>If you want to count on a team for your real estate needs, you can trust
-														Dolmazzi Group.
-														They are extremely professional and have the know-how to get the deal you
-														want. We
-														couldn’t be more happy with the services provided by Anna and her team.
-													</p>
-												</div>
-											</div>
-										</div>
-										<button hidden data-showmore-button type="button" class="case-show__more btn-circle _icon-arrow"><span>show
-												more</span><span>hide</span></button>
-									</div>
+									<!-- <div data-showmore class="case-tab__show case-show">
+                    <div data-showmore-content="0" class="case-show__content">
+                      <div class="case-tab__body-wrap-item" aria-haspopup="true">
+                        <picture><source srcset="img/case-img1.webp" type="image/webp"><img src="img/case-img1.jpg" alt="картинка"></picture>
+                        <div class="case-tab__body-wrap-text">
+                          <p>67 Valley Meadow Road, Encino, CA 91436
+                            6 bed / 6 bath / $2,000,000</p>
+                          <h3>TOPANGA – MODERN HOUSE
+                            WITH A NICE VIEW</h3>
+                          <p>If you want to count on a team for your real estate needs, you can trust
+                            Dolmazzi Group.
+                            They are extremely professional and have the know-how to get the deal you
+                            want. We
+                            couldn’t be more happy with the services provided by Anna and her team.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="case-tab__body-wrap-item" aria-haspopup="true">
+                        <picture><source srcset="img/case-img3.webp" type="image/webp"><img src="img/case-img3.jpg" alt="картинка"></picture>
+                        <div class="case-tab__body-wrap-text">
+                          <p>67 Valley Meadow Road, Encino, CA 91436
+                            6 bed / 6 bath / $2,000,000</p>
+                          <h3>TOPANGA – MODERN HOUSE
+                            WITH A NICE VIEW</h3>
+                          <p>If you want to count on a team for your real estate needs, you can trust
+                            Dolmazzi Group.
+                            They are extremely professional and have the know-how to get the deal you
+                            want. We
+                            couldn’t be more happy with the services provided by Anna and her team.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <button hidden data-showmore-button type="button"
+                      class="case-show__more btn-circle _icon-arrow"><span>show
+                        more</span><span>hide</span></button>
+                  </div> -->
 								</div>
 								<div class="case-tab__body">
 									<!-- <div class="case-tab__body-wrap">
@@ -465,9 +474,9 @@
 							<div class="footer__column">
 								<div class="footer__column-list footer__column-list--second">
 									<a href="#">Musings</a>
-									<a href="#">Contact</a>
-									<a href="#">Privacy</a>
-									<a href="#"><span>NMLS consumer</span><br><span>access</span></a>
+									<a href="contacts.html">Contact</a>
+									<a href="polyce.html">Privacy</a>
+									<a href="https://www.nmlsconsumeraccess.org/"><span>NMLS consumer</span><br><span>access</span></a>
 								</div>
 							</div>
 						</div>
@@ -492,8 +501,8 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20220527074915"></script>
-	<script src="https://cdn.plyr.io/3.6.3/plyr.js?_v=20220527074915"></script>
+	<script src="js/app.min.js?_v=20220609204449"></script>
+	<script src="https://cdn.plyr.io/3.6.3/plyr.js?_v=20220609204449"></script>
 
 </body>
 

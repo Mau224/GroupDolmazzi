@@ -3272,7 +3272,30 @@
                 document.documentElement.classList.add(className);
             }));
         }
-        function functions_getHash() {
+        let isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function() {
+                return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+            }
+        };
+        function addTouchClass() {
+            if (isMobile.any()) document.documentElement.classList.add("touch");
+        }
+        function getHash() {
             if (location.hash) return location.hash.replace("#", "");
         }
         function setHash(hash) {
@@ -3458,7 +3481,7 @@
             const tabs = document.querySelectorAll("[data-tabs]");
             let tabsActiveHash = [];
             if (tabs.length > 0) {
-                const hash = functions_getHash();
+                const hash = getHash();
                 if (hash && hash.startsWith("tab-")) tabsActiveHash = hash.replace("tab-", "").split("-");
                 tabs.forEach(((tabsBlock, index) => {
                     tabsBlock.classList.add("_tab-init");
@@ -3558,6 +3581,10 @@
                     document.documentElement.classList.toggle("menu-open");
                 }
             }));
+        }
+        function menuClose() {
+            bodyUnlock();
+            document.documentElement.classList.remove("menu-open");
         }
         function showMore() {
             window.addEventListener("load", (function(e) {
@@ -3709,6 +3736,35 @@
                 }
             }
         }
+        let gotoblock_gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+            const targetBlockElement = document.querySelector(targetBlock);
+            if (targetBlockElement) {
+                let headerItem = "";
+                let headerItemHeight = 0;
+                if (noHeader) {
+                    headerItem = "header.header";
+                    headerItemHeight = document.querySelector(headerItem).offsetHeight;
+                }
+                let options = {
+                    speedAsDuration: true,
+                    speed,
+                    header: headerItem,
+                    offset: offsetTop,
+                    easing: "easeOutQuad"
+                };
+                document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+                if ("undefined" !== typeof SmoothScroll) (new SmoothScroll).animateScroll(targetBlockElement, "", options); else {
+                    let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+                    targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+                    targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+                    window.scrollTo({
+                        top: targetBlockElementPosition,
+                        behavior: "smooth"
+                    });
+                }
+                functions_FLS(`[gotoBlock]: Юхуу...едем к ${targetBlock}`);
+            } else functions_FLS(`[gotoBlock]: Ой ой..Такого блока нет на странице: ${targetBlock}`);
+        };
         function ssr_window_esm_isObject(obj) {
             return null !== obj && "object" === typeof obj && "constructor" in obj && obj.constructor === Object;
         }
@@ -8311,6 +8367,44 @@
         }
         modules_flsModules.watcher = new ScrollWatcher({});
         let addWindowScrollEvent = false;
+        function pageNavigation() {
+            document.addEventListener("click", pageNavigationAction);
+            document.addEventListener("watcherCallback", pageNavigationAction);
+            function pageNavigationAction(e) {
+                if ("click" === e.type) {
+                    const targetElement = e.target;
+                    if (targetElement.closest("[data-goto]")) {
+                        const gotoLink = targetElement.closest("[data-goto]");
+                        const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : "";
+                        const noHeader = gotoLink.hasAttribute("data-goto-header") ? true : false;
+                        const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
+                        const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
+                        gotoblock_gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+                        e.preventDefault();
+                    }
+                } else if ("watcherCallback" === e.type && e.detail) {
+                    const entry = e.detail.entry;
+                    const targetElement = entry.target;
+                    if ("navigator" === targetElement.dataset.watch) {
+                        document.querySelector(`[data-goto]._navigator-active`);
+                        let navigatorCurrentItem;
+                        if (targetElement.id && document.querySelector(`[data-goto="#${targetElement.id}"]`)) navigatorCurrentItem = document.querySelector(`[data-goto="#${targetElement.id}"]`); else if (targetElement.classList.length) for (let index = 0; index < targetElement.classList.length; index++) {
+                            const element = targetElement.classList[index];
+                            if (document.querySelector(`[data-goto=".${element}"]`)) {
+                                navigatorCurrentItem = document.querySelector(`[data-goto=".${element}"]`);
+                                break;
+                            }
+                        }
+                        if (entry.isIntersecting) navigatorCurrentItem ? navigatorCurrentItem.classList.add("_navigator-active") : null; else navigatorCurrentItem ? navigatorCurrentItem.classList.remove("_navigator-active") : null;
+                    }
+                }
+            }
+            if (getHash()) {
+                let goToHash;
+                if (document.querySelector(`#${getHash()}`)) goToHash = `#${getHash()}`; else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
+                goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 20) : null;
+            }
+        }
         setTimeout((() => {
             if (addWindowScrollEvent) {
                 let windowScroll = new Event("windowScroll");
@@ -13444,59 +13538,13 @@
         videoplayer_instance.forEach((element => {
             videoPlayer(element);
         }));
-        gsapWithCSS.registerPlugin(ScrollTrigger_ScrollTrigger);
-        const videoScroll_image = document.querySelector(".video-background") || {};
-        const imageSource = document.querySelector(".video__wrap > picture > source") || {};
-        const frameCount = 148;
-        const currentFrame = index => `img/video/Full_5_1${index.toString().padStart(3, "0")}.jpg`;
-        const currentFrameWebP = index => `img/video/Full_5_1${index.toString().padStart(3, "0")}.webp`;
-        const videoScroll_preloadImages = () => {
-            for (let i = 0; i <= frameCount; i++) {
-                const img = new Image;
-                const source = document.createElement("source");
-                img.src = currentFrame(i);
-                source.srcset = currentFrameWebP(i);
-            }
-        };
-        const img = new Image;
-        const imgSource = document.createElement("source");
-        img.src = currentFrame(1);
-        imgSource.srcset = currentFrameWebP(1);
-        img.onload = () => {
-            videoScroll_image.src = img && img?.src;
-        };
-        imgSource.onload = () => {
-            imageSource.srcset = imgSource && imgSource?.srcset;
-        };
-        const updateImage = index => {
-            img.src = currentFrame(index);
-            imgSource.srcset = currentFrameWebP(index);
-            videoScroll_image.src = img?.src;
-            imageSource.srcset = imgSource?.srcset;
-        };
-        const scrollVideo = self => {
-            const scrollTop = Math.floor(100 * self.progress);
-            const maxScrollTop = 100;
-            const scrollFraction = scrollTop / maxScrollTop;
-            const frameIndex = Math.min(frameCount - 1, Math.ceil(scrollFraction * frameCount));
-            requestAnimationFrame((() => updateImage(frameIndex + 1)));
-        };
-        gsapWithCSS.timeline({
-            scrollTrigger: {
-                trigger: ".video__wrap",
-                start: () => `top ${(window.innerHeight - document.querySelector(".video-background")?.clientHeight) / 2}`,
-                end: "bottom bottom",
-                pin: true,
-                scrub: true,
-                onUpdate: scrollVideo
-            }
-        });
-        videoScroll_preloadImages();
         window["FLS"] = true;
         isWebp();
+        addTouchClass();
         menuInit();
         spollers();
         tabs();
         showMore();
+        pageNavigation();
     })();
 })();
