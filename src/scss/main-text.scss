@@ -16,7 +16,7 @@
     }
 
     h3 {
-      font-family: "SuisseIntlCondTrialLight";
+      font-family: "SuisseIntlMedium";
       font-weight: 450;
       @include adaptiveValue("font-size", 60, 40, 1920 , 767);
       line-height: math.div(60, 69);

@@ -14,7 +14,7 @@
 
     h2 {
       padding-bottom: rem(85);
-      font-family: 'SuisseIntlCondensedLight';
+      font-family: 'SuisseIntlCondensedThin';
 
       @media (max-width:$mobile) {
         @include adaptiveValue("padding-bottom", 85, 24);

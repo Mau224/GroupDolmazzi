@@ -420,9 +420,9 @@
     display: flex;
     overflow: hidden;
     flex-direction: column;
-    // justify-content: space-between;
+    justify-content: space-between;
     transition: 0.3s ease;
-    opacity: 1;
+    // opacity: 1;
     padding-top: rem(30);
     padding-bottom: rem(30);
     @include adaptiveValue("padding-right", 130, 10, 1920, 991);

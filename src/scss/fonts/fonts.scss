@@ -20,16 +20,16 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: SuisseIntlMedium;
+	font-family: SuisseIntllight;
 	font-display: swap;
-	src: url("../fonts/SuisseIntl-Medium.woff2") format("woff2"), url("../fonts/SuisseIntl-Medium.woff") format("woff");
-	font-weight: 500;
+	src: url("../fonts/SuisseIntl-Light.woff2") format("woff2"), url("../fonts/SuisseIntl-Light.woff") format("woff");
+	font-weight: 300;
 	font-style: normal;
 }
 @font-face {
 	font-family: SuisseIntlCondensedThin;
 	font-display: swap;
-	src: url("../fonts/SuisseIntlCondensedThin.woff2") format("woff2"), url("../fonts/Suisse Intl Condensed Thin.woff") format("woff");
+	src: url("../fonts/Suisse Intl Condensed Thin.woff2") format("woff2"), url("../fonts/Suisse Intl Condensed Thin.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
@@ -41,16 +41,23 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: SuisseIntl;
+	font-family: SuisseIntlMedium;
 	font-display: swap;
-	src: url("../fonts/SuisseIntl-Regular.woff2") format("woff2"), url("../fonts/SuisseIntl-Regular.woff") format("woff");
-	font-weight: 400;
+	src: url("../fonts/SuisseIntl-Medium.woff2") format("woff2"), url("../fonts/SuisseIntl-Medium.woff") format("woff");
+	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
 	font-family: SuisseIntlCondTrialLight;
 	font-display: swap;
 	src: url("../fonts/SuisseIntlCondTrialLight.woff2") format("woff2"), url("../fonts/SuisseIntlCondTrialLight.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: SuisseIntl;
+	font-display: swap;
+	src: url("../fonts/SuisseIntl-Regular.woff2") format("woff2"), url("../fonts/SuisseIntl-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
