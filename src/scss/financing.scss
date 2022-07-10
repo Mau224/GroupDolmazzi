@@ -16,7 +16,7 @@
 
   // .financing__img
   &__img {
-    max-height: rem(900);
+    max-height: rem(564);
     padding-top: rem(24);
 
     img {
@@ -26,6 +26,7 @@
 
   // .financing__text
   &__text {
+    font-family: "SuisseIntl";
     .main-text__container {
       align-items: flex-end;
 

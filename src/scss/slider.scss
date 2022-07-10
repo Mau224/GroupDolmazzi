@@ -25,7 +25,7 @@
 
       font-family: $fontFamily;
       text-align: center;
-      max-width: rem(882);
+      // max-width: rem(882);
       margin: 0 auto;
       font-size: rem(40);
       line-height: math.div(45, 40);
@@ -74,6 +74,7 @@
     width: 100%;
     max-width: 100%;
     max-height: rem(900);
+    -webkit-backface-visibility: hidden;
 
     img {
       object-fit: cover;

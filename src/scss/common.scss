@@ -599,19 +599,14 @@ h2 {
 
     img {
       object-fit: contain;
-      height: 100% !important;
     }
 
     @media (max-width:$tablet) {
       height: rem(270);
-
-      img {
-        width: auto !important;
-      }
     }
 
     @media (max-width:$mobile) {
-      height: 100%;
+      height: auto;
     }
   }
 
@@ -1069,12 +1064,13 @@ h2 {
       right: 0;
       position: relative;
       @include adaptiveValue("margin-top", 56, 10, 1920, 991);
-      height: 57%;
+      height: 54%;
       font-weight: 400;
       padding-right: rem(20);
-      padding-left: rem(17);
+      @include adaptiveValue("padding-left", 20, 10, 1920, 991);
       @include adaptiveValue("font-size", 24, 16);
       line-height: math.div(30, 24);
+      padding-bottom: rem(20);
 
       @media (max-width:$tablet) {
         max-height: 60%;
@@ -1082,7 +1078,9 @@ h2 {
       }
 
       @media (max-width:$mobile) {
-        max-height: 63%;
+        max-height: 80%;
+        height: 68%;
+        padding-left: rem(10);
       }
 
       .simplebar-content-wrapper {
@@ -1112,6 +1110,8 @@ h2 {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+
+
 
   &:hover {
     .blog-item-adp__flip {
@@ -1314,6 +1314,11 @@ h2 {
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 
+  @media (max-width:$mobile){
+    .blog-item__text-scroll {
+      height: 68%;
+    }
+  }
   // background-color: #E5E5E5;
   &:hover {
     .blog-item-tri__flip {
@@ -1374,6 +1379,7 @@ h2 {
 
     .blog-item__img-wrap {
       height: 100%;
+      overflow: hidden;
     }
 
     img {
@@ -1412,6 +1418,12 @@ h2 {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+
+  @media (max-width:$mobile) {
+    .blog-item__text-scroll {
+      height: 68%;
+    }
+  }
 
   &:hover {
     .blog-item-cof__flip {
@@ -1701,11 +1713,11 @@ h2 {
 
       @media (max-width:$tablet) {
         top: 23%;
-        right: 11%;
+        right: 10%;
       }
 
       @media (max-width:$mobile) {
-        top: 22%;
+        top: 24%;
       }
     }
 
@@ -1953,6 +1965,12 @@ h2 {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+
+  @media (max-width:$mobile) {
+    .blog-item__text-scroll {
+      height: 68%;
+    }
+  }
 
   &:hover {
     .blog-item-3__flip {

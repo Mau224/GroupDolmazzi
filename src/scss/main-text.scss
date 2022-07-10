@@ -29,11 +29,12 @@
     }
 
     p {
-      font-family: "SuisseIntlCondTrialLight";
-      font-weight: 450;
+      // font-family: "SuisseIntlCondTrialLight";
+      font-weight: 400;
       @include adaptiveValue("font-size", 40, 20, 1920, 767);
       line-height: math.div(44 , 40);
-      @include adaptiveValue("width", 1225, 900);
+      width: 60%;
+      // @include adaptiveValue("width", 1225, 900);
 
       @media (max-width:$mobile){
         @include adaptiveValue("font-size", 20, 16);

@@ -395,6 +395,7 @@
     position: relative;
     cursor: pointer;
 
+
     @media (max-width:$mobile) {
       max-height: rem(605);
     }
@@ -419,12 +420,13 @@
     display: flex;
     overflow: hidden;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     transition: 0.3s ease;
+    opacity: 1;
     padding-top: rem(30);
     padding-bottom: rem(30);
-    @include adaptiveValue("padding-right", 130, 50, 1920, 991);
-    @include adaptiveValue("padding-left", 130, 50, 1920, 991);
+    @include adaptiveValue("padding-right", 130, 10, 1920, 991);
+    @include adaptiveValue("padding-left", 130, 10, 1920, 991);
 
     // &:focus {
     //   display: block;
@@ -469,7 +471,7 @@
       text-align: center;
 
       &:last-child {
-        @include adaptiveValue("font-size", 24, 18);
+        @include adaptiveValue("font-size", 24, 12, 1920, 991);
         line-height: math.div(32, 24);
         /* or 133% */
 
@@ -497,7 +499,7 @@
     h3 {
       line-height: math.div(35, 30);
       /* or 117% */
-      @include adaptiveValue("font-size", 30, 20);
+      @include adaptiveValue("font-size", 30, 20,1920, 991);
       text-align: center;
       text-transform: uppercase;
 
